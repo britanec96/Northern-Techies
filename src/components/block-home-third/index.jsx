@@ -108,9 +108,9 @@ const BlockHomeThird = () => {
 
       <section>
         <div className="bg-gray-900 p-5 mb-5 text-center relative rounded-lg">
-          <h1 className="m-5 text-almost-white text-6xl font-extrabold element-delay-1200">Get a free consultation</h1>
+          <h1 className="m-5 text-almost-white md:text-5xl sm:text-3xl font-extrabold element-delay-1200">Get a free consultation</h1>
           <div className="element-delay-1400">
-            <p className="m-5 text-gray-100 text-2xl">Get professional help right{' '}
+            <p className="m-5 text-gray-100 md:text-2xl sm:text-xl">Get professional help right{' '}
               <span className="text-sky-500 text-3xl font-semibold">NOW!</span>
             </p>
             <Button onClick={(event) => { event.preventDefault(); handleWhatsApp(); }} className="m-5" hasWhiteStyle={true}>

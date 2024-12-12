@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className="bg-gray-900 text-almost-white py-10">
       <div className="container mx-auto px-4">
         <div className="flex justify-center mb-10">
-        <Link to="/" className='antialiased cursor-pointer tracking-widest mr-20'>
+        <Link to="/" className='antialiased cursor-pointer tracking-widest'>
         <h1 className="text-almost-white text-xl font-fira font-extrabold">{"<Northern>"}</h1>
         <h1 className="text-sky-500 text-xl -mt-2 font-fira font-extrabold">{"</Techies>"}</h1>
         </Link>

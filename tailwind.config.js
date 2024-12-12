@@ -5,9 +5,9 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'xl': '1440px',
-      'md': '1024px',
-      'sm': '545px',
+      'sm': '380px', 
+      'md': '768px',  
+      'xl': '1280px', 
     },
     fontFamily: {
       fira: ['FiraCode', 'monospace'],

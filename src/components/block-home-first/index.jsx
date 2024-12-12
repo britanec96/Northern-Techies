@@ -36,8 +36,8 @@ export const BlockHomeFirst = () => {
 
       <div className="relative z-10 pointer-events-none select-none">
         <Wrapper>
-          <div className="flex flex-col w-full max-h-full overflow-hidden sm:text-center md:text-left md:justify-start sm:justify-center md:items-start sm:items-center">
-            <h1 className="font-extrabold text-almost-white text-4xl md:text-6xl my-14 mt-56 whitespace-pre-line element-delay-400">
+          <div className="flex flex-col max-h-full overflow-hidden sm:text-center md:text-left md:justify-start sm:justify-center md:items-start sm:items-center">
+            <h1 className="font-extrabold text-almost-white text-4xl md:text-6xl my-14 xl:mt-56 md:mt-28 sm:mt-16 whitespace-pre-line element-delay-400">
               Budget IT services starting from £10
               <span className="inline-block my-7 p-2 px-3 rounded-md bg-gray-800 bg-opacity-40 text-sky-500 font-thin text-base md:text-xl element-delay-800">
                 At Northern Techies, our mission is to make IT and technology accessible to everyone.
