@@ -49,7 +49,7 @@ module.exports = {
         },
       },
       animation: {
-        'marquee': 'marquee 10s linear infinite',
+        'marquee': 'marquee 20s linear infinite',
         vibrate: 'vibrate 0.5s linear infinite',
         shakeRotate: 'shakeRotate 0.5s ease-in-out infinite',
         jump: 'jump 0.6s ease-in-out infinite', // Анимация для прыгающих элементов

@@ -69,7 +69,7 @@ const About = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 my-16">
           <div className="text-center transform transition-all duration-300 ease-in-out hover:scale-105">
-            <img src={KristoferPicture} alt="Team Member 1" className="rounded-full object-cover w-32 h-32 mx-auto mb-4" />
+            <img src={KristoferPicture} alt="Team Member 1" className="rounded-full object-cover w-32 h-32 mx-auto mb-4 pointer-events-none select-none" />
             <h3 className="text-2xl font-semibold text-almost-white">Christopher Ellis-Tatti</h3>
             <p className="text-gray-300">Founder & CEO</p>
             <p className="text-gray-400 mt-2">
@@ -77,7 +77,7 @@ const About = () => {
             </p>
           </div>
           <div className="text-center transform transition-all duration-300 ease-in-out hover:scale-105">
-            <img src={DanielPicture} alt="Team Member 2" className="rounded-full w-32 h-32 mx-auto mb-4 object-cover" />
+            <img src={DanielPicture} alt="Team Member 2" className="rounded-full w-32 h-32 mx-auto mb-4 object-cover pointer-events-none select-none" />
             <h3 className="text-2xl font-semibold text-almost-white">Daniel Caras</h3>
             <p className="text-gray-300">Lead Tech Specialist</p>
             <p className="text-gray-400 mt-2">
@@ -85,8 +85,8 @@ const About = () => {
             </p>
           </div>
           <div className="text-center transform transition-all duration-300 ease-in-out hover:scale-105">
-            <img src={JanePicture} alt="Team Member 3" className="rounded-full w-32 h-32 mx-auto mb-4 object-cover" />
-            <h3 className="text-2xl font-semibold text-almost-white">Jane Smith</h3>
+            <img src={JanePicture} alt="Team Member 3" className="rounded-full w-32 h-32 mx-auto mb-4 object-cover object-top pointer-events-none select-none" />
+            <h3 className="text-2xl font-semibold text-almost-white">Alexander Neitan</h3>
             <p className="text-gray-300">Creative Director</p>
             <p className="text-gray-400 mt-2">
               Jane is a talented designer with an eye for detail. She leads our creative team, ensuring that every project meets the highest visual standards.
