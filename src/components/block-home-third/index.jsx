@@ -3,8 +3,8 @@ import { Button } from '../button';
 import { Link } from 'react-router-dom';
 import useScrollReveal from '../SCROLL-REVEAL/ScrollReveal';
 import One from '../../images/One.png';
-import Two from '../../images/Two.png';
-import Three from '../../images/Three.png';
+import Two from '../../images/two.png';
+import Three from '../../images/three.png';
 import Six from '../../images/Six.png';
 
 const BlockHomeThird = () => {
