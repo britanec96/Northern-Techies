@@ -66,20 +66,32 @@ export const BlockHomeFirst = () => {
 
       <Wrapper>
         <div className="relative z-20 pointer-events-auto select-auto flex gap-5 mt-16 sm:justify-center md:justify-start element-delay-1800">
-          <Button className="text-sm font-bold" hasWhiteStyle={true} onClick={(e) => {
-            e.preventDefault();
-            handleWhatsApp();
-          }}>
-            CHAT NOW
-          </Button>
+        <Button 
+  className="flex items-center justify-center gap-2 text-sm font-bold" 
+  hasWhiteStyle={true} 
+  onClick={(e) => {
+    e.preventDefault();
+    handleWhatsApp();
+  }}
+>
+  <i className="ri-whatsapp-line text-green-500 text-base font-thin"></i>
+  CHAT NOW
+</Button>
+
 
           <Button
-            className="text-sm font-bold"
-            hasWhiteStyle={true}
-            onClick={() => window.location.href = 'mailto:Floxstreet@gmail.com?subject=Service%20Request&body=Hello,%20I%20would%20like%20to%20request%20your%20services.'}
-          >
-            EMAIL NOW
-          </Button>
+  className="text-sm font-bold"
+  hasWhiteStyle={true}
+  onClick={() => {
+    const email = 'Floxstreet@gmail.com';
+    const subject = encodeURIComponent('Service Request');
+    const body = encodeURIComponent('Hello, I would like to request your services.');
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  }}
+>
+  EMAIL NOW
+</Button>
+
 
           <Link to="/order" className="antialiased cursor-pointer tracking-widest">
             <Button className="text-sm font-bold bg-almost-white text-black" hasWhiteStyle={true}>

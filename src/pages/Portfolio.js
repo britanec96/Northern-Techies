@@ -171,7 +171,7 @@ const Portfolio = () => {
         </div>
 
         {/* Правая часть: изображение */}
-        <div className="w-1/2  element-delay-1400">
+        <div className="w-1/2  element-delay-1200">
           <img
             className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-105"
             src={PortfolioIcon}
@@ -188,7 +188,7 @@ const Portfolio = () => {
 
 
     <section className="bg-almost-black text-white mt-10">
-    <div className="element-delay-1600">
+    <div className="element-delay-1200">
       <h1 className="text-sky-500 text-7xl  font-bold bg-gray-900 px-3 text-left ">
         WEB DEVELOPMENT
       </h1>
@@ -201,7 +201,7 @@ const Portfolio = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-300"
                 onClick={() => openModal(project.image)}
               />
             </div>
@@ -213,7 +213,7 @@ const Portfolio = () => {
 
 
 
-      <div className="my-12 element-delay-1600">
+      <div className="my-12 element-delay-1200">
       <h1 className="text-almost-white text-7xl font-bold bg-gray-900 px-3 text-right">
         GRAPHIC DESIGN
       </h1>
@@ -226,7 +226,7 @@ const Portfolio = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                 onClick={() => openModal(project.image)}
               />
             </div>
@@ -238,7 +238,7 @@ const Portfolio = () => {
 
 
 
-      <div className="my-12 element-delay-1600">
+      <div className="my-12 element-delay-1200">
         <h1 className="text-sky-500 text-7xl font-bold bg-gray-900 px-3">MOTION DESIGN</h1>
       {/* Слайдер */}
       <Slider {...settings}>
@@ -264,7 +264,7 @@ const Portfolio = () => {
 
 
 
-      <div className="element-delay-1600">
+      <div className="element-delay-1200">
         <h1 className="text-almost-white text-7xl font-bold bg-gray-900 px-3 text-right"> AI CONTENT</h1>
        {/* Слайдер */}
        <Slider {...settings}>
