@@ -42,7 +42,7 @@ const BlockHomeSecond = () => {
   };
 
   return (
-    <div className="w-6xl px-4">
+    <div className="w-6xl px-4 z-10">
       <Wrapper>
         <Slider {...carouselSettings} className="feature-slider element-delay-200">
           {[

@@ -25,15 +25,9 @@ function AiContentCreation() {
     setModalOpen((prev) => !prev);
   };
 
-  // ScrollReveal effect
   useScrollReveal([
-    { selector: '.element-delay-200', delay: 200, options: { distance: '70px' } },
-    { selector: '.element-delay-400', delay: 400, options: { distance: '70px' } },
-    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
-    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
-    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
-    { selector: '.element-delay-1600', delay: 1600, options: { distance: '70px' } },
-    { selector: '.element-delay-1800', delay: 1800, options: { distance: '70px' } },
+    { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
   ]);
 
   const scrollToSection = () => {
@@ -76,12 +70,12 @@ function AiContentCreation() {
             <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
           </div>
           <div className="flex justify-between mt-12">
-            <p className="text-almost-white font-bold text-xl mt-7 element-delay-800">Our expertise extends across diverse platforms:</p>
+            <p className="text-almost-white font-bold text-xl mt-7 element-delay-400">Our expertise extends across diverse platforms:</p>
             <div className="flex flex-col md:flex-row xl:flex-row md:space-x-8 space-y-3">
-              <img className='mt-3 element-delay-800' src={ChatGPT} alt="ChatGPTIcon" loading="lazy" />
-              <img className='element-delay-1200' src={Canva} alt="CanvaIcon" loading="lazy"/>
-              <img className='element-delay-1400' src={MidJourney} alt="MidJourney" loading="lazy" />
-              <img className='element-delay-1600' src={Gemini} alt="Gemini" loading="lazy" />
+              <img className='mt-3 element-delay-400' src={ChatGPT} alt="ChatGPTIcon" loading="lazy" />
+              <img className='element-delay-400' src={Canva} alt="CanvaIcon" loading="lazy"/>
+              <img className='element-delay-400' src={MidJourney} alt="MidJourney" loading="lazy" />
+              <img className='element-delay-400' src={Gemini} alt="Gemini" loading="lazy" />
             </div>
           </div>
         </div>
@@ -98,8 +92,8 @@ function AiContentCreation() {
 
       <section>
         <div className='bg-gray-900 p-5 text-center relative'>
-          <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-1200'>Ready to generate top-notch content?</h1>
-          <div className='element-delay-1400'>
+          <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-400'>Ready to generate top-notch content?</h1>
+          <div className='element-delay-400'>
             <p className='m-5 text-gray-100 text-2xl'>Start your project from just <span className='text-sky-500 text-3xl font-semibold'>£10!</span></p>
             <Button onClick={scrollToSection} className='m-5' hasWhiteStyle={true}>
               Order Now
@@ -112,14 +106,14 @@ function AiContentCreation() {
         <section>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-300'>
             <div className='flex flex-col items-center'>
-              <img className="w-1/2 h-auto m-10 element-delay-1200" src={PromptEngineeringIcon} alt="Prompt Engineering Icon" loading="lazy" />
-              <h1 className='font-bold text-lg text-almost-white element-delay-1400'>What is Prompt Engineering?</h1>
-              <p className='m-5 text-gray-300 element-delay-1600'>Prompt engineering is the art of crafting effective inputs for AI models to generate desired outputs. Our engineers specialize in fine-tuning prompts to produce high-quality images, business plans, and content tailored to your needs.</p>
+              <img className="w-1/2 h-auto m-10 element-delay-400" src={PromptEngineeringIcon} alt="Prompt Engineering Icon" loading="lazy" />
+              <h1 className='font-bold text-lg text-almost-white element-delay-400'>What is Prompt Engineering?</h1>
+              <p className='m-5 text-gray-300 element-delay-400'>Prompt engineering is the art of crafting effective inputs for AI models to generate desired outputs. Our engineers specialize in fine-tuning prompts to produce high-quality images, business plans, and content tailored to your needs.</p>
             </div>
             <div className='flex flex-col items-center'>
-              <img className="w-1/2 h-auto m-10 element-delay-1200" src={WhyChooseUsIcon} alt="Business Plans Icon" loading="lazy" />
-              <h1 className='font-bold text-lg text-almost-white element-delay-1400'>Why Choose Us for Prompt Engineering?</h1>
-              <p className='m-5 text-gray-300 element-delay-1600'>We bring a blend of technical skill and creativity to tailor AI-generated content that matches your brand’s vision. Our team excels in generating diverse and detailed outputs, from visual content to business plans and more.</p>
+              <img className="w-1/2 h-auto m-10 element-delay-400" src={WhyChooseUsIcon} alt="Business Plans Icon" loading="lazy" />
+              <h1 className='font-bold text-lg text-almost-white element-delay-400'>Why Choose Us for Prompt Engineering?</h1>
+              <p className='m-5 text-gray-300 element-delay-400'>We bring a blend of technical skill and creativity to tailor AI-generated content that matches your brand’s vision. Our team excels in generating diverse and detailed outputs, from visual content to business plans and more.</p>
             </div>
           </div>
         </section>
@@ -127,7 +121,7 @@ function AiContentCreation() {
 
       <Wrapper>
         <div id='targetSection' className="bg-gray-900 rounded-lg shadow-md py-20 px-4 md:px-8 my-20">
-          <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6">
+          <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6 element-delay-200">
             <div className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">
                 Looking for Creative Content?
@@ -135,11 +129,6 @@ function AiContentCreation() {
               <p className="text-lg text-gray-300">
                 Need custom content to engage your audience? Our prompt engineers will develop captivating content to suit your unique style and goals.
               </p>
-              <div className="mt-6">
-                <Button hasWhiteStyle={true}>
-                  Start
-                </Button>
-              </div>
             </div>
             <div className="block md:w-1/2">
               <img
@@ -152,7 +141,7 @@ function AiContentCreation() {
 
           <div className="border-t-2 border-gray-400 my-8 opacity-25 mt-20"></div>
 
-          <div className="mt-12 flex flex-col md:flex-row items-center md:text-right sm:text-center gap-6">
+          <div className="mt-12 flex flex-col md:flex-row items-center md:text-right sm:text-center gap-6 element-delay-200">
             <div className="block md:w-1/2">
               <img
                 src={ImageGeneration}
@@ -168,17 +157,12 @@ function AiContentCreation() {
               <p className="text-lg text-gray-300">
                 Our AI specialists can create unique visuals for any purpose, helping you stand out with custom image content.
               </p>
-              <div className="mt-6">
-                <Button hasWhiteStyle={true}>
-                  Start
-                </Button>
-              </div>
             </div>
           </div>
 
           <div className="border-t-2 border-gray-400 my-8 opacity-25 mt-20"></div>
 
-          <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6">
+          <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6 element-delay-200">
             <div className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">
                 Data-Driven Insights at Your Fingertips
@@ -186,11 +170,6 @@ function AiContentCreation() {
               <p className="text-lg text-gray-300">
                 Gain valuable insights with our data analytics solutions. Our team is equipped to help you leverage data effectively.
               </p>
-              <div className="mt-6">
-                <Button hasWhiteStyle={true}>
-                  Start
-                </Button>
-              </div>
             </div>
 
             <div className="block md:w-1/2">

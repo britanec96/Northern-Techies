@@ -12,13 +12,8 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useScrollReveal([
-    { selector: '.element-delay-200', delay: 200, options: { distance: '70px' } },
-    { selector: '.element-delay-400', delay: 400, options: { distance: '70px' } },
-    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
-    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
-    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
-    { selector: '.element-delay-1600', delay: 1600, options: { distance: '70px' } },
-    { selector: '.element-delay-1800', delay: 1800, options: { distance: '70px' } },
+    { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
   ]);
 
   const handleChange = (e) => {
@@ -69,7 +64,7 @@ const Contact = () => {
             <h2 className="text-xl sm:text-lg xl:text-3xl m-5 font-bold text-almost-white element-delay-400">
               Reach out if you're interested in partnering or joining our team
             </h2>
-            <div className="element-delay-800">
+            <div className="element-delay-400">
               <Link to="/about">
                 <Button hasWhiteStyle={true}>About Us</Button>
               </Link>
@@ -77,7 +72,7 @@ const Contact = () => {
           </div>
 
           {/* Правая часть: изображение */}
-          <div className="w-1/2 element-delay-1200">
+          <div className="w-1/2 element-delay-400">
             <img
               className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-105"
               src={ContactUsIcon}
@@ -86,14 +81,14 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center mb-10 element-delay-1400">
+        <div className="flex justify-center items-center mb-10 element-delay-400">
           <div className="w-60 h-px bg-gray-600 opacity-50"></div>
         </div>
       </div>
 
       <Wrapper>
         <div className="grid gap-8 xl:grid-cols-2 sm:grid-cols-1">
-          <div className="bg-gray-900 p-8 rounded-lg shadow-lg element-delay-1400">
+          <div className="bg-gray-900 p-8 rounded-lg shadow-lg element-delay-400">
             <h2 className="text-3xl text-almost-white font-semibold mb-4">Cooperation</h2>
             <p className="text-gray-300 mb-4">
               If you want to work with us, we look forward to your message.
@@ -143,7 +138,7 @@ const Contact = () => {
             )}
           </div>
 
-          <div className="bg-gray-900 p-8 rounded-lg shadow-lg element-delay-1600">
+          <div className="bg-gray-900 p-8 rounded-lg shadow-lg element-delay-400">
             <h2 className="text-2xl text-almost-white font-semibold mb-4">Our Location</h2>
             <div
               style={{

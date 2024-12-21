@@ -3,12 +3,22 @@ import { Button } from '../components/button';
 import KristoferPicture from "../images/KristoferPicture.jpg";
 import JanePicture from "../images/JanePicture.jpg";
 import DanielPicture from "../images/DanielPicture.jpg";
+import useScrollReveal from '../components/SCROLL-REVEAL/ScrollReveal';
+
+
+
 const About = () => {
+
+  useScrollReveal([
+    { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
+  ]);
+
   return (
     <div className="bg-gray-900 text-almost-white">
       <div className="container mx-auto px-6 py-12">
         {/* Hero Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 element-delay-200">
           <h1 className="text-5xl sm:text-6xl font-bold text-sky-500 transition-transform transform hover:scale-105 duration-300 ease-in-out pointer-none">
             About Us
           </h1>
@@ -17,12 +27,12 @@ const About = () => {
           </p>
         </div>
 
-        <div className="flex justify-center items-center mb-10 element-delay-1400">
+        <div className="flex justify-center items-center mb-10 element-delay-200">
           <div className="w-60 h-px bg-gray-600 opacity-50"></div>
         </div>
 
         {/* Mission & Vision Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 element-delay-400">
           <div className="text-center md:text-left hover:scale-105 transform transition-all duration-300 ease-in-out">
             <h2 className="text-3xl font-semibold text-almost-white mb-4">Our Mission</h2>
             <p className="text-lg text-gray-300">
@@ -38,7 +48,7 @@ const About = () => {
         </div>
 
         {/* Our Values Section */}
-        <div className="bg-gray-800 py-12 rounded-lg">
+        <div className="bg-gray-800 py-12 rounded-lg element-delay-200">
           <h2 className="text-4xl font-bold text-almost-white text-center mb-8">Our Core Values</h2>
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 p-5">
             <div className="text-center bg-gray-700 p-6 rounded-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-600">
@@ -63,11 +73,11 @@ const About = () => {
         </div>
 
         {/* Our Team Section */}
-        <div className="flex justify-center items-center my-10 element-delay-1400">
+        <div className="flex justify-center items-center my-10 element-delay-200">
           <div className="w-60 h-px bg-gray-600 opacity-50"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 my-16">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 my-16 element-delay-200">
           <div className="text-center transform transition-all duration-300 ease-in-out hover:scale-105">
             <img src={KristoferPicture} alt="Team Member 1" className="rounded-full object-cover w-32 h-32 mx-auto mb-4 pointer-events-none select-none" />
             <h3 className="text-2xl font-semibold text-almost-white">Christopher Ellis-Tatti</h3>
@@ -94,12 +104,12 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center my-10 element-delay-1400">
+        <div className="flex justify-center items-center my-10 element-delay-200">
           <div className="w-60 h-px bg-gray-600 opacity-50"></div>
         </div>
 
         {/* Achievements Section */}
-        <div className="bg-gray-800 py-12 rounded-lg">
+        <div className="bg-gray-800 py-12 rounded-lg element-delay-200">
           <h2 className="text-3xl font-semibold text-almost-white text-center mb-8">Our Achievements</h2>
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 p-5">
             <div className="text-center bg-gray-700 p-6 rounded-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-600">
@@ -123,12 +133,12 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center my-10 element-delay-1400">
+        <div className="flex justify-center items-center my-10 element-delay-200">
           <div className="w-60 h-px bg-gray-600 opacity-50"></div>
         </div>
 
         {/* Call-to-Action Section */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 element-delay-200">
           <p className="md:text-2xl sm:text-xl text-gray-300 mb-4">
             Ready to start your project with Northern Techies? Get in touch today to discuss your needs!
           </p>
