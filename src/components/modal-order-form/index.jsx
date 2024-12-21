@@ -84,7 +84,7 @@ function ContactFormModal({ toggleModal }) {
       ></div>
 
       {/* Контент модального окна */}
-      <div className="relative bg-almost-black w-full max-w-lg md:w-2/3 h-auto md:max-h-full p-4 md:p-8 shadow-lg z-50 flex flex-col justify-center items-center md:items-start md:text-left text-center overflow-y-auto">
+      <div className="relative bg-almost-black w-full max-w-lg md:w-2/3 h-auto md:max-h-full p-4 sm:pt-12 md:p-8 shadow-lg z-50 flex flex-col justify-center items-center md:items-start md:text-left text-center overflow-y-auto">
         <h1 className="text-almost-white text-lg md:text-xl font-fira font-extrabold mt-6">{"<Northern>"}</h1>
         <h1 className="text-sky-500 text-lg md:text-xl -mt-2 my-4 font-fira font-extrabold">{"</Techies>"}</h1>
 
