@@ -73,7 +73,7 @@ function ContactFormModal({ toggleModal }) {
   };
 
   return (
-    <div className="fixed inset-0 flex z-50 h-screen">
+    <div className="fixed inset-0 flex z-50 h-full">
       {/* Фон модального окна */}
       <div
         className="absolute inset-0 bg-gray-800 opacity-60 z-40"
@@ -84,39 +84,39 @@ function ContactFormModal({ toggleModal }) {
       ></div>
 
       {/* Контент модального окна */}
-      <div className="relative bg-almost-black w-full md:w-2/3 max-h-full p-6 md:p-20 shadow-lg z-50 flex flex-col justify-center items-center md:items-start md:text-left text-center">
-        <h1 className="text-almost-white text-xl font-fira font-extrabold mt-10">{"<Northern>"}</h1>
-        <h1 className="text-sky-500 text-xl -mt-2 my-6 font-fira font-extrabold">{"</Techies>"}</h1>
+      <div className="relative bg-almost-black w-full max-w-lg md:w-2/3 h-auto md:max-h-full p-4 md:p-8 shadow-lg z-50 flex flex-col justify-center items-center md:items-start md:text-left text-center overflow-y-auto">
+        <h1 className="text-almost-white text-lg md:text-xl font-fira font-extrabold mt-6">{"<Northern>"}</h1>
+        <h1 className="text-sky-500 text-lg md:text-xl -mt-2 my-4 font-fira font-extrabold">{"</Techies>"}</h1>
 
-        <h2 className="sm:text-3xl md:text-6xl font-bold text-sky-500 mb-4">
+        <h2 className="sm:text-2xl md:text-4xl font-bold text-sky-500 mb-2">
           Tell us what you <span className="text-almost-white">need</span> done.
         </h2>
 
-        <p className="m-5 sm:text-md md:text-xl text-almost-white font-fira">
+        <p className="m-4 sm:text-sm md:text-md text-almost-white font-fira">
           Fill out the form below to tell us about your problem or request.
         </p>
 
         {/* Форма */}
         <form onSubmit={handleSubmit} className="w-full flex flex-col">
-          <div className="m-4">
+          <div className="m-2">
             <textarea
               id="message"
               name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="w-full h-40 px-4 py-2 border-2 border-sky-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 resize-none"
+              className="w-full h-32 px-4 py-2 border-2 border-sky-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 resize-none"
               placeholder="The more details, the better we can serve you!"
             ></textarea>
           </div>
 
-          <div className="m-4">
+          <div className="m-2">
             <PhoneNumberInput
               value={phoneNumber}
               onChange={handlePhoneChange} // Передаем handlePhoneChange
             />
           </div>
 
-          <div className="flex justify-between gap-10 my-10 mx-4">
+          <div className="flex justify-between gap-6 my-6 mx-4">
             <Button
               hasRedStyle={true}
               type="button"
@@ -141,10 +141,10 @@ function ContactFormModal({ toggleModal }) {
 
         {/* Ссылки на соцсети */}
         <div className="flex flex-col items-center w-full">
-          <h1 className="text-xl text-almost-white text-center mb-4 mt-4">
+          <h1 className="text-lg md:text-xl text-almost-white text-center mb-4 mt-4">
             Contact Us Via:
           </h1>
-          <div className="flex justify-center items-center space-x-6 mb-14 text-sky-500 text-3xl">
+          <div className="flex justify-center items-center space-x-4 mb-10 text-sky-500 text-2xl">
             <a
               href="#"
               onClick={(event) => {
@@ -185,6 +185,8 @@ function ContactFormModal({ toggleModal }) {
 }
 
 export default ContactFormModal;
+
+
 
 
 
