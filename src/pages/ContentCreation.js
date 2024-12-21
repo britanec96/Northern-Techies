@@ -6,9 +6,9 @@ import ChatGPT from '../images/ChatGPT.svg';
 import Canva from '../images/Canva.svg';
 import MidJourney from '../images/MidJourney.svg';
 import Gemini from '../images/Gemini.png';
-import CreativeContent from '../images/CreativeContent.png';
-import ImageGeneration from '../images/ImageGeneration.png';
-import Analytics from '../images/AnalyticsPromt.png';
+import CreativeContent from '../images/CreativeContent.jpg';
+import ImageGeneration from '../images/ImageGeneration.jpg';
+import Analytics from '../images/AnalyticsPromt.jpg';
 
 
 // Components
@@ -56,7 +56,7 @@ function AiContentCreation() {
           <div className="lg:grid lg:grid-cols-2 lg:gap-8">
             <div className="max-w-md mx-0 flex flex-col justify-start text-left">
               <h1 className="text-5xl font-bold text-white element-delay-200">
-                Our expert <span className="text-blue-500">Prompt Engineers</span> are here for your creative needs
+                Our expert <span className="text-sky-500">Prompt Engineers</span> are here for your creative needs
               </h1>
               <p className="mt-6 text-xl font-fira text-gray-300 element-delay-400">
                 Images, Business Plans, Content, Essey, Studying and other
@@ -120,7 +120,7 @@ function AiContentCreation() {
       </Wrapper>
 
       <Wrapper>
-        <div id='targetSection' className="bg-gray-900 rounded-lg shadow-md py-20 px-4 md:px-8 my-20">
+        <div id='targetSection' className="bg-gray-900 rounded-lg shadow-md py-20 px-4 md:px-8 mt-14">
           <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6 element-delay-200">
             <div className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">
@@ -163,14 +163,15 @@ function AiContentCreation() {
           <div className="border-t-2 border-gray-400 my-8 opacity-25 mt-20"></div>
 
           <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6 element-delay-200">
-            <div className="flex-1">
-              <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">
-                Data-Driven Insights at Your Fingertips
-              </h3>
-              <p className="text-lg text-gray-300">
-                Gain valuable insights with our data analytics solutions. Our team is equipped to help you leverage data effectively.
-              </p>
-            </div>
+          <div className="flex-1">
+  <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">
+    Professional Essays and Help with Assignments
+  </h3>
+  <p className="text-lg text-gray-300">
+    We offer high-quality essay writing and assignment assistance that is indistinguishable from human work. Our experts will help you achieve excellent academic results.
+  </p>
+</div>
+
 
             <div className="block md:w-1/2">
               <img
@@ -181,6 +182,21 @@ function AiContentCreation() {
             </div>
           </div>
         </div>
+        <section>
+        <div className='bg-gray-900 p-5 my-5 rounded-lg text-center relative'>
+         <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-400'>Get a free consultation</h1>
+         <div className='element-delay-400'>
+         <p className='m-5 text-gray-100 text-2xl'>Get professional advice right NOW!<span className='text-sky-500 text-3xl font-semibold'> From £10!</span></p>
+         <Button
+                  hasWhiteStyle={true}
+                  onClick={toggleModal}
+                  className=""
+                >
+                  Contact Us
+                </Button>
+         </div>
+        </div>
+    </section>
       </Wrapper>
     </>
   );

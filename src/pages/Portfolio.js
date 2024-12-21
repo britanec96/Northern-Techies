@@ -40,13 +40,8 @@ const Portfolio = () => {
   };
 
   useScrollReveal([
-    { selector: '.element-delay-200', delay: 200, options: { distance: '70px' } },
-    { selector: '.element-delay-400', delay: 400, options: { distance: '70px' } },
-    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
-    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
-    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
-    { selector: '.element-delay-1600', delay: 1600, options: { distance: '70px' } },
-    { selector: '.element-delay-1800', delay: 1800, options: { distance: '70px' } },
+    { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
   ]);
 
   const websites = [
@@ -160,10 +155,10 @@ const Portfolio = () => {
           <h1 className="text-4xl sm:text-3xl xl:text-5xl font-bold text-sky-500 element-delay-400">
            Our Portfolio
           </h1>
-          <h2 className="text-xl sm:text-lg xl:text-3xl m-5 font-bold text-almost-white element-delay-800">
+          <h2 className="text-xl sm:text-lg xl:text-3xl m-5 font-bold text-almost-white element-delay-400">
           Explore our work showcasing creativity
           </h2>
-          <div className="element-delay-1200">
+          <div className="element-delay-400">
             <Link to="/order">
           <Button hasWhiteStyle={true}>Consultation</Button>
           </Link>
@@ -171,7 +166,7 @@ const Portfolio = () => {
         </div>
 
         {/* Правая часть: изображение */}
-        <div className="w-1/2  element-delay-1200">
+        <div className="w-1/2  element-delay-400">
           <img
             className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-105"
             src={PortfolioIcon}
@@ -180,7 +175,7 @@ const Portfolio = () => {
         </div>
       </div>
       
-    <div className="flex justify-center items-center mb-10 element-delay-1400">
+    <div className="flex justify-center items-center mb-10 element-delay-400">
   <div className="w-60 h-px bg-gray-600 opacity-50"></div>
 </div>
 
@@ -188,8 +183,8 @@ const Portfolio = () => {
 
 
     <section className="bg-almost-black text-white mt-10">
-    <div className="element-delay-1200">
-      <h1 className="text-sky-500 text-7xl  font-bold bg-gray-900 px-3 text-left ">
+    <div className="element-delay-200">
+      <h1 className="text-sky-500 md:text-7xl sm:text-4xl  font-bold bg-gray-900 px-3 text-left ">
         WEB DEVELOPMENT
       </h1>
       {/* Слайдер */}
@@ -213,8 +208,8 @@ const Portfolio = () => {
 
 
 
-      <div className="my-12 element-delay-1200">
-      <h1 className="text-almost-white text-7xl font-bold bg-gray-900 px-3 text-right">
+      <div className="my-12 element-delay-200">
+      <h1 className="text-almost-white md:text-7xl sm:text-4xl font-bold bg-gray-900 px-3 text-right">
         GRAPHIC DESIGN
       </h1>
       {/* Слайдер */}
@@ -238,8 +233,8 @@ const Portfolio = () => {
 
 
 
-      <div className="my-12 element-delay-1200">
-        <h1 className="text-sky-500 text-7xl font-bold bg-gray-900 px-3">MOTION DESIGN</h1>
+      <div className="my-12 element-delay-200">
+        <h1 className="text-sky-500 md:text-7xl sm:text-4xl font-bold bg-gray-900 px-3">MOTION DESIGN</h1>
       {/* Слайдер */}
       <Slider {...settings}>
         {motiondesign.map((project, index) => (
@@ -264,8 +259,8 @@ const Portfolio = () => {
 
 
 
-      <div className="element-delay-1200">
-        <h1 className="text-almost-white text-7xl font-bold bg-gray-900 px-3 text-right"> AI CONTENT</h1>
+      <div className="element-delay-200">
+        <h1 className="text-almost-white md:text-7xl sm:text-4xl font-bold bg-gray-900 px-3 text-right"> AI CONTENT</h1>
        {/* Слайдер */}
        <Slider {...settings}>
         {aicontent.map((project, index) => (

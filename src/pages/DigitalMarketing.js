@@ -5,9 +5,9 @@ import WhyChooseUsIcon from '../images/WhyChooseUsIcon.svg';
 import Tiktok from '../images/Tiktoklogo.svg';
 import Instagram from '../images/Instagramlogo.svg';
 import Facebook from '../images/Facebooklogo.svg';
-import Blogger from '../images/Blogger.png';
-import BrandRefresh from '../images/BrandRefresh.png';
-import Analytics from '../images/Analytics.png';
+import Blogger from '../images/Blogger.jpg';
+import BrandRefresh from '../images/BrandRefresh.jpg';
+import Analytics from '../images/Analytics.jpg';
 
 
 
@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom';
 
 function DigMarketing() {
 
-    // Открытие/закрытие модального окна
+  
   const [isModalOpen, setModalOpen] = useState(false);
 
     const toggleModal = () => {
@@ -33,23 +33,10 @@ function DigMarketing() {
       { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
       { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
     ]);
-  
 
-  // Автоматический скролл
-  const scrollToSection = () => {
-    const targetSection = document.getElementById('targetSection');
-    targetSection.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  };
   
   return (
     <>
-
-
-
-
     <section 
       className="relative bg-cover bg-center bg-almost-black"
     >
@@ -153,7 +140,7 @@ function DigMarketing() {
 
 
       <Wrapper>
-      <div className="bg-gray-900 rounded-lg shadow-md py-20 px-4 md:px-8 my-20">
+      <div className="bg-gray-900 rounded-lg shadow-md py-20 px-4 md:px-8 mt-14">
 
 <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6">
 <div className="flex-1">
@@ -228,7 +215,23 @@ alt="Online Store Showcase"
 />
 </div>
 </div>
+
 </div>
+<section>
+        <div className='bg-gray-900 p-5 my-5 rounded-lg text-center relative'>
+         <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-400'>Get a free consultation</h1>
+         <div className='element-delay-400'>
+         <p className='m-5 text-gray-100 text-2xl'>Get professional advice right NOW!<span className='text-sky-500 text-3xl font-semibold'> £20!</span></p>
+         <Button
+                  hasWhiteStyle={true}
+                  onClick={toggleModal}
+                  className=""
+                >
+                  Contact Us
+                </Button>
+         </div>
+        </div>
+    </section>
 </Wrapper>
     </>
   );

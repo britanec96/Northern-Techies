@@ -115,22 +115,6 @@ const CardList = () => {
       technologies: 'HTML, CSS, JavaScript, CMS (Shopify), frameworks (React), backend (Node.js), payment gateway integration (PayPal, Stripe).',
       image: 'https://cdn.dribbble.com/userupload/5969124/file/original-5b5ab27e964531ebf6df77a092681ff4.png?resize=1200x900&vertical=center',
     },
-    {
-      title: 'Content Portal (soon)',
-      price: '??? GBP',
-      developmentTime: '??? days',
-      description: 'A website with a large amount of content, such as news portals or platforms for posting articles or blogs',
-      technologies: 'CMS (Drupal, WordPress), advanced content management systems, possible API integration.',
-      image: 'https://cdn.dribbble.com/userupload/7381601/file/original-c56e86447d5486885da6d6297ca1043b.png?resize=1200x900&vertical=center',
-    },
-    {
-      title: 'Social Networking/Community Website (soon)',
-      price: '??? GBP',
-      developmentTime: '??? days',
-      description: 'Websites with user registration and authentication, allowing users to create and edit profiles',
-      technologies: 'Backend (Node.js, Django, Ruby on Rails), frontend frameworks (React, Angular), databases (PostgreSQL, MongoDB), authentication systems.',
-      image: 'https://cdn.dribbble.com/userupload/10143564/file/original-efbc21892e4a94953c8f0ae1732d2025.png?resize=1200x900&vertical=center',
-    },
   ];
 
   return (

@@ -18,7 +18,7 @@ import CardList from '../components/cards/CardsWebDev';
 
 function WebDev() {
 
-    // Открытие/закрытие модального окна
+
   const [isModalOpen, setModalOpen] = useState(false);
 
     const toggleModal = () => {
@@ -26,15 +26,9 @@ function WebDev() {
     };
 
 
-  // ScrollReveal эффект при загрузке
     useScrollReveal([
-      { selector: '.element-delay-200', delay: 200, options: { distance: '70px' } },
-      { selector: '.element-delay-400', delay: 400, options: { distance: '70px' } },
-      { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
-      { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
-      { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
-      { selector: '.element-delay-1600', delay: 1600, options: { distance: '70px' } },
-      { selector: '.element-delay-1800', delay: 1800, options: { distance: '70px' } },
+      { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
+      { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
     ]);
   
 
@@ -89,13 +83,13 @@ function WebDev() {
           <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
         </div>
         <div className="flex justify-between mt-12">
-          <p className="text-almost-white font-bold text-xl mt-7 element-delay-800">The best technologies for your website</p>
+          <p className="text-almost-white font-bold text-xl mt-7 element-delay-400">The best technologies for your website</p>
           <div className="flex flex-col md:flex-row xl:flex-row md:space-x-8 space-y-3">
-          <img className='mt-3 element-delay-800' src={ReactIcon} alt="ReactIcon" loading="lazy" />
-          <img className='element-delay-1200' src={Node} alt="Node" loading="lazy"/>
-          <img className='element-delay-1400' src={JavaScript} alt="JavaScript" loading="lazy" />
-          <img className='element-delay-1600' src={Tailwind} alt="Tailwind" loading="lazy" />
-          <img className='element-delay-1800' src={Html} alt="Html" loading="lazy" />
+          <img className='mt-3 element-delay-400' src={ReactIcon} alt="ReactIcon" loading="lazy" />
+          <img className='element-delay-400' src={Node} alt="Node" loading="lazy"/>
+          <img className='element-delay-400' src={JavaScript} alt="JavaScript" loading="lazy" />
+          <img className='element-delay-400' src={Tailwind} alt="Tailwind" loading="lazy" />
+          <img className='element-delay-400' src={Html} alt="Html" loading="lazy" />
           </div>
         </div>
       </div>
@@ -118,8 +112,8 @@ function WebDev() {
 
     <section>
         <div className='bg-gray-900 p-5 text-center relative'>
-         <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-1200'>Ready to grow?</h1>
-         <div className='element-delay-1400'>
+         <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-400'>Ready to grow?</h1>
+         <div className='element-delay-400'>
          <p className='m-5 text-gray-100 text-2xl'>Start your website with us from just <span className='text-sky-500 text-3xl font-semibold'>£140!</span></p>
          <Button
          onClick={scrollToSection}
@@ -139,9 +133,9 @@ function WebDev() {
     <section>
     <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-300'>
     <div className='flex flex-col items-center'>
-    <img className="w-1/2 h-auto m-10 element-delay-1200" src={WebDevIcon} alt="Web Icon" loading="lazy" />
-          <h1 className='font-bold text-lg text-almost-white element-delay-1400'>What is Web Development?</h1>
-          <p className='m-5 text-gray-300 element-delay-1600'>Web development is the process of designing 
+    <img className="w-1/2 h-auto m-10 element-delay-200" src={WebDevIcon} alt="Web Icon" loading="lazy" />
+          <h1 className='font-bold text-lg text-almost-white element-delay-200'>What is Web Development?</h1>
+          <p className='m-5 text-gray-300 element-delay-200'>Web development is the process of designing 
             and building websites. Web developers use programming languages,
              software, and tools to create everything you see on a website,
               from text and images to videos, apps and games. You may need to
@@ -149,9 +143,9 @@ function WebDev() {
                 add features to an existing site.</p>
         </div>
         <div className='flex flex-col items-center'>
-        <img className="w-1/2 h-auto m-10 element-delay-1200" src={WhyChooseUsIcon} alt="Web Icon" loading="lazy" />
-        <h1 className='font-bold text-lg text-almost-white element-delay-1400'>Why Choose Us for Your Website Development?</h1>
-          <p className='m-5 text-gray-300 element-delay-1600'>We bring a blend of creativity, technical expertise, and personalized solutions to build websites that not only look great but also perform exceptionally. Our team is committed to delivering user-friendly, responsive, and SEO-optimized websites that are tailored to your business needs. We ensure a seamless development process, from concept to launch, with a focus on your goals and audience.</p>
+        <img className="w-1/2 h-auto m-10 element-delay-200" src={WhyChooseUsIcon} alt="Web Icon" loading="lazy" />
+        <h1 className='font-bold text-lg text-almost-white element-delay-200'>Why Choose Us for Your Website Development?</h1>
+          <p className='m-5 text-gray-300 element-delay-200'>We bring a blend of creativity, technical expertise, and personalized solutions to build websites that not only look great but also perform exceptionally. Our team is committed to delivering user-friendly, responsive, and SEO-optimized websites that are tailored to your business needs. We ensure a seamless development process, from concept to launch, with a focus on your goals and audience.</p>
         </div>
       </div>
       </section>
@@ -187,7 +181,7 @@ function WebDev() {
 
 
           <div id="targetSection" className='bg-gray-900 p-10 '>
-            <h1 className='text-6xl text-center font-fira text-almost-white font-black mb-4 element-delay-400'>Built for You: Choose the Ideal Web Solution</h1>
+            <h1 className='text-6xl text-center font-fira text-almost-white font-black mb-4 element-delay-200'>Built for You: Choose the Ideal Web Solution</h1>
         <CardList/>
         </div>
         

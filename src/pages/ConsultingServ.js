@@ -42,7 +42,7 @@ function ConsultationServices() {
           <div className="lg:grid lg:grid-cols-2 lg:gap-8">
             <div className="max-w-md mx-0 flex flex-col justify-start text-left">
               <h1 className="text-5xl font-bold text-white element-delay-200">
-                Our expert <span className="text-green-500">Consultants</span> for your needs
+                Our expert <span className="text-green-500">Consultants</span> for your tech needs
               </h1>
               <p className="mt-6 text-xl font-fira text-gray-300 element-delay-400">
                 Computers, Internet, Tech Support

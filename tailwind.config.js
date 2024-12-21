@@ -23,7 +23,7 @@ module.exports = {
           '100%': { transform: 'translateX(0)' },
         },
         marquee: {
-          '0%': { transform: 'translateX(400%)' }, // Начало с правого края экрана
+          '0%': { transform: 'translateX(300%)' }, // Начало с правого края экрана
           '100%': { transform: 'translateX(-100%)' }, // Конец на левом краю экрана
         },
         shakeRotate: {
@@ -49,7 +49,7 @@ module.exports = {
         },
       },
       animation: {
-        'marquee': 'marquee 20s linear infinite',
+        'marquee': 'marquee 10s linear infinite',
         vibrate: 'vibrate 0.5s linear infinite',
         shakeRotate: 'shakeRotate 0.5s ease-in-out infinite',
         jump: 'jump 0.6s ease-in-out infinite', // Анимация для прыгающих элементов

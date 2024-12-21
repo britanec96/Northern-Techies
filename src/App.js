@@ -17,6 +17,7 @@ import MotionGraphics from "./pages/MotionGraphics";
 import ConsultationServices from "./pages/ConsultingServ";
 import ChatBotWrapper from "./components/chat-bot-script/chatbotwrapper";
 import ScrollToTopButton from "./components/ScrollToTopButton/";
+import ScrollToTop from "./components/ScrollToTopPages";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Header />
         <ChatBotWrapper />
         <ScrollToTopButton />
+        <ScrollToTop />
         </Wrapper>
         <Routes>
           <Route path="/" element={<Home />} />

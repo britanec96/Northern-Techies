@@ -2,10 +2,10 @@ import React from 'react';
 import { Button } from '../button';
 import { Link } from 'react-router-dom';
 import useScrollReveal from '../SCROLL-REVEAL/ScrollReveal';
-import One from '../../images/One.png';
-import Two from '../../images/two.png';
-import Three from '../../images/three.png';
-import Six from '../../images/Six.png';
+import One from '../../images/One.jpg';
+import Two from '../../images/two.jpg';
+import Three from '../../images/Three.jpg';
+import Six from '../../images/Six.jpg';
 
 const BlockHomeThird = () => {
   useScrollReveal([

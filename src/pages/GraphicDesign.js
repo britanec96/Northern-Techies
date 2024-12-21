@@ -18,7 +18,7 @@ import CardListGraphicDesign from '../components/cards/CardsGraphDesign';
 
 function GraphicDesignPage() {
 
-    // Открытие/закрытие модального окна
+
   const [isModalOpen, setModalOpen] = useState(false);
 
     const toggleModal = () => {
@@ -26,16 +26,10 @@ function GraphicDesignPage() {
     };
 
 
-  // ScrollReveal эффект при загрузке
-  useScrollReveal([
-    { selector: '.element-delay-200', delay: 200, options: { distance: '70px' } },
-    { selector: '.element-delay-400', delay: 400, options: { distance: '70px' } },
-    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
-    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
-    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
-    { selector: '.element-delay-1600', delay: 1600, options: { distance: '70px' } },
-    { selector: '.element-delay-1800', delay: 1800, options: { distance: '70px' } },
-  ]);
+    useScrollReveal([
+      { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
+      { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
+    ]);
 
   // Автоматический скролл
   const scrollToSection = () => {
@@ -89,13 +83,13 @@ function GraphicDesignPage() {
           <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
         </div>
         <div className="flex justify-between mt-12">
-          <p className="text-almost-white font-bold text-xl mt-7 element-delay-800">The best programms for your design idea</p>
+          <p className="text-almost-white font-bold text-xl mt-7 element-delay-400">The best programms for your design idea</p>
           <div className="flex flex-col md:flex-row xl:flex-row md:space-x-8 space-y-3">
-          <img className='mt-3 size-12 element-delay-800' src={PhotoshopIcon} alt="PhotoshopIcon" loading="lazy" />
-          <img className='size-12 element-delay-1200' src={IllustratorIcon} alt="IllustratorIcon" loading="lazy"/>
-          <img className='size-12 element-delay-1400' src={FigmaIcon} alt="FigmaIcon" loading="lazy" />
-          <img className='size-12 element-delay-1600' src={BlenderIcon} alt="BlenderIcon" loading="lazy" />
-          <img className='size-12 element-delay-1800' src={CanvaIcon} alt="CanvaIcon" loading="lazy" />
+          <img className='mt-3 size-12 element-delay-400' src={PhotoshopIcon} alt="PhotoshopIcon" loading="lazy" />
+          <img className='size-12 element-delay-400' src={IllustratorIcon} alt="IllustratorIcon" loading="lazy"/>
+          <img className='size-12 element-delay-400' src={FigmaIcon} alt="FigmaIcon" loading="lazy" />
+          <img className='size-12 element-delay-400' src={BlenderIcon} alt="BlenderIcon" loading="lazy" />
+          <img className='size-12 element-delay-400' src={CanvaIcon} alt="CanvaIcon" loading="lazy" />
           </div>
         </div>
       </div>
@@ -118,12 +112,12 @@ function GraphicDesignPage() {
 
     <section>
         <div className='bg-gray-900 p-5 text-center relative'>
-         <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-1200'>Ready to elevate your brand?</h1>
-         <div className='element-delay-1400'>
-         <p className='m-5 text-gray-100 text-2xl element-delay-1200'>Get started with a custom graphic design package from just<span className='text-sky-500 text-3xl font-semibold'> £140!</span></p>
+         <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-200'>Ready to elevate your brand?</h1>
+         <div className='element-delay-200'>
+         <p className='m-5 text-gray-100 text-2xl element-delay-200'>Get started with a custom graphic design package from just<span className='text-sky-500 text-3xl font-semibold'> £140!</span></p>
          <Button
          onClick={scrollToSection}
-         className='m-5 element-delay-1400'
+         className='m-5 element-delay-200'
          hasWhiteStyle={true}>
           Order Now
          </Button>
@@ -138,15 +132,15 @@ function GraphicDesignPage() {
     <Wrapper>
     <section>
     <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-300'>
-    <div className='flex flex-col items-center element-delay-1200'>
-    <img className="w-1/2 h-auto m-10 element-delay-1200" src={GraphicDesignIcon} alt="Graphic Design" loading="lazy" />
-          <h1 className='font-bold text-lg text-almost-white element-delay-1400'>What is Graphic Design?</h1>
-          <p className='m-5 text-gray-300 element-delay-1600'>Graphic design is the art of visual communication that combines text and images to convey ideas and messages effectively. It plays a crucial role in branding, advertising, and user experience. Through the use of color, typography, and composition, graphic design helps businesses create a strong identity and engage their audience.</p>
+    <div className='flex flex-col items-center element-delay-200'>
+    <img className="w-1/2 h-auto m-10 element-delay-200" src={GraphicDesignIcon} alt="Graphic Design" loading="lazy" />
+          <h1 className='font-bold text-lg text-almost-white element-delay-200'>What is Graphic Design?</h1>
+          <p className='m-5 text-gray-300 element-delay-200'>Graphic design is the art of visual communication that combines text and images to convey ideas and messages effectively. It plays a crucial role in branding, advertising, and user experience. Through the use of color, typography, and composition, graphic design helps businesses create a strong identity and engage their audience.</p>
         </div>
         <div className='flex flex-col items-center'>
-        <img className="w-1/2 h-auto m-10 element-delay-1200" src={WhyChooseUsIcon} alt="Web Icon" loading="lazy" />
-        <h1 className='font-bold text-lg text-almost-white element-delay-1400'>Why Choose Us for Graphic Design?</h1>
-          <p className='m-5 text-gray-300 element-delay-1600'>At our agency, we understand that every project is unique, and so are your budgetary needs. That’s why we offer flexible budget plans tailored for everyone—from startups to established businesses. Our commitment to providing high-quality graphic design services ensures you receive exceptional value without compromising on creativity or effectiveness.</p>
+        <img className="w-1/2 h-auto m-10 element-delay-200" src={WhyChooseUsIcon} alt="Web Icon" loading="lazy" />
+        <h1 className='font-bold text-lg text-almost-white element-delay-200'>Why Choose Us for Graphic Design?</h1>
+          <p className='m-5 text-gray-300 element-delay-200'>At our agency, we understand that every project is unique, and so are your budgetary needs. That’s why we offer flexible budget plans tailored for everyone—from startups to established businesses. Our commitment to providing high-quality graphic design services ensures you receive exceptional value without compromising on creativity or effectiveness.</p>
         </div>
       </div>
       </section>
@@ -182,7 +176,7 @@ function GraphicDesignPage() {
 
 
           <div id="targetSection" className='bg-gray-900 p-10 '>
-            <h1 className='text-5xl text-center font-fira text-almost-white font-black mb-4 element-delay-400'>Crafted for You: Choose the Perfect Graphic Design Solution</h1>
+            <h1 className='text-5xl text-center font-fira text-almost-white font-black mb-4 element-delay-200'>Crafted for You: Choose the Perfect Graphic Design Solution</h1>
         <CardListGraphicDesign/>
         </div>
         
