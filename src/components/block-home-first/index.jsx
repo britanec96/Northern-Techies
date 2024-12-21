@@ -10,12 +10,10 @@ export const BlockHomeFirst = () => {
 
   useScrollReveal([
     { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
-    { selector: '.element-delay-400', delay: 400, options: { distance: '60px', origin: 'left' } },
+    { selector: '.element-delay-300', delay: 300, options: { distance: '50px', origin: 'top' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
+    { selector: '.element-delay-500', delay: 500, options: { distance: '60px', origin: 'left' } },
     { selector: '.element-delay-800', delay: 800, options: { distance: '70px', origin: 'right' } },
-    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px', origin: 'bottom' } },
-    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px', origin: 'bottom' } },
-    { selector: '.element-delay-1600', delay: 1600, options: { distance: '70px', origin: 'bottom' } },
-    { selector: '.element-delay-1800', delay: 1800, options: { distance: '70px', origin: 'top' } },
   ]);
 
   const toggleModal = () => setModalOpen(prev => !prev);
@@ -37,23 +35,23 @@ export const BlockHomeFirst = () => {
       <div className="relative z-10 pointer-events-none select-none">
         <Wrapper>
           <div className="flex flex-col max-h-full overflow-hidden sm:text-center md:text-left md:justify-start sm:justify-center md:items-start sm:items-center">
-            <h1 className="font-extrabold text-almost-white text-4xl md:text-6xl my-14 xl:mt-56 md:mt-28 sm:mt-16 whitespace-pre-line element-delay-400">
+            <h1 className="font-extrabold text-almost-white text-4xl md:text-6xl my-14 xl:mt-56 md:mt-28 sm:mt-16 whitespace-pre-line element-delay-300">
               Budget IT services starting from £10
-              <span className="inline-block my-7 p-2 px-3 rounded-md bg-gray-800 bg-opacity-40 text-sky-500 font-thin text-base md:text-xl element-delay-800">
+              <span className="inline-block my-7 p-2 px-3 rounded-md bg-gray-800 bg-opacity-40 text-sky-500 font-thin text-base md:text-xl element-delay-400">
                 At Northern Techies, our mission is to make IT and technology accessible to everyone.
               </span>
             </h1>
 
             <div className="w-full text-2xl text-almost-white">
-              <div className="flex gap-2 mb-8 items-center justify-center md:justify-start sm:text-center md:text-left element-delay-1200">
+              <div className="flex gap-2 mb-8 items-center justify-center md:justify-start sm:text-center md:text-left element-delay-500">
                 <span className="text-sky-500">—</span>
                 <p>Professional experts in web development, design, and tech assistance</p>
               </div>
-              <div className="flex gap-2 mb-8 items-center justify-center md:justify-start sm:text-center md:text-left element-delay-1400">
+              <div className="flex gap-2 mb-8 items-center justify-center md:justify-start sm:text-center md:text-left element-delay-500">
                 <span className="text-sky-500">—</span>
                 <p>Unbeatable prices starting from just £10</p>
               </div>
-              <div className="flex gap-2 items-center justify-center md:justify-start sm:text-center md:text-left element-delay-1600">
+              <div className="flex gap-2 items-center justify-center md:justify-start sm:text-center md:text-left element-delay-500">
                 <span className="text-sky-500">—</span>
                 <p>Fast, reliable, and creative problem-solving for all your digital needs</p>
               </div>
@@ -65,7 +63,7 @@ export const BlockHomeFirst = () => {
       </div>
 
       <Wrapper>
-        <div className="relative z-20 pointer-events-auto select-auto flex gap-5 mt-16 sm:justify-center md:justify-start element-delay-1800">
+        <div className="relative z-20 pointer-events-auto select-auto flex gap-5 mt-16 sm:justify-center md:justify-start element-delay-800">
         <Button 
   className="flex items-center justify-center gap-2 text-sm font-bold" 
   hasWhiteStyle={true} 

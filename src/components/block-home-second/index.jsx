@@ -10,8 +10,11 @@ const BlockHomeSecond = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   useScrollReveal([
-    { selector: "element-delay-800", delay: 800, options: { distance: "70px", easing: "ease-in-out" } },
-    { selector: "element-delay-1200", delay: 1200, options: { distance: "70px", easing: "ease-in-out" } },
+    { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
+    { selector: '.element-delay-300', delay: 300, options: { distance: '50px', origin: 'top' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
+    { selector: '.element-delay-500', delay: 500, options: { distance: '60px', origin: 'left' } },
+    { selector: '.element-delay-800', delay: 800, options: { distance: '70px', origin: 'right' } },
   ]);
 
   const handleRedirect = (path) => {
@@ -41,7 +44,7 @@ const BlockHomeSecond = () => {
   return (
     <div className="w-6xl px-4">
       <Wrapper>
-        <Slider {...carouselSettings} className="feature-slider element-delay-1200">
+        <Slider {...carouselSettings} className="feature-slider element-delay-200">
           {[
             { title: "Software & Computer Assistance", description: "Having trouble with your software or hardware? We troubleshoot, repair, and optimize all types of devices.", icon: "💻", button: "Chat", onButtonClick: () => setIsChatOpen(true) },
             { title: "Website Development", description: "We offer website design and development services that bring your vision online. Fully responsive, user-friendly, and optimized.", icon: "🚀", button: "Explore", onButtonClick: () => handleRedirect("/web-development") },
@@ -59,7 +62,7 @@ const BlockHomeSecond = () => {
 
       <ChatBot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
 
-      <div className="py-3 element-delay-1200">
+      <div className="py-3 element-delay-200">
         <Wrapper>
           <div className="flex justify-center my-10">
             <div className="border-l-2 border-almost-white h-14" />

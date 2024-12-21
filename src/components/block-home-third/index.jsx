@@ -9,11 +9,11 @@ import Six from '../../images/Six.png';
 
 const BlockHomeThird = () => {
   useScrollReveal([
-    { selector: '.element-delay-200', delay: 200, options: { distance: '50px' } },
-    { selector: '.element-delay-400', delay: 400, options: { distance: '60px' } },
-    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
-    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
-    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
+    { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
+    { selector: '.element-delay-300', delay: 300, options: { distance: '50px', origin: 'top' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
+    { selector: '.element-delay-500', delay: 500, options: { distance: '60px', origin: 'left' } },
+    { selector: '.element-delay-800', delay: 800, options: { distance: '70px', origin: 'right' } },
   ]);
 
   const handleWhatsApp = () => {
@@ -39,7 +39,7 @@ const BlockHomeThird = () => {
           <i className="ri-star-line mr-1"></i> <h1>Qualitatively</h1>
         </div>
 
-        <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6">
+        <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6 element-delay-200">
           <div className="flex-1">
             <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">Thinking of Starting an Online Store?</h3>
             <p className="text-lg text-gray-300">Your dream of running an online shop is within reach! We’ve helped countless entrepreneurs bring their store ideas to life, from custom designs to seamless integrations. Join our happy clients, and get a quick overview of the steps and what you can expect by working with us.</p>
@@ -56,7 +56,7 @@ const BlockHomeThird = () => {
 
         <div className="border-t-2 border-gray-400 my-8 opacity-25 mt-20"></div>
 
-        <div className="mt-12 flex flex-col md:flex-row items-center md:text-right sm:text-center gap-6">
+        <div className="mt-12 flex flex-col md:flex-row items-center md:text-right sm:text-center gap-6 element-delay-200">
           <div className="block md:w-1/2">
             <img src={Two} className="w-full max-w-1/2 aspect-video object-cover rounded-lg shadow-md transition-transform duration-300 ease-in-out hover:scale-105" alt="Online Store Showcase" />
           </div>
@@ -73,7 +73,7 @@ const BlockHomeThird = () => {
 
         <div className="border-t-2 border-gray-400 my-8 opacity-25 mt-20"></div>
 
-        <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6">
+        <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6 element-delay-200">
           <div className="flex-1">
             <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">Computer issues?</h3>
             <p className="text-lg text-gray-300">Won’t start? Running slow? Need a Windows reinstall? We’ve got you covered! Our specialists are experienced in handling all kinds of issues and can quickly get your computer back to optimal performance. Contact us to learn how we can help restore your device to peak condition.</p>
@@ -90,7 +90,7 @@ const BlockHomeThird = () => {
 
         <div className="border-t-2 border-gray-400 my-8 opacity-25 mt-20"></div>
 
-        <div className="mt-12 flex flex-col md:flex-row items-center md:text-right sm:text-center gap-6">
+        <div className="mt-12 flex flex-col md:flex-row items-center md:text-right sm:text-center gap-6 element-delay-200">
           <div className="block md:w-1/2">
             <img src={Six} className="w-full max-w-1/2 aspect-video object-cover rounded-lg shadow-md transition-transform duration-300 ease-in-out hover:scale-105" alt="Online Store Showcase" />
           </div>
@@ -108,8 +108,8 @@ const BlockHomeThird = () => {
 
       <section>
         <div className="bg-gray-900 p-5 mb-5 text-center relative rounded-lg">
-          <h1 className="m-5 text-almost-white md:text-5xl sm:text-3xl font-extrabold element-delay-1200">Get a free consultation</h1>
-          <div className="element-delay-1400">
+          <h1 className="m-5 text-almost-white md:text-5xl sm:text-3xl font-extrabold element-delay-200">Get a free consultation</h1>
+          <div className="element-delay-400">
             <p className="m-5 text-gray-100 md:text-2xl sm:text-xl">Get professional help right{' '}
               <span className="text-sky-500 text-3xl font-semibold">NOW!</span>
             </p>

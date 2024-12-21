@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Wrapper } from "../components/wrapper";
+import { Wrapper } from "../components/wrapper/index";
 import emailjs from "emailjs-com";
 import useScrollReveal from "../components/SCROLL-REVEAL/ScrollReveal";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 import { Button } from "../components/button";
 
 const Order = () => {
@@ -10,20 +11,21 @@ const Order = () => {
   const [selectedSubOption, setSelectedSubOption] = useState(null);
   const [nextSubOptions, setNextSubOptions] = useState([]);
   const [selectedNextSubOption, setSelectedNextSubOption] = useState(null);
-  const [preferredLanguage, setPreferredLanguage] = useState(""); // Новый параметр
-  const [preferredMessenger, setPreferredMessenger] = useState(""); // Новый параметр
+  const [preferredLanguage, setPreferredLanguage] = useState("");
+  const [preferredMessenger, setPreferredMessenger] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     comments: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+
   useScrollReveal([
-    { selector: ".element-delay-800", delay: 800, options: { distance: "70px", easing: "ease-in-out" } },
-    { selector: ".element-delay-1200", delay: 1200, options: { distance: "70px", easing: "ease-in-out" } },
-    { selector: ".element-delay-1600", delay: 1600, options: { distance: "70px", easing: "ease-in-out" } },
+    { selector: ".element-delay-200", delay: 200, options: { distance: "70px", easing: "ease-in-out" } },
+    { selector: ".element-delay-400", delay: 400, options: { distance: "70px", easing: "ease-in-out" } },
   ]);
 
   const services = [
@@ -216,6 +218,14 @@ const Order = () => {
     }    
   ];
 
+  const scrollToSection = (id) => {
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.error(`Element with id ${id} not found.`);
+    }
+  };
 
   const handleServiceClick = (service) => {
     setSelectedService(service.title);
@@ -223,16 +233,25 @@ const Order = () => {
     setSelectedSubOption(null);
     setNextSubOptions([]);
     setSelectedNextSubOption(null);
+    setTimeout(() => {
+      scrollToSection("targetElement");
+    }, 500);
   };
 
   const handleSubOptionClick = (subOption) => {
     setSelectedSubOption(subOption.name);
     setNextSubOptions(subOption.nextSubOptions || []);
     setSelectedNextSubOption(null);
+    setTimeout(() => {
+      scrollToSection("targetElementSecond");
+    }, 500);
   };
 
   const handleNextSubOptionClick = (option) => {
     setSelectedNextSubOption(option);
+    setTimeout(() => {
+      scrollToSection("targetElementThird");
+    }, 500);
   };
 
   const handleInputChange = (e) => {
@@ -240,45 +259,62 @@ const Order = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const dataToSend = {
-      ...formData,
-      selectedService,
-      selectedSubOption,
-      selectedNextSubOption,
-      preferredLanguage,
-      preferredMessenger,
+  
+    // Простая валидация email
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+      alert('Please, provide the correct email adress.');
+      return;
+    }
+  
+    setIsLoading(true);
+  
+    // Подготовка данных для отправки
+    const emailParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      selectedService: selectedService,
+      selectedSubOption: selectedSubOption,
+      selectedNextSubOption: selectedNextSubOption,
+      comments: formData.comments,
+      preferredLanguage: preferredLanguage,
+      preferredMessenger: preferredMessenger,
     };
-
-    emailjs
-      .send("service_lxxmm8s", "template_il5cfqr", dataToSend, "Df4zcv3Cqe2LtutdW")
-      .then(
-        () => {
-          setIsSubmitted(true);
-          setTimeout(() => {
-            setIsSubmitted(false);
-            setFormData({ name: "", email: "", phone: "", comments: "" });
-            setSelectedService(null);
-            setSubOptions([]);
-            setSelectedSubOption(null);
-            setNextSubOptions([]);
-            setSelectedNextSubOption(null);
-            setPreferredLanguage("");
-            setPreferredMessenger("");
-          }, 3000);
-        },
-        (error) => {
-          console.error(error.text);
-        }
+  
+    try {
+     
+      await emailjs.send(
+        'service_lxxmm8s', 
+        'template_il5cfqr', 
+        emailParams,
+        'Df4zcv3Cqe2LtutdW' 
       );
-  };
+      
+      setIsSubmitted(true);  
+      alert('Form successfully submitted!');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        comments: '',
+      });
+      setPreferredLanguage('');
+      setPreferredMessenger('');
+    } catch (error) {
+      console.error('Error sending form:', error);
+      alert('There was an error sending the form. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };    
   
 
   return (
     <div className="bg-gray-900 text-gray-100 min-h-screen">
     <Wrapper>
-    <div className="flex flex-col items-center justify-center text-center element-delay-800">
+    <div className="flex flex-col items-center justify-center text-center element-delay-400">
   <div className="bg-gradient-to-r from-sky-500 to-blue-500 p-12 rounded-3xl shadow-xl mt-10 max-w-3xl mx-auto">
     <h1 className="text-4xl xl:text-5xl font-extrabold text-white mb-4">
       Choose the Best Solution for Your Needs
@@ -292,14 +328,16 @@ const Order = () => {
 
 
 
-      <h1 className="text-sky-500 text-5xl font-extrabold text-center my-10 element-delay-1200">
+      <h1 className="text-sky-500 text-5xl font-extrabold text-center my-10 element-delay-400">
         1. Choose Your Services
       </h1>
-      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3 mb-10 cursor-pointer element-delay-1600">
+      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3 mb-10 xl:p-7 md:p-8 sm:p-10 cursor-pointer  element-delay-400">
         {services.map((service) => (
           <div
   key={service.title}
-  onClick={() => handleServiceClick(service)}
+  onClick={() => {
+    handleServiceClick(service);
+  }}
   className={`relative bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-lg shadow-xl transition-transform transform hover:scale-105 ${
     selectedService === service.title ? "ring-4 ring-sky-500" : ""
   }`}
@@ -318,16 +356,16 @@ const Order = () => {
       </div>
 
       {subOptions.length > 0 && (
-        <div className="mb-10 element-delay-800">
+        <div id="targetElement" className="mb-10 element-delay-200">
   <h2 className="text-sky-500 text-3xl font-bold text-center mb-6">
     2. Select an Option
   </h2>
-  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 xl:p-7 md:p-8 sm:p-10">
     {subOptions.map((option) => (
       <div
         key={option.name}
         onClick={() => handleSubOptionClick(option)}
-        className={`bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition-colors cursor-pointer ${
+        className={`bg-gradient-to-br from-gray-800 to-gray-900 p-4 mb-5 rounded-lg shadow-lg text-center cursor-pointer transition-transform transform hover:scale-105${
           selectedSubOption === option.name ? "bg-gradient-to-br from-sky-500 via-sky-800 to-sky-700" : ""
         }`}
       >
@@ -354,27 +392,24 @@ const Order = () => {
       )}
 
 {nextSubOptions.length > 0 && (
-  <div className="mb-10 element-delay-800">
-  <h2 className="text-sky-500 text-3xl font-bold text-center mb-6">
-    3. Select the Next Sub-Option
+  <div id="targetElementSecond" className="mb-14 xl:p-7 md:p-12 sm:p-14 element-delay-200">
+  <h2  className="text-sky-500 text-3xl font-bold text-center mb-6">
+    3. Almost there
   </h2>
-  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+  <div className="grid gap-6 mb-24 md:grid-cols-2 xl:grid-cols-3">
     {nextSubOptions.map((option, index) => (
       <div
         key={option}
         onClick={() => handleNextSubOptionClick(option)}
-        className={`relative group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-lg text-center transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer ${
+        className={`relative group bg-gradient-to-br from-gray-800 to-gray-900 p-6 mb-7 rounded-xl shadow-lg text-center transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer ${
           selectedNextSubOption === option
             ? "bg-gradient-to-br from-sky-500 via-sky-800 to-sky-700 text-white"
             : ""
         }`}
       >
-        <div className="absolute -top-3 -left-3 w-8 h-8 bg-sky-500 text-white rounded-full flex items-center justify-center text-sm font-semibold group-hover:animate-spin">
-          {index + 1}
-        </div>
         <h3
           className={`text-xl font-medium ${
-            selectedNextSubOption === option ? "text-white" : "text-gray-300"
+            selectedNextSubOption === option ? "text-white" : "text-white rounded-full flex items-center justify-center text-sm font-semibold group-hover:animate-bounce"
           }`}
         >
           {option}
@@ -388,8 +423,9 @@ const Order = () => {
 
 {selectedNextSubOption && (
   <form
+  id="targetElementThird"
   onSubmit={handleSubmit}
-  className="bg-gradient-to-b from-gray-800 to-gray-900 p-8 rounded-2xl shadow-2xl element-delay-800 transform transition-transform hover:scale-105"
+  className="bg-gradient-to-b from-gray-800 to-gray-900 xl:p-7 md:p-12 sm:p-14 rounded-2xl shadow-2xl element-delay-200 transform transition-transform hover:scale-105"
 >
   <h2 className="text-sky-500 text-4xl font-extrabold mb-8 text-center">
     Complete Your Order
@@ -470,19 +506,49 @@ const Order = () => {
     </div>
   </div>
 
-  <button
+  <Button
+    hasWhiteStyle={true}
     type="submit"
-    className="mt-6 w-full bg-sky-500 text-white p-4 rounded-xl font-bold text-lg hover:bg-sky-600 transition-all"
+    disabled={isLoading}
+    className={`w-full mt-10 py-3 px-6 text-white ${
+      isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-sky-600 hover:bg-sky-700 border-none"
+    }`}
   >
-    SUBMIT
-  </button>
+    {isLoading ? (
+      <div className="flex items-center justify-center">
+        <svg
+          className="animate-spin h-5 w-5 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          ></circle>
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8v4l3.5-3.5L8 8V4a8 8 0 00-4 8h4z"
+          ></path>
+        </svg>
+        <span className="ml-2">Sending...</span>
+      </div>
+    ) : (
+      "Submit"
+    )}
+  </Button>
 </form>
 
       )}
 
       {isSubmitted && (
         <div className="bg-green-500 text-white p-4 rounded-lg mt-6 text-center">
-          Thank you! Your order has been submitted.
+          Thank you! Your message has been sent. We will contact you shortly.
         </div>
       )}
     </Wrapper>
