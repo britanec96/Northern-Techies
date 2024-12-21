@@ -73,7 +73,7 @@ function ContactFormModal({ toggleModal }) {
   };
 
   return (
-    <div className="fixed inset-0 flex z-50 overflow-y-hidden h-screen">
+    <div className="fixed inset-0 flex z-50 h-screen">
       {/* Фон модального окна */}
       <div
         className="absolute inset-0 bg-gray-800 opacity-60 z-40"
@@ -85,7 +85,7 @@ function ContactFormModal({ toggleModal }) {
 
       {/* Контент модального окна */}
       <div className="relative bg-almost-black w-full md:w-2/3 max-h-full p-6 md:p-20 shadow-lg z-50 flex flex-col justify-center items-center md:items-start md:text-left text-center">
-        <h1 className="text-almost-white text-xl font-fira font-extrabold">{"<Northern>"}</h1>
+        <h1 className="text-almost-white text-xl font-fira font-extrabold mt-10">{"<Northern>"}</h1>
         <h1 className="text-sky-500 text-xl -mt-2 my-6 font-fira font-extrabold">{"</Techies>"}</h1>
 
         <h2 className="sm:text-3xl md:text-6xl font-bold text-sky-500 mb-4">
@@ -93,7 +93,7 @@ function ContactFormModal({ toggleModal }) {
         </h2>
 
         <p className="m-5 sm:text-md md:text-xl text-almost-white font-fira">
-          Fill out the form below to tell us about your problem or request, and let us find the best solution for you—at free consultation.
+          Fill out the form below to tell us about your problem or request.
         </p>
 
         {/* Форма */}
@@ -105,7 +105,7 @@ function ContactFormModal({ toggleModal }) {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               className="w-full h-40 px-4 py-2 border-2 border-sky-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 resize-none"
-              placeholder="What issue are you facing with your computer, or which digital service do you need assistance with? The more details, the better we can serve you!"
+              placeholder="The more details, the better we can serve you!"
             ></textarea>
           </div>
 
@@ -144,7 +144,7 @@ function ContactFormModal({ toggleModal }) {
           <h1 className="text-xl text-almost-white text-center mb-4 mt-4">
             Contact Us Via:
           </h1>
-          <div className="flex justify-center items-center space-x-6 mb-6 text-sky-500 text-3xl">
+          <div className="flex justify-center items-center space-x-6 mb-14 text-sky-500 text-3xl">
             <a
               href="#"
               onClick={(event) => {
@@ -185,6 +185,7 @@ function ContactFormModal({ toggleModal }) {
 }
 
 export default ContactFormModal;
+
 
 
 

@@ -38,7 +38,7 @@ function PhoneNumberInput({ value, onChange }) {
   };
 
   return (
-    <div className="rounded-lg mt-2 mx-4 flex items-center space-x-3 max-w-7xl">
+    <div className="rounded-lg mt-2 mx-4 flex md:flex-row sm:flex-col sm:gap-6 items-center space-x-3 max-w-7xl">
       {/* Country Selector */}
       <div className="relative">
         <select
