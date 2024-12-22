@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Flag from "react-world-flags";
+import Select from "react-select"; // Импортируем react-select
 
 const countryCodes = {
   "United States": "+1",
@@ -23,48 +25,133 @@ const countryCodes = {
   "United Arab Emirates": "+971",
 };
 
+const countryData = {
+  "United States": "US",
+  "United Kingdom": "GB",
+  "Canada": "CA",
+  "Australia": "AU",
+  "Germany": "DE",
+  "France": "FR",
+  "Italy": "IT",
+  "Spain": "ES",
+  "Russia": "RU",
+  "China": "CN",
+  "India": "IN",
+  "Japan": "JP",
+  "Brazil": "BR",
+  "Mexico": "MX",
+  "South Africa": "ZA",
+  "Nigeria": "NG",
+  "Egypt": "EG",
+  "Turkey": "TR",
+  "Saudi Arabia": "SA",
+  "United Arab Emirates": "AE",
+};
+
+const countryOptions = Object.keys(countryData).map((country) => ({
+  value: country,
+  label: (
+    <div className="flex items-center">
+      <Flag
+        code={countryData[country]}
+        alt={country}
+        style={{ width: "24px", height: "24px", marginRight: "10px" }}
+      />
+      {country}
+    </div>
+  ),
+}));
+
 function PhoneNumberInput({ value, onChange }) {
   const [selectedCountry, setSelectedCountry] = useState("United Kingdom");
-  const [phonePlaceholder, setPhonePlaceholder] = useState(countryCodes["United Kingdom"] + " (555) 000-000");
+  const [formattedPhone, setFormattedPhone] = useState(value);
 
-  const handleCountryChange = (e) => {
-    const country = e.target.value;
+  useEffect(() => {
+    setFormattedPhone(value);
+  }, [value]);
+
+  const handleCountryChange = (selectedOption) => {
+    const country = selectedOption.value;
+    const newCode = countryCodes[country];
+
     setSelectedCountry(country);
-    setPhonePlaceholder(countryCodes[country] + " (555) 000-000");
+
+    // Если номер не начинается с кода страны, то обнуляем номер, оставляя только код страны
+    if (!formattedPhone.startsWith(newCode)) {
+      setFormattedPhone(newCode);
+      onChange(newCode); // Передаем только код страны
+    }
   };
 
   const handlePhoneChange = (e) => {
-    onChange(e.target.value); // Передаем введенный номер родительскому компоненту
+    const phoneValue = e.target.value.trim(); // Удаляем лишние пробелы
+
+    // Убираем всё кроме цифр
+    const digitsOnly = phoneValue.replace(/\D/g, "");
+
+    // Проверяем, начинается ли введенное значение с текущего кода страны
+    const countryCode = countryCodes[selectedCountry].replace(/\D/g, ""); // Код страны (только цифры)
+
+    if (digitsOnly.startsWith(countryCode)) {
+      // Если начинается с кода страны, сохраняем только цифры после кода
+      const restOfNumber = digitsOnly.slice(countryCode.length);
+      setFormattedPhone(`${countryCodes[selectedCountry]} ${restOfNumber}`);
+      onChange(`${countryCodes[selectedCountry]} ${restOfNumber}`);
+    } else {
+      // Если код страны отсутствует, добавляем его
+      setFormattedPhone(`${countryCodes[selectedCountry]} ${digitsOnly}`);
+      onChange(`${countryCodes[selectedCountry]} ${digitsOnly}`);
+    }
+  };
+
+  const handleBlur = () => {
+    // Маскируем номер, только если номер состоит из цифр
+    const phoneDigits = formattedPhone.replace(/\D/g, "");
+    let formatted = countryCodes[selectedCountry] + " ";
+    if (phoneDigits.length >= 10) {
+      formatted += phoneDigits.slice(0, 3) + " " + phoneDigits.slice(3, 6) + " " + phoneDigits.slice(6, 10);
+    } else {
+      formatted += phoneDigits;
+    }
   };
 
   return (
     <div className="rounded-lg mt-2 mx-4 flex md:flex-row sm:flex-col sm:gap-6 items-center space-x-3 max-w-7xl">
       {/* Country Selector */}
-      <div className="relative">
-        <select
-          value={selectedCountry}
-          onChange={handleCountryChange}
-          className="text-sm outline-none rounded-lg h-12 pl-4 pr-12 border focus:border-sky-500 focus:ring-2 focus:ring-sky-500 appearance-none"
-        >
-          {Object.keys(countryCodes).map((country) => (
-            <option key={country} value={country}>
-              {country}
-            </option>
-          ))}
-        </select>
-        {/* Custom Arrow Icon */}
-        <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-500">
-          <i className="ri-arrow-down-s-line"></i>
+      <div className="w-1/2 flex">
+        {/* Dropdown для выбора страны */}
+        <div className="w-full">
+          <Select
+            options={countryOptions}
+            onChange={handleCountryChange}
+            value={{
+              value: selectedCountry,
+              label: (
+                <div className="flex items-center">
+                  <Flag
+                    code={countryData[selectedCountry]}
+                    alt={selectedCountry}
+                    style={{ width: "24px", height: "24px", marginRight: "10px" }}
+                  />
+                  {selectedCountry}
+                </div>
+              ),
+            }}
+            className="w-full"
+            classNamePrefix="react-select"
+            placeholder="Select Country"
+          />
         </div>
       </div>
 
       {/* Phone Input */}
       <input
         type="tel"
-        value={value}  // Устанавливаем значение через пропс
+        value={formattedPhone} // Устанавливаем отформатированный номер
         onChange={handlePhoneChange} // Обработчик для передачи изменений
-        placeholder={phonePlaceholder}
-        className="w-full pl-4 py-2 bg-transparent outline-none border focus:border-sky-500 rounded-lg focus:text-sky-800 text-xl"
+        onBlur={handleBlur} // Применение маски при выходе
+        placeholder="Phone number"
+        className="w-full pl-4 py-2 bg-transparent outline-none border text-almost-white focus:border-sky-500 rounded-lg focus:text-sky-500 text-xl"
         required
       />
     </div>
@@ -72,3 +159,9 @@ function PhoneNumberInput({ value, onChange }) {
 }
 
 export default PhoneNumberInput;
+
+
+
+
+
+

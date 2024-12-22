@@ -95,9 +95,8 @@ const Contact = () => {
             </p>
             <h3 className="text-3xl text-almost-white font-semibold mb-2">Contact Information</h3>
             <ul className="text-gray-300 mb-4">
-              <li>Email: floxstreet@gmail.com</li>
-              <li>Phone: +44 737 87 16 579</li>
-              <li>Address: Salford, Greater Manchester, UK</li>
+              <li>Email: support@northerntechies.com</li>
+              <li>Address: Greater Manchester, UK</li>
             </ul>
 
             <h3 className="text-2xl text-almost-white font-semibold mb-2">Write to Us</h3>

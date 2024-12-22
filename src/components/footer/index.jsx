@@ -57,7 +57,7 @@ export const Footer = () => {
               Have any questions? Reach out to us and we'll be happy to assist you.
             </p>
             <ul className="space-y-2">
-              <li className="hover:text-sky-500">Email: floxstreet@gmail.com</li>
+              <li className="hover:text-sky-500">Email: support@northerntechies.com</li>
               <li className="hover:text-sky-500">Address:  Manchester, UK</li>
             </ul>
           </div>

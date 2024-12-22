@@ -81,7 +81,7 @@ export const BlockHomeFirst = () => {
   className="text-sm font-bold"
   hasWhiteStyle={true}
   onClick={() => {
-    const email = 'Floxstreet@gmail.com';
+    const email = 'support@northerntechies.com';
     const subject = encodeURIComponent('Service Request');
     const body = encodeURIComponent('Hello, I would like to request your services.');
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
