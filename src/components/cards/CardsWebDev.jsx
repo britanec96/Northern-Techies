@@ -30,7 +30,7 @@ const Card = ({ title, price, description, developmentTime, technologies, image 
           src={image}
           alt={title}
           loading="lazy"
-          className={`mb-4 w-full h-full object-cover transition-transform duration-300 ${
+          className={`mb-4 w-full h-full object-cover cursor-pointer transition-transform duration-300 ${
             isHovering ? 'scale-150' : 'scale-100'
           }`}
           style={{ transformOrigin: `${position.x}% ${position.y}%` }}
@@ -60,7 +60,7 @@ const Card = ({ title, price, description, developmentTime, technologies, image 
       </div>
       <Link to="/order">
         <Button hasWhiteStyle={true} className="mt-5">
-          Order
+          Order Page
         </Button>
       </Link>
 

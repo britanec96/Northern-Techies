@@ -116,45 +116,77 @@ function PhoneNumberInput({ value, onChange }) {
   };
 
   return (
-    <div className="rounded-lg mt-2 mx-4 flex md:flex-row sm:flex-col sm:gap-6 items-center space-x-3 max-w-7xl">
-      {/* Country Selector */}
-      <div className="w-1/2 flex">
-        {/* Dropdown для выбора страны */}
-        <div className="w-full">
-          <Select
-            options={countryOptions}
-            onChange={handleCountryChange}
-            value={{
-              value: selectedCountry,
-              label: (
-                <div className="flex items-center">
-                  <Flag
-                    code={countryData[selectedCountry]}
-                    alt={selectedCountry}
-                    style={{ width: "24px", height: "24px", marginRight: "10px" }}
-                  />
-                  {selectedCountry}
-                </div>
-              ),
-            }}
-            className="w-full"
-            classNamePrefix="react-select"
-            placeholder="Select Country"
-          />
-        </div>
-      </div>
+<div className="rounded-lg mt-4 mx-4 flex md:flex-row sm:flex-col sm:gap-6 items-center space-x-3 max-w-7xl">
+  {/* Country Selector */}
+  <div className="w-full">
+    <Select
+      options={countryOptions}
+      onChange={handleCountryChange}
+      value={{
+        value: selectedCountry,
+        label: (
+          <div className="flex items-center text-almost-white">
+            <Flag
+              code={countryData[selectedCountry]}
+              alt={selectedCountry}
+              style={{ width: "24px", height: "24px", marginRight: "10px" }}
+            />
+            {selectedCountry}
+          </div>
+        ),
+      }}
+      className="w-full px-6 py-4 border-2 border-transparent focus:border-sky-500 rounded-lg bg-gray-700 text-almost-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out"
+      classNamePrefix="react-select"
+      placeholder="Select Country"
+      styles={{
+        control: (provided) => ({
+          ...provided,
+          backgroundColor: '#2D2D2D', // Темный фон для контейнера
+          color: '#FFFFFF', // Цвет текста
+          '&:hover': {
+            borderColor: '#4F9CC7', // Цвет границы при наведении
+          },
+        }),
+        menu: (provided) => ({
+          ...provided,
+          backgroundColor: '#2D2D2D', // Темный фон для выпадающего меню
+          color: '#FFFFFF', // Цвет текста в меню
+        }),
+        option: (provided, state) => ({
+          ...provided,
+          backgroundColor: state.isSelected ? '#4F9CC7' : '#2D2D2D', // Фон выбранной опции
+          color: state.isSelected ? '#FFFFFF' : '#B0B0B0', // Цвет текста опции
+          '&:hover': {
+            backgroundColor: '#4F9CC7', // Фон опции при наведении
+            color: '#FFFFFF', // Цвет текста при наведении
+          },
+        }),
+        dropdownIndicator: (provided) => ({
+          ...provided,
+          color: '#FFFFFF', // Цвет стрелки
+        }),
+        indicatorSeparator: () => ({
+          display: 'none', // Убираем разделитель
+        }),
+      }}
+    />
+  </div>
 
-      {/* Phone Input */}
-      <input
-        type="tel"
-        value={formattedPhone} // Устанавливаем отформатированный номер
-        onChange={handlePhoneChange} // Обработчик для передачи изменений
-        onBlur={handleBlur} // Применение маски при выходе
-        placeholder="Phone number"
-        className="w-full pl-4 py-2 bg-transparent outline-none border text-almost-white focus:border-sky-500 rounded-lg focus:text-sky-500 text-xl"
-        required
-      />
-    </div>
+  {/* Phone Input */}
+  <div className="w-full">
+    <input
+      type="tel"
+      value={formattedPhone}
+      onChange={handlePhoneChange}
+      onBlur={handleBlur}
+      placeholder="Phone number"
+      className="w-full pl-6 py-4 bg-gray-700 text-white border-2 border-transparent focus:border-sky-500 rounded-lg focus:text-sky-500 text-xl placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out"
+      required
+    />
+  </div>
+</div>
+
+
   );
 }
 
