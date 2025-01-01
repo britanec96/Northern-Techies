@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // Images
 import PromptEngineeringIcon from '../images/PromptEngineeringIcon.svg';
 import WhyChooseUsIcon from '../images/WhyChooseUsIcon.svg';
@@ -13,17 +13,12 @@ import Analytics from '../images/AnalyticsPromt.jpg';
 
 // Components
 import { Button } from '../components/button';
-import OrderFormModal from '../components/modal-order-form';
 import useScrollReveal from '../components/SCROLL-REVEAL/ScrollReveal';
 import { Wrapper } from '../components/wrapper';
+import { Link } from 'react-router-dom';
 
 function AiContentCreation() {
 
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setModalOpen((prev) => !prev);
-  };
 
   useScrollReveal([
     { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
@@ -37,6 +32,9 @@ function AiContentCreation() {
       block: 'start',
     });
   };
+
+  const handleWhatsApp = () => window.open("https://wa.me/+447378716579", "_blank");
+  const handleTelegram = () => window.open("https://t.me/+447378716579", "_blank");
   
   return (
     <>
@@ -61,11 +59,33 @@ function AiContentCreation() {
               <p className="mt-6 text-xl font-fira text-gray-300 element-delay-400">
                 Images, Business Plans, Content, Essey, Studying and other
               </p>
-              <div className="mt-8 element-delay-400">
-                <Button onClick={toggleModal} hasWhiteStyle={true}>
-                  Contact Us Today
-                </Button>
-              </div>
+              <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8 element-delay-400">
+  <Link to="/order" className="w-full sm:w-auto">
+    <Button hasWhiteStyle={true}>Order</Button>
+  </Link>
+  <Button
+    className="flex items-center gap-2 w-full sm:w-auto"
+    hasWhiteStyle={true}
+    onClick={(e) => {
+      e.preventDefault();
+      handleWhatsApp();
+    }}
+  >
+    <i className="ri-whatsapp-line text-green-500 font-thin"></i>
+    Chat with us on WhatsApp
+  </Button>
+  <Button
+    className="flex items-center justify-center gap-2 w-full sm:w-auto"
+    hasWhiteStyle={true}
+    onClick={(e) => {
+      e.preventDefault();
+      handleTelegram();
+    }}
+  >
+    <i className="ri-telegram-line text-sky-500 font-thin"></i>
+    Chat with us on Telegram
+  </Button>
+</div>
             </div>
             <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
           </div>
@@ -79,15 +99,6 @@ function AiContentCreation() {
             </div>
           </div>
         </div>
-
-        {isModalOpen && (
-          <div
-            id="modal-background"
-            className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
-          >
-            <OrderFormModal toggleModal={toggleModal} />
-          </div>
-        )}
       </section>
 
       <section>
@@ -95,9 +106,6 @@ function AiContentCreation() {
           <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-400'>Ready to generate top-notch content?</h1>
           <div className='element-delay-400'>
             <p className='m-5 text-gray-100 text-2xl'>Start your project from just <span className='text-sky-500 text-3xl font-semibold'>£10!</span></p>
-            <Button onClick={scrollToSection} className='m-5' hasWhiteStyle={true}>
-              Order Now
-            </Button>
           </div>
         </div>
       </section>
@@ -187,13 +195,13 @@ function AiContentCreation() {
          <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-400'>Get a free consultation</h1>
          <div className='element-delay-400'>
          <p className='m-5 text-gray-100 text-2xl'>Get professional advice right NOW!<span className='text-sky-500 text-3xl font-semibold'> From £10!</span></p>
+<Link to="/order">
          <Button
                   hasWhiteStyle={true}
-                  onClick={toggleModal}
-                  className=""
                 >
-                  Contact Us
+                  Order Page
                 </Button>
+                </Link>
          </div>
         </div>
     </section>

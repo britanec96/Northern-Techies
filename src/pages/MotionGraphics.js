@@ -9,33 +9,19 @@ import Adobephotoshop from '../images/adobephotoshop.svg';
 
 // Компоненты
 import { Button } from '../components/button';
-import OrderFormModal from '../components/modal-order-form';
 import useScrollReveal from '../components/SCROLL-REVEAL/ScrollReveal';
 import { Wrapper } from '../components/wrapper';
 import { Link } from 'react-router-dom';
 
 function MotionGraphics() {
 
-  // Открытие/закрытие модального окна
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setModalOpen((prev) => !prev);
-  };
-
   useScrollReveal([
     { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
     { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
   ]);
 
-
-  const scrollToSection = () => {
-    const targetSection = document.getElementById('targetSection');
-    targetSection.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  };
+  const handleWhatsApp = () => window.open("https://wa.me/+447378716579", "_blank");
+  const handleTelegram = () => window.open("https://t.me/+447378716579", "_blank");
   
   return (
     <>
@@ -62,14 +48,33 @@ function MotionGraphics() {
             <p className="mt-6 text-xl font-fira text-gray-300 element-delay-400">
               Our team of skilled motion designers brings your ideas to life through stunning intros, animations, and engaging content.
             </p>
-            <div className="mt-8 element-delay-400">
-              <Button
-                onClick={toggleModal}
-                hasWhiteStyle={true}
-              >
-                Contact Us Today
-              </Button>
-            </div>
+            <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8 element-delay-400">
+  <Link to="/order" className="w-full sm:w-auto">
+    <Button hasWhiteStyle={true}>Order</Button>
+  </Link>
+  <Button
+    className="flex items-center gap-2 w-full sm:w-auto"
+    hasWhiteStyle={true}
+    onClick={(e) => {
+      e.preventDefault();
+      handleWhatsApp();
+    }}
+  >
+    <i className="ri-whatsapp-line text-green-500 font-thin"></i>
+    Chat with us on WhatsApp
+  </Button>
+  <Button
+    className="flex items-center justify-center gap-2 w-full sm:w-auto"
+    hasWhiteStyle={true}
+    onClick={(e) => {
+      e.preventDefault();
+      handleTelegram();
+    }}
+  >
+    <i className="ri-telegram-line text-sky-500 font-thin"></i>
+    Chat with us on Telegram
+  </Button>
+</div>
           </div>
           <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
         </div>
@@ -83,16 +88,6 @@ function MotionGraphics() {
           </div>
         </div>
       </div>
-
-      {/* Модальное окно */}
-      {isModalOpen && (
-        <div
-          id="modal-background"
-          className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
-        >
-          <OrderFormModal toggleModal={toggleModal} />
-        </div>
-      )}
     </section>
 
     <section>
@@ -167,13 +162,13 @@ function MotionGraphics() {
                 Get professional help right{' '}
                 <span className="text-sky-500 text-3xl font-semibold">NOW!</span>
               </p>
-              <Button
+              <Link to="/order">
+         <Button
                   hasWhiteStyle={true}
-                  onClick={toggleModal}
-                  className=""
                 >
-                  Contact Us
+                  Order Page
                 </Button>
+                </Link>
             </div>
           </div>
         </section>
