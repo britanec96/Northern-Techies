@@ -57,10 +57,9 @@ function WebDev() {
    Your browser doesn't support videos
   </video>
       <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-          <div className="max-w-md mx-0 flex flex-col justify-start text-left"> {/* Flexbox для вертикального выравнивания */}
-            <h1 className="text-5xl font-bold text-white element-delay-200">
+      <div className="relative z-10 max-w-7xl mx-auto py-24 px-6">
+          <div className="max-w-md mx-0 flex flex-col justify-start text-left"> 
+            <h1 className="text-5xl font-bold text-almost-white element-delay-200">
               Our expert <span className="text-sky-500">Web Developers</span> for any job
             </h1>
             <p className="mt-6 text-xl font-fira text-gray-300 element-delay-400">
@@ -94,18 +93,45 @@ function WebDev() {
   </Button>
 </div>
           </div>
-          <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
-        </div>
-        <div className="flex justify-between mt-12">
-          <p className="text-almost-white font-bold text-xl mt-7 element-delay-400">The best technologies for your website</p>
-          <div className="flex flex-col md:flex-row xl:flex-row md:space-x-8 space-y-3">
-          <img className='mt-3 element-delay-400' src={ReactIcon} alt="ReactIcon" loading="lazy" />
-          <img className='element-delay-400' src={Node} alt="Node" loading="lazy"/>
-          <img className='element-delay-400' src={JavaScript} alt="JavaScript" loading="lazy" />
-          <img className='element-delay-400' src={Tailwind} alt="Tailwind" loading="lazy" />
-          <img className='element-delay-400' src={Html} alt="Html" loading="lazy" />
-          </div>
-        </div>
+          <div className="w-full h-px bg-gray-200 my-12 opacity-20"></div>
+          <div className="w-full md:flex sm:block justify-between items-center element-delay-400">
+  <p className="text-almost-white font-bold text-center md:text-left text-xl mt-7 mb-4 md:mb-0">
+    The best technologies for your website:
+  </p>
+  <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-start items-center">
+    <img
+      src={ReactIcon}
+      alt="React"
+      loading="lazy"
+      className="w-12 h-12 md:w-16 md:h-16"
+    />
+    <img
+      src={Node}
+      alt="Node.js"
+      loading="lazy"
+      className="w-12 h-12 md:w-16 md:h-16"
+    />
+    <img
+      src={JavaScript}
+      alt="JavaScript"
+      loading="lazy"
+      className="w-12 h-12 md:w-16 md:h-16"
+    />
+    <img
+      src={Tailwind}
+      alt="Tailwind CSS"
+      loading="lazy"
+      className="w-12 h-12 md:w-16 md:h-16"
+    />
+    <img
+      src={Html}
+      alt="HTML"
+      loading="lazy"
+      className="w-12 h-12 md:w-16 md:h-16"
+    />
+  </div>
+</div>
+
       </div>
     </section>
 
@@ -185,7 +211,7 @@ function WebDev() {
 
 
           <div id="targetSection" className='bg-gray-900 p-10 '>
-            <h1 className='text-6xl text-center font-fira text-almost-white font-black mb-4 element-delay-200'>Built for You: Choose the Ideal Web Solution</h1>
+            <h1 className='md:text-6xl text-4xl text-center text-almost-white font-black mb-4 element-delay-200'>Choose the Ideal Web Solution:</h1>
         <CardList/>
         </div>
         

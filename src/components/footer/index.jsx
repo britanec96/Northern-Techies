@@ -39,9 +39,6 @@ export const Footer = () => {
                 <Link to="/graphic-design" className="hover:text-sky-500">Graphic Design</Link>
               </li>
               <li>
-                <Link to="/digital-marketing" className="hover:text-sky-500">Digital Marketing</Link>
-              </li>
-              <li>
                 <Link to="/consultationservices" className="hover:text-sky-500">Consulting Services</Link>
               </li>
               <li>
@@ -65,7 +62,7 @@ export const Footer = () => {
 
 
         <div className="text-center mt-10 text-gray-500">
-          <p>&copy; 2024 Northern Techies. All Rights Reserved.</p>
+          <p>&copy; 2025 Northern Techies. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

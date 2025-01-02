@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { Button } from '../button';
 import { Wrapper } from '../wrapper';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+const DownloadButton = () => {
+  const fileUrl = "/download_files/Northern_Techies_Services_and_Pricing_Guide.pdf";
+  return (
+    <a href={fileUrl} download="Northern_Techies_Services_and_Pricing_Guide.pdf">
+      <Button hasWhiteStyle={true}>Price List</Button>
+    </a>
+  );
+};
 
 const Card = ({ title, price, description, developmentTime, technologies, image }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -30,39 +40,27 @@ const Card = ({ title, price, description, developmentTime, technologies, image 
           src={image}
           alt={title}
           loading="lazy"
-          className={`mb-4 w-full h-full object-cover cursor-pointer transition-transform duration-300 ${
-            isHovering ? 'scale-150' : 'scale-100'
-          }`}
+          className={`mb-4 w-full h-full object-cover object-top cursor-pointer transition-transform duration-300 ${isHovering ? 'scale-150' : 'scale-100'}`}
           style={{ transformOrigin: `${position.x}% ${position.y}%` }}
           onClick={openModal}
         />
       </div>
       <h3 className="font-semibold text-2xl my-2">{title}</h3>
-      <p>
-        From <span className="text-md font-bold">{price}</span> in {developmentTime}.
-      </p>
+      <p>From <span className="text-md font-bold">{price}</span> in {developmentTime}.</p>
       <div className="text-md mt-5">
-        <div className="flex items-start gap-2">
-          <p>
-            <span className="text-sky-500">Description:</span> {description}
-          </p>
-        </div>
-        <div className="flex items-start gap-2 mt-5">
-          <p>
-            <span className="text-sky-500">Development time:</span> {developmentTime}
-          </p>
-        </div>
-        <div className="flex items-start gap-2 mt-5">
-          <p>
-            <span className="text-sky-500">Technologies:</span> {technologies}
-          </p>
-        </div>
+        <p><span className="text-sky-500">Description:</span> {description}</p>
+        <p className="mt-5"><span className="text-sky-500">Development time:</span> {developmentTime}</p>
+        <p className="mt-5"><span className="text-sky-500">Technologies:</span> {technologies}</p>
       </div>
-      <Link to="/order">
-        <Button hasWhiteStyle={true} className="mt-5">
-          Order Page
-        </Button>
-      </Link>
+  <Link to="/order">
+    <Button hasWhiteStyle={true} className="mt-5">Order Page</Button>
+  </Link>
+
+  <div className="mt-5">
+    <DownloadButton />
+  </div>
+
+
 
       {isModalOpen && (
         <div
@@ -89,6 +87,15 @@ const Card = ({ title, price, description, developmentTime, technologies, image 
   );
 };
 
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  developmentTime: PropTypes.string.isRequired,
+  technologies: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
+
 const CardList = () => {
   const cardsData = [
     {
@@ -97,7 +104,7 @@ const CardList = () => {
       developmentTime: '2-5 days',
       description: 'A single-page website for promoting a product.',
       technologies: 'HTML, CSS, JavaScript, CMS (e.g., WordPress), React, basic backend for form processing.',
-      image: 'https://cdn.dribbble.com/userupload/15973642/file/original-9b1256bc0b31d08e471519037b3844e5.png?resize=1200x900&vertical=center',
+      image: 'https://unbounce.com/photos/Calm-1.png',
     },
     {
       title: 'Business Website',
@@ -129,4 +136,3 @@ const CardList = () => {
 };
 
 export default CardList;
-

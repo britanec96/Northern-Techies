@@ -21,7 +21,7 @@ const ReviewsSection = () => {
   const reviewLink = "https://g.page/r/CRMVNulv0FGUEBM/review";
 
   return (
-    <div className="relative w-full bg-gray-900 overflow-hidden mb-10">
+    <div className="relative w-full bg-gray-900 overflow-hidden mb-10 pt-14">
       {/* Звезды на фоне */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(30)].map((_, index) => (

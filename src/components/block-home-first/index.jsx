@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Wrapper } from '../wrapper';
 import OrderFormModal from '../modal-order-form';
 import useScrollReveal from '../SCROLL-REVEAL/ScrollReveal';
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 export const BlockHomeFirst = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [opacity, setOpacity] = useState(1); // Состояние для прозрачности
 
   useScrollReveal([
     { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
@@ -20,6 +21,22 @@ export const BlockHomeFirst = () => {
 
   const handleWhatsApp = () => window.open("https://wa.me/+447378716579", "_blank");
 
+  // Эффект для отслеживания прокрутки
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY; // Текущее положение прокрутки
+      const newOpacity = Math.max(1 - scrollPosition / 400, 0); // Расчет прозрачности, исчезает при прокрутке
+      setOpacity(newOpacity);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Очистка обработчика при размонтировании компонента
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <section className="relative w-full h-[55rem] max-h-full">
       <video
@@ -32,12 +49,15 @@ export const BlockHomeFirst = () => {
         <source src={require('../../videos/CoddingFootage.mp4')} type="video/mp4" />
       </video>
 
-      <div className="relative z-10 pointer-events-none select-none">
+      <div
+        className="relative z-10 pointer-events-none select-none"
+        style={{ opacity }} // Применение изменяющейся прозрачности
+      >
         <Wrapper>
           <div className="flex flex-col max-h-full overflow-hidden sm:text-center md:text-left md:justify-start sm:justify-center md:items-start sm:items-center">
-            <h1 className="font-extrabold text-almost-white text-4xl md:text-6xl my-14 xl:mt-56 md:mt-28 sm:mt-16 whitespace-pre-line element-delay-300">
-              Budget IT services starting from £10
-              <span className="inline-block my-7 p-2 px-3 rounded-md bg-gray-800 bg-opacity-40 text-sky-500 font-thin text-base md:text-xl element-delay-400">
+            <h1 className="font-black text-almost-white text-4xl md:text-6xl my-14 xl:mt-56 md:mt-28 sm:mt-52 whitespace-pre-line element-delay-300">
+              Budget IT / TECH services starting from £10
+              <span className="block my-7 p-2 px-3 rounded-md bg-gray-800 bg-opacity-40 text-sky-500 font-thin text-base md:text-xl element-delay-400">
                 At Northern Techies, our mission is to make IT and technology accessible to everyone.
               </span>
             </h1>
@@ -63,33 +83,31 @@ export const BlockHomeFirst = () => {
       </div>
 
       <Wrapper>
-        <div className="relative z-20 pointer-events-auto select-auto flex gap-5 mt-16 sm:justify-center md:justify-start element-delay-800">
-        <Button 
-  className="flex items-center justify-center gap-2 text-sm font-bold" 
-  hasWhiteStyle={true} 
-  onClick={(e) => {
-    e.preventDefault();
-    handleWhatsApp();
-  }}
->
-  <i className="ri-whatsapp-line text-green-500 text-base font-thin"></i>
-  CHAT NOW
-</Button>
-
+        <div className="relative z-20 pointer-events-auto select-auto flex gap-5 mt-16  sm:justify-center md:justify-start element-delay-800">
+          <Button 
+            className="flex items-center justify-center gap-2 text-sm font-bold" 
+            hasWhiteStyle={true} 
+            onClick={(e) => {
+              e.preventDefault();
+              handleWhatsApp();
+            }}
+          >
+            <i className="ri-whatsapp-line text-green-500 text-base font-thin"></i>
+            CHAT NOW
+          </Button>
 
           <Button
-  className="text-sm font-bold"
-  hasWhiteStyle={true}
-  onClick={() => {
-    const email = 'support@northerntechies.com';
-    const subject = encodeURIComponent('Service Request');
-    const body = encodeURIComponent('Hello, I would like to request your services.');
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-  }}
->
-  EMAIL NOW
-</Button>
-
+            className="text-sm font-bold"
+            hasWhiteStyle={true}
+            onClick={() => {
+              const email = 'support@northerntechies.com';
+              const subject = encodeURIComponent('Service Request');
+              const body = encodeURIComponent('Hello, I would like to request your services.');
+              window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+            }}
+          >
+            EMAIL NOW
+          </Button>
 
           <Link to="/order" className="antialiased cursor-pointer tracking-widest">
             <Button className="text-sm font-bold bg-almost-white text-black" hasWhiteStyle={true}>
@@ -103,4 +121,5 @@ export const BlockHomeFirst = () => {
 };
 
 export default BlockHomeFirst;
+
 

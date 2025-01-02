@@ -57,11 +57,10 @@ function GraphicDesignPage() {
     <source src={require('../videos/GraphicDesignPrezi.mp4')} type="video/mp4" />
    Your browser doesn't support videos
   </video>
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-          <div className="max-w-md mx-0 flex flex-col justify-start text-left"> {/* Flexbox для вертикального выравнивания */}
-            <h1 className="text-5xl font-bold text-white element-delay-200">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10 max-w-7xl mx-auto py-24 px-6">
+          <div className="max-w-md mx-0 flex flex-col justify-start text-left"> 
+            <h1 className="text-5xl font-bold text-almost-white element-delay-200">
               Our the best <span className="text-yellow-500">Graphic Designers</span> for any job
             </h1>
             <p className="mt-6 text-xl font-fira text-gray-300 element-delay-400">
@@ -72,7 +71,7 @@ function GraphicDesignPage() {
     <Button hasWhiteStyle={true}>Order</Button>
   </Link>
   <Button
-    className="flex items-center gap-2 w-full sm:w-auto"
+    className="flex items-center gap-2 w-auto"
     hasWhiteStyle={true}
     onClick={(e) => {
       e.preventDefault();
@@ -83,7 +82,7 @@ function GraphicDesignPage() {
     Chat with us on WhatsApp
   </Button>
   <Button
-    className="flex items-center justify-center gap-2 w-full sm:w-auto"
+    className="flex items-center justify-center gap-2 w-auto"
     hasWhiteStyle={true}
     onClick={(e) => {
       e.preventDefault();
@@ -94,19 +93,46 @@ function GraphicDesignPage() {
     Chat with us on Telegram
   </Button>
 </div>
-          </div>
-          <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
-        </div>
-        <div className="flex justify-between mt-12">
-          <p className="text-almost-white font-bold text-xl mt-7 element-delay-400">The best programms for your design idea</p>
-          <div className="flex flex-col md:flex-row xl:flex-row md:space-x-8 space-y-3">
-          <img className='mt-3 size-12 element-delay-400' src={PhotoshopIcon} alt="PhotoshopIcon" loading="lazy" />
-          <img className='size-12 element-delay-400' src={IllustratorIcon} alt="IllustratorIcon" loading="lazy"/>
-          <img className='size-12 element-delay-400' src={FigmaIcon} alt="FigmaIcon" loading="lazy" />
-          <img className='size-12 element-delay-400' src={BlenderIcon} alt="BlenderIcon" loading="lazy" />
-          <img className='size-12 element-delay-400' src={CanvaIcon} alt="CanvaIcon" loading="lazy" />
-          </div>
-        </div>
+</div>
+<div className="w-full h-px bg-gray-200 my-12 opacity-20"></div>
+<div className="w-full md:flex md:items-center justify-between mt-12">
+<p className="text-almost-white font-bold text-center md:text-left text-xl mt-7 mb-4 md:mb-0">
+    The best programs for your design idea:
+  </p>
+  <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-start items-center mt-5 md:mt-0">
+    <img
+      className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+      src={PhotoshopIcon}
+      alt="Photoshop"
+      loading="lazy"
+    />
+    <img
+      className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+      src={IllustratorIcon}
+      alt="Illustrator"
+      loading="lazy"
+    />
+    <img
+      className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+      src={FigmaIcon}
+      alt="Figma"
+      loading="lazy"
+    />
+    <img
+      className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+      src={BlenderIcon}
+      alt="Blender"
+      loading="lazy"
+    />
+    <img
+      className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+      src={CanvaIcon}
+      alt="Canva"
+      loading="lazy"
+    />
+  </div>
+</div>
+
       </div>
     </section>
 
@@ -119,7 +145,7 @@ function GraphicDesignPage() {
         <div className='bg-gray-900 p-5 text-center relative'>
          <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-200'>Ready to elevate your brand?</h1>
          <div className='element-delay-200'>
-         <p className='m-5 text-gray-100 text-2xl element-delay-200'>Get started with a custom graphic design package from just<span className='text-sky-500 text-3xl font-semibold'> £20!</span></p>
+         <p className='m-5 text-gray-100 text-2xl element-delay-200'>Get started with a custom graphic design package from just<span className='text-sky-500 text-3xl font-semibold'> £10!</span></p>
          <Button
          onClick={scrollToSection}
          className='m-5 element-delay-200'
@@ -181,7 +207,7 @@ function GraphicDesignPage() {
 
 
           <div id="targetSection" className='bg-gray-900 p-10 '>
-            <h1 className='text-5xl text-center font-fira text-almost-white font-black mb-4 element-delay-200'>Crafted for You: Choose the Perfect Graphic Design Solution</h1>
+          <h1 className='md:text-6xl text-4xl text-center text-almost-white font-black mb-4 element-delay-200'>Choose Your Graphic Design Solution:</h1>
         <CardListGraphicDesign/>
         </div>
         

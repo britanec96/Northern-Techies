@@ -15,7 +15,7 @@ const About = () => {
   ]);
 
   return (
-    <div className="bg-gray-900 text-almost-white">
+    <div className="bg-gray-900 text-almost-white pt-14">
       <div className="container mx-auto px-6 py-12">
         {/* Hero Section */}
         <div className="text-center mb-12 element-delay-200">

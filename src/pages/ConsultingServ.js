@@ -2,6 +2,8 @@ import React from 'react';
 import { Button } from '../components/button';
 import useScrollReveal from '../components/SCROLL-REVEAL/ScrollReveal';
 import { Link } from 'react-router-dom';
+import 'animate.css';
+
 
 import Three from '../images/Three.jpg';
 import Wifi from '../images/wifitroubles.jpg';
@@ -45,7 +47,7 @@ function ConsultationServices() {
               </p>
               <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8 element-delay-400">
   <Link to="/order" className="w-full sm:w-auto">
-    <Button hasWhiteStyle={true}>Order</Button>
+    <Button hasWhiteStyle={true}>Order page</Button>
   </Link>
   <Button
     className="flex items-center gap-2 w-full sm:w-auto"
@@ -76,20 +78,21 @@ function ConsultationServices() {
           </div>
           <div className="flex justify-between mt-12">
             <p className="text-almost-white font-bold text-xl mt-7 element-delay-400">
-              We solve any IT problem, big or small.
+              We solve any IT / TECH problem, big or small.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="p-12">
+      <section className="p-12 bg-gray-900">
   <div className="max-w-7xl mx-auto text-center">
-    <h2 className="text-4xl font-extrabold text-sky-500 mb-6 animate__animated animate__fadeIn">
-      Common Consultation Topics
-    </h2>
-    <p className="text-xl text-gray-300 mb-10 animate__animated animate__fadeIn animate__delay-1s">
-      Reach out to us for professional guidance on the following topics and more:
-    </p>
+  <h2 className="text-4xl md:text-6xl font-bold text-gray-300 mb-6">
+  <span className="text-sky-400">Common</span> Consultation Topics
+</h2>
+<p className="text-lg md:text-xl text-gray-300 mb-10 opacity-80">
+  Reach out to us for professional guidance on the following topics and more:
+</p>
+
 
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
       <div className="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transform transition duration-300 ease-in-out relative overflow-hidden group">
@@ -153,19 +156,20 @@ function ConsultationServices() {
       </div>
 
       <div className="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transform transition duration-300 ease-in-out relative overflow-hidden group">
-        <img
-          src={Cybersecurity}  
-          alt="Cybersecurity"
-          className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition duration-300"
-        />
-        <h3 className="text-2xl font-bold text-white mb-3 z-10 relative">
-          Cybersecurity & Privacy
-        </h3>
-        <p className="text-gray-300 z-10 relative">
-          Protect your devices and online presence with expert cybersecurity services and privacy measures.
-        </p>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black opacity-40 group-hover:opacity-50 transition duration-300"></div>
-      </div>
+  <img
+    src={Cybersecurity}  
+    alt="Consultation"
+    className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition duration-300"
+  />
+  <h3 className="text-2xl font-bold text-white mb-3 z-10 relative">
+    Standard Consultation
+  </h3>
+  <p className="text-gray-300 z-10 relative">
+    Reach out for expert guidance on a variety of tech-related topics and solutions.
+  </p>
+  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black opacity-40 group-hover:opacity-50 transition duration-300"></div>
+</div>
+
 
       <div className="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transform transition duration-300 ease-in-out relative overflow-hidden group">
         <img
@@ -186,15 +190,15 @@ function ConsultationServices() {
 </section>
 
 
-      <section className="bg-gray-900 p-5 mb-5 text-center relative">
-        <h1 className="m-5 text-almost-white text-5xl font-extrabold element-delay-200">
-          Struggling with Tech Issues?
-        </h1>
-        <div className="element-delay-200">
-          <p className="m-5 text-gray-100 text-2xl">
-            Get professional help right{' '}
-            <span className="text-sky-500 text-3xl font-semibold">NOW!</span>
-          </p>
+      <section className="bg-gray-900 p-5 my-5 text-center relative">
+      <h1 className="m-5 text-almost-white text-3xl md:text-5xl font-extrabold element-delay-200">
+  Get Expert Help Right Now
+</h1>
+<div className="element-delay-200">
+  <p className="m-5 text-gray-100 text-xl md:text-2xl">
+    Get a free consultation and chat with our specialist 24/7{' '}
+    <span className="text-sky-500 text-2xl md:text-3xl font-semibold">RIGHT NOW!</span>
+  </p>
           <div className="relative z-20 pointer-events-auto select-auto flex justify-center element-delay-800">
             <Button className="flex items-center justify-center gap-2 text-sm font-bold" hasWhiteStyle={true} onClick={(e) => {
               e.preventDefault();

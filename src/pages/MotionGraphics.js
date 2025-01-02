@@ -39,10 +39,9 @@ function MotionGraphics() {
         Your browser doesn't support videos
       </video>
       <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-          <div className="max-w-md mx-0 flex flex-col justify-start text-left">
-            <h1 className="text-5xl font-bold text-white element-delay-200">
+      <div className="relative z-10 max-w-7xl mx-auto py-24 px-6">
+          <div className="max-w-md mx-0 flex flex-col justify-start text-left"> 
+            <h1 className="text-5xl font-bold text-almost-white element-delay-200">
               Professional <span className="text-purple-500">Motion Designers</span> for All Your Needs
             </h1>
             <p className="mt-6 text-xl font-fira text-gray-300 element-delay-400">
@@ -76,18 +75,39 @@ function MotionGraphics() {
   </Button>
 </div>
           </div>
-          <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
-        </div>
-        <div className="flex justify-between mt-12">
-          <p className="text-almost-white font-bold text-xl mt-7 element-delay-400">Our Technology Stack</p>
-          <div className="flex flex-col md:flex-row xl:flex-row md:space-x-8 space-y-3">
-            <img className='mt-3 element-delay-400' src={AfterEffects} alt="AfterEffects" loading="lazy" />
-            <img className='element-delay-400' src={Cinema4d} alt="Cinema4d" loading="lazy"/>
-            <img className='element-delay-400' src={Blender} alt="Blender" loading="lazy" />
-            <img className='element-delay-400' src={Adobephotoshop} alt="Adobephotoshop" loading="lazy" />
+          <div className="w-full h-px bg-gray-200 my-12 opacity-20"></div>
+          <div className="w-full md:flex sm:block justify-between items-center element-delay-400">
+          <p className="text-almost-white font-bold text-center md:text-left text-xl mt-7 mb-4 md:mb-0">
+            The best programs for your goals:</p>
+            <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-start items-center">
+  <img
+    className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+    src={AfterEffects}
+    alt="AfterEffects"
+    loading="lazy"
+  />
+  <img
+    className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+    src={Cinema4d}
+    alt="Cinema4d"
+    loading="lazy"
+  />
+  <img
+    className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+    src={Blender}
+    alt="Blender"
+    loading="lazy"
+  />
+  <img
+    className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+    src={Adobephotoshop}
+    alt="Adobephotoshop"
+    loading="lazy"
+  />
+</div>
+
           </div>
         </div>
-      </div>
     </section>
 
     <section>
@@ -154,14 +174,9 @@ function MotionGraphics() {
 
         <section>
           <div className="bg-gray-900 p-5 mb-5 text-center relative rounded-lg">
-            <h1 className="m-5 text-almost-white text-6xl font-extrabold element-delay-200">
-            Get a free consultation
-            </h1>
-            <div className="element-delay-200">
-              <p className="m-5 text-gray-100 text-2xl">
-                Get professional help right{' '}
-                <span className="text-sky-500 text-3xl font-semibold">NOW!</span>
-              </p>
+          <h1 className='m-5 text-almost-white text-4xl md:text-6xl font-extrabold element-delay-400'>Get a free consultation</h1>
+         <div className='element-delay-400'>
+         <p className='m-5 text-gray-100 text-xl md:text-2xl'>Get professional advice<span className='text-sky-500 text-2xl md:text-3xl font-semibold'> RIGHT NOW!</span></p>
               <Link to="/order">
          <Button
                   hasWhiteStyle={true}

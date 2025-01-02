@@ -42,7 +42,7 @@ const BlockHomeSecond = () => {
   };
 
   return (
-    <div className="w-6xl px-4 z-10">
+    <div className="w-6xl py-10 md:py-5 px-4 z-10">
       <Wrapper>
         <Slider {...carouselSettings} className="feature-slider element-delay-200">
           {[
@@ -50,7 +50,6 @@ const BlockHomeSecond = () => {
             { title: "Website Development", description: "We offer website design and development services that bring your vision online. Fully responsive, user-friendly, and optimized.", icon: "🚀", button: "Explore", onButtonClick: () => handleRedirect("/web-development") },
             { title: "Graphic Design", description: "We create visuals that make your business stand out, including logos, branding, and website graphics.", icon: "✏️", button: "Explore", onButtonClick: () => handleRedirect("/graphic-design") },
             { title: "Custom PC Builds", description: "We design and assemble custom PCs to meet your exact specifications, whether for gaming, work, or personal use.", icon: "⚙️", button: "Explore", onButtonClick: () => handleRedirect("/consultationservices") },
-            { title: "Social Media Marketing", description: "Effective brand promotion through social networks with engaging content and targeted ads.", icon: "🎯", button: "Explore", onButtonClick: () => handleRedirect("/digital-marketing") },
             { title: "AI Content Creation", description: "Effortlessly generate high-quality content using artificial intelligence for blogs, social media updates, and more.", icon: "🤖", button: "Explore", onButtonClick: () => handleRedirect("/ai-content-creation") },
           ].map((card, index) => (
             <div key={index} className="p-4">

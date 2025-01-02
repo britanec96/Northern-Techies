@@ -11,7 +11,6 @@ import  Pricing  from "./pages/Pricing";
 import { Footer } from "./components/footer";
 import WebDev from "./pages/Webdev";
 import GraphicDesignPage from "./pages/GraphicDesign";
-import DigMarketing from "./pages/DigitalMarketing";
 import AiContentCreation from "./pages/ContentCreation";
 import MotionGraphics from "./pages/MotionGraphics";
 import ConsultationServices from "./pages/ConsultingServ";
@@ -37,11 +36,9 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/web-development" element={<WebDev />} />
           <Route path="/graphic-design" element={<GraphicDesignPage />} />
-          <Route path="/digital-marketing" element={<DigMarketing />} />
           <Route path="/ai-content-creation" element={<AiContentCreation />} />
           <Route path="/motion-graphics" element={<MotionGraphics />} />
           <Route path="/consultationservices" element={<ConsultationServices />} />
-          <Route path="/order" element={<Order />} />
           <Route path="/order" element={<Order />} />
           <Route path="/order" element={<Order />} />
           <Route path="/order" element={<Order />} />

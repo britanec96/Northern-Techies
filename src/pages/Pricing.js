@@ -19,7 +19,7 @@ const Pricing = () => {
 
     return (
       <>
-        <div className="relative w-full bg-gray-900 overflow-hidden">
+        <div className="relative w-full bg-gray-900 overflow-hidden pt-14">
           <div className="container mx-auto flex flex-col xl:flex-row items-center justify-center relative z-10 p-6 xl:p-10">
             <div className="w-full xl:w-1/2 text-center p-5">
               <div className="flex justify-center items-center element-delay-200">

@@ -44,8 +44,8 @@ const Contact = () => {
 };
 
   return (
-    <div className="my-10">
-      <div className="relative w-full mb-10 bg-gray-900 overflow-hidden">
+    <div className="mb-10">
+      <div className="relative w-full mb-10 bg-gray-900 overflow-hidden pt-14">
         <div className="container mx-auto flex flex-col xl:flex-row items-center justify-center relative z-10 p-6 xl:p-10">
           {/* Левая часть: текст и кнопки */}
           <div className="w-full xl:w-1/2 text-center p-5">

@@ -40,32 +40,15 @@ const BlockHomeThird = () => {
         </div>
 
         <div className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6 element-delay-200">
+        <div className="block md:w-1/2">
+            <img src={One} className="w-full max-w-1/2 aspect-video object-cover rounded-lg shadow-md transition-transform duration-300 ease-in-out hover:scale-105" alt="Online Store Showcase" />
+          </div>
           <div className="flex-1">
             <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">Thinking of Starting an Online Store?</h3>
             <p className="text-lg text-gray-300">Your dream of running an online shop is within reach! We’ve helped countless entrepreneurs bring their store ideas to life, from custom designs to seamless integrations. Join our happy clients, and get a quick overview of the steps and what you can expect by working with us.</p>
             <div className="mt-6">
               <Link to="/web-development">
                 <Button hasWhiteStyle={true}>Let's Start</Button>
-              </Link>
-            </div>
-          </div>
-          <div className="block md:w-1/2">
-            <img src={One} className="w-full max-w-1/2 aspect-video object-cover rounded-lg shadow-md transition-transform duration-300 ease-in-out hover:scale-105" alt="Online Store Showcase" />
-          </div>
-        </div>
-
-        <div className="border-t-2 border-gray-400 my-8 opacity-25 mt-20"></div>
-
-        <div className="mt-12 flex flex-col md:flex-row items-center md:text-right sm:text-center gap-6 element-delay-200">
-          <div className="block md:w-1/2">
-            <img src={Two} className="w-full max-w-1/2 aspect-video object-cover rounded-lg shadow-md transition-transform duration-300 ease-in-out hover:scale-105" alt="Online Store Showcase" />
-          </div>
-          <div className="flex-1">
-            <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">Not Sure How to Start Creating Content on Social Media?</h3>
-            <p className="text-lg text-gray-300">Our social media experts are here to guide you every step of the way. From crafting your first content strategy to building engaging videos, we help aspiring creators and influencers kickstart their journey online and grow their audience. Discover success stories from our clients and see how we can support your goals!</p>
-            <div className="mt-6">
-              <Link to="/digital-marketing">
-                <Button hasWhiteStyle={true}>Explore</Button>
               </Link>
             </div>
           </div>
