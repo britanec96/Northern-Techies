@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Wrapper } from "../components/wrapper/index";
 import emailjs from "emailjs-com";
-import useScrollReveal from "../components/SCROLL-REVEAL/ScrollReveal";
-import ScrollToTopButton from "../components/ScrollToTopButton";
 import { Button } from "../components/button";
 
 const Order = () => {
@@ -22,11 +20,6 @@ const Order = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-
-  useScrollReveal([
-    { selector: ".element-delay-200", delay: 200, options: { distance: "70px", easing: "ease-in-out" } },
-    { selector: ".element-delay-400", delay: 400, options: { distance: "70px", easing: "ease-in-out" } },
-  ]);
 
   const services = [
     {
@@ -312,9 +305,9 @@ const Order = () => {
   
 
   return (
-    <div className="bg-gray-900 text-gray-100 min-h-screen">
+    <div className="bg-gray-900 text-gray-100 min-h-screen md:pt-14 sm:pt-20">
     <Wrapper>
-    <div className="flex flex-col items-center justify-center text-center element-delay-400">
+    <div className="flex flex-col items-center justify-center text-center ">
   <div className="bg-gradient-to-r from-sky-500 to-blue-500 p-12 rounded-3xl shadow-xl mt-10 max-w-3xl mx-auto">
     <h1 className="text-4xl xl:text-5xl font-extrabold text-white mb-4">
       Choose the Best Solution for Your Needs
@@ -328,10 +321,10 @@ const Order = () => {
 
 
 
-      <h1 className="text-sky-500 text-5xl font-extrabold text-center my-10 element-delay-400">
+      <h1 className="text-sky-500 text-5xl font-extrabold text-center my-10 ">
         1. Choose Your Services
       </h1>
-      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3 mb-10 xl:p-7 md:p-8 sm:p-10 cursor-pointer  element-delay-400">
+      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3 mb-10 xl:p-7 md:p-8 sm:p-10 cursor-pointer  ">
         {services.map((service) => (
           <div
   key={service.title}
@@ -356,7 +349,7 @@ const Order = () => {
       </div>
 
       {subOptions.length > 0 && (
-        <div id="targetElement" className="mb-10 element-delay-200">
+        <div id="targetElement" className="mb-10 ">
   <h2 className="text-sky-500 text-3xl font-bold text-center mb-6">
     2. Select an Option
   </h2>
@@ -392,7 +385,7 @@ const Order = () => {
       )}
 
 {nextSubOptions.length > 0 && (
-  <div id="targetElementSecond" className="mb-14 xl:p-7 md:p-12 sm:p-14 element-delay-200">
+  <div id="targetElementSecond" className="mb-14 xl:p-7 md:p-12 sm:p-14 ">
   <h2  className="text-sky-500 text-3xl font-bold text-center mb-6">
     3. Almost there
   </h2>
@@ -425,7 +418,7 @@ const Order = () => {
   <form
   id="targetElementThird"
   onSubmit={handleSubmit}
-  className="bg-gradient-to-b from-gray-800 to-gray-900 xl:p-7 md:p-12 sm:p-14 rounded-2xl shadow-2xl element-delay-200 transform transition-transform hover:scale-105"
+  className="bg-gradient-to-b from-gray-800 to-gray-900 xl:p-7 md:p-12 sm:p-14 rounded-2xl shadow-2xl  transform transition-transform hover:scale-105"
 >
   <h2 className="text-sky-500 text-4xl font-extrabold mb-8 text-center">
     Complete Your Order

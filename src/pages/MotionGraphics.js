@@ -9,16 +9,11 @@ import Adobephotoshop from '../images/adobephotoshop.svg';
 
 // Компоненты
 import { Button } from '../components/button';
-import useScrollReveal from '../components/SCROLL-REVEAL/ScrollReveal';
 import { Wrapper } from '../components/wrapper';
 import { Link } from 'react-router-dom';
 
 function MotionGraphics() {
 
-  useScrollReveal([
-    { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
-    { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
-  ]);
 
   const handleWhatsApp = () => window.open("https://wa.me/+447378716579", "_blank");
   const handleTelegram = () => window.open("https://t.me/+447378716579", "_blank");
@@ -41,13 +36,13 @@ function MotionGraphics() {
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative z-10 max-w-7xl mx-auto py-24 px-6">
           <div className="max-w-md mx-0 flex flex-col justify-start text-left"> 
-            <h1 className="text-5xl font-bold text-almost-white element-delay-200">
+            <h1 className="text-5xl font-bold text-almost-white ">
               Professional <span className="text-purple-500">Motion Designers</span> for All Your Needs
             </h1>
-            <p className="mt-6 text-xl font-fira text-gray-300 element-delay-400">
+            <p className="mt-6 text-xl font-fira text-gray-300 ">
               Our team of skilled motion designers brings your ideas to life through stunning intros, animations, and engaging content.
             </p>
-            <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8 element-delay-400">
+            <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8 ">
   <Link to="/order" className="w-full sm:w-auto">
     <Button hasWhiteStyle={true}>Order</Button>
   </Link>
@@ -76,30 +71,30 @@ function MotionGraphics() {
 </div>
           </div>
           <div className="w-full h-px bg-gray-200 my-12 opacity-20"></div>
-          <div className="w-full md:flex sm:block justify-between items-center element-delay-400">
+          <div className="w-full md:flex sm:block justify-between items-center ">
           <p className="text-almost-white font-bold text-center md:text-left text-xl mt-7 mb-4 md:mb-0">
             The best programs for your goals:</p>
             <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-start items-center">
   <img
-    className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+    className="w-12 h-12 md:w-16 md:h-16 "
     src={AfterEffects}
     alt="AfterEffects"
     loading="lazy"
   />
   <img
-    className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+    className="w-12 h-12 md:w-16 md:h-16 "
     src={Cinema4d}
     alt="Cinema4d"
     loading="lazy"
   />
   <img
-    className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+    className="w-12 h-12 md:w-16 md:h-16 "
     src={Blender}
     alt="Blender"
     loading="lazy"
   />
   <img
-    className="w-12 h-12 md:w-16 md:h-16 element-delay-400"
+    className="w-12 h-12 md:w-16 md:h-16 "
     src={Adobephotoshop}
     alt="Adobephotoshop"
     loading="lazy"
@@ -112,8 +107,8 @@ function MotionGraphics() {
 
     <section>
       <div className='bg-gray-900 p-5 text-center relative'>
-        <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-400'>Elevate Your Brand with Motion Design</h1>
-        <div className='element-delay-400'>
+        <h1 className='m-5 text-almost-white text-6xl font-extrabold '>Elevate Your Brand with Motion Design</h1>
+        <div className=''>
           <p className='m-5 text-gray-100 text-2xl'>From just <span className='text-sky-500 text-3xl font-semibold'>£20</span>, bring your brand to life with dynamic animations!</p>
           <Link to='/order'>
          <Button
@@ -131,20 +126,20 @@ function MotionGraphics() {
       <section>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-300'>
           <div className='flex flex-col items-center'>
-            <img className="w-1/2 h-auto m-10 element-delay-200" src={MotionDesignIcon} alt="Motion Design Icon" loading="lazy" />
+            <img className="w-1/2 h-auto m-10 " src={MotionDesignIcon} alt="Motion Design Icon" loading="lazy" />
             <h1 className='font-bold text-lg text-almost-white element-delay-1400'>What is Motion Design?</h1>
-            <p className='m-5 text-gray-300 element-delay-200'>Motion design is a creative process that brings graphics to life using animation and visual effects. Our motion designers specialize in creating captivating intros, explainer videos, social media content, and much more.</p>
+            <p className='m-5 text-gray-300 '>Motion design is a creative process that brings graphics to life using animation and visual effects. Our motion designers specialize in creating captivating intros, explainer videos, social media content, and much more.</p>
           </div>
           <div className='flex flex-col items-center'>
-            <img className="w-1/2 h-auto m-10 element-delay-200" src={WhyChooseUsIcon} alt="Our Team Icon" loading="lazy" />
+            <img className="w-1/2 h-auto m-10 " src={WhyChooseUsIcon} alt="Our Team Icon" loading="lazy" />
             <h1 className='font-bold text-lg text-almost-white element-delay-1400'>Why Choose Us for Motion Design?</h1>
-            <p className='m-5 text-gray-300 element-delay-200'>We combine technical expertise and artistic vision to create animations that engage and inspire. Our team is committed to delivering polished, impactful designs tailored to your audience and brand.</p>
+            <p className='m-5 text-gray-300 '>We combine technical expertise and artistic vision to create animations that engage and inspire. Our team is committed to delivering polished, impactful designs tailored to your audience and brand.</p>
           </div>
         </div>
       </section>
 
       <section>
-        <div className='mt-20 mb-20 bg-gray-900 text-almost-white rounded-lg p-5 text-center md:text-left element-delay-200'>
+        <div className='mt-20 mb-20 bg-gray-900 text-almost-white rounded-lg p-5 text-center md:text-left '>
           <h1 className='text-center xl:text-5xl sm:text-3xl font-bold m-5'>Motion Design Process</h1>
           <div className='grid xl:grid-cols-4 sm:grid-cols-1 gap-5'>
             <div className='flex flex-col justify-center sm:items-center xl:items-start'>
@@ -174,8 +169,8 @@ function MotionGraphics() {
 
         <section>
           <div className="bg-gray-900 p-5 mb-5 text-center relative rounded-lg">
-          <h1 className='m-5 text-almost-white text-4xl md:text-6xl font-extrabold element-delay-400'>Get a free consultation</h1>
-         <div className='element-delay-400'>
+          <h1 className='m-5 text-almost-white text-4xl md:text-6xl font-extrabold '>Get a free consultation</h1>
+         <div className=''>
          <p className='m-5 text-gray-100 text-xl md:text-2xl'>Get professional advice<span className='text-sky-500 text-2xl md:text-3xl font-semibold'> RIGHT NOW!</span></p>
               <Link to="/order">
          <Button

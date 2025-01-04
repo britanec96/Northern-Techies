@@ -3,7 +3,6 @@ import { Button } from "../components/button";
 import PortfolioIcon from "../images/PortfolioIcon.svg";
 import Paletteline from "../images/palette-line.svg";
 import Slider from "react-slick";
-import useScrollReveal from "../components/SCROLL-REVEAL/ScrollReveal";
 import { Link } from 'react-router-dom';
 
 
@@ -39,10 +38,6 @@ const Portfolio = () => {
     setIsModalOpen(false);
   };
 
-  useScrollReveal([
-    { selector: '.element-delay-200', delay: 200, options: { distance: '50px', origin: 'top' } },
-    { selector: '.element-delay-400', delay: 400, options: { distance: '50px', origin: 'left' } },
-  ]);
 
   const websites = [
     {
@@ -143,7 +138,7 @@ const Portfolio = () => {
       <div className="container mx-auto flex flex-col xl:flex-row items-center justify-center relative z-10 p-6 xl:p-10">
         {/* Левая часть: текст и кнопки */}
         <div className="w-full xl:w-1/2 text-center p-5">
-        <div className="flex justify-center items-center element-delay-200">
+        <div className="flex justify-center items-center ">
       <div className="relative">
         <img
           src={Paletteline} // Замените на путь к своему значку
@@ -152,13 +147,13 @@ const Portfolio = () => {
         />
       </div>
     </div>
-          <h1 className="text-4xl sm:text-3xl xl:text-5xl font-bold text-sky-500 element-delay-400">
+          <h1 className="text-4xl sm:text-3xl xl:text-5xl font-bold text-sky-500 ">
            Our Portfolio
           </h1>
-          <h2 className="text-xl sm:text-lg xl:text-3xl m-5 font-bold text-almost-white element-delay-400">
+          <h2 className="text-xl sm:text-lg xl:text-3xl m-5 font-bold text-almost-white ">
           Explore our work showcasing creativity
           </h2>
-          <div className="element-delay-400">
+          <div className="">
             <Link to="/order">
           <Button hasWhiteStyle={true}>Consultation</Button>
           </Link>
@@ -166,7 +161,7 @@ const Portfolio = () => {
         </div>
 
         {/* Правая часть: изображение */}
-        <div className="w-1/2  element-delay-400">
+        <div className="w-1/2  ">
           <img
             className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-105"
             src={PortfolioIcon}
@@ -175,7 +170,7 @@ const Portfolio = () => {
         </div>
       </div>
       
-    <div className="flex justify-center items-center mb-10 element-delay-400">
+    <div className="flex justify-center items-center mb-10 ">
   <div className="w-60 h-px bg-gray-600 opacity-50"></div>
 </div>
 
@@ -183,7 +178,7 @@ const Portfolio = () => {
 
 
     <section className="bg-almost-black text-white mt-10">
-    <div className="element-delay-200">
+    <div className="">
       <h1 className="text-sky-500 md:text-7xl sm:text-4xl  font-bold bg-gray-900 px-3 text-left ">
         WEB DEVELOPMENT
       </h1>
@@ -208,7 +203,7 @@ const Portfolio = () => {
 
 
 
-      <div className="my-12 element-delay-200">
+      <div className="my-12 ">
       <h1 className="text-almost-white md:text-7xl sm:text-4xl font-bold bg-gray-900 px-3 text-right">
         GRAPHIC DESIGN
       </h1>
@@ -233,7 +228,7 @@ const Portfolio = () => {
 
 
 
-      <div className="my-12 element-delay-200">
+      <div className="my-12 ">
         <h1 className="text-sky-500 md:text-7xl sm:text-4xl font-bold bg-gray-900 px-3">MOTION DESIGN</h1>
       {/* Слайдер */}
       <Slider {...settings}>
@@ -259,7 +254,7 @@ const Portfolio = () => {
 
 
 
-      <div className="element-delay-200">
+      <div className="">
         <h1 className="text-almost-white md:text-7xl sm:text-4xl font-bold bg-gray-900 px-3 text-right"> AI CONTENT</h1>
        {/* Слайдер */}
        <Slider {...settings}>

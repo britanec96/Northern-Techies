@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '../button';
 import { Wrapper } from '../wrapper';
-import useScrollReveal from '../SCROLL-REVEAL/ScrollReveal';
 import { Link } from 'react-router-dom';
 
 const Card = ({ id, title, price, description, developmentTime, technologies, image, siteExample }) => {
@@ -9,9 +8,6 @@ const Card = ({ id, title, price, description, developmentTime, technologies, im
   const [isHovering, setIsHovering] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false); 
 
-  useScrollReveal([
-    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
-  ]);
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();

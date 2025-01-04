@@ -3,20 +3,9 @@ import { Button } from "../components/button";
 import ReviewsIcon from "../images/ReviewsIcon.svg";
 import StarRating from "../images/starfill.svg";
 import TestimonialCarousel from "../components/carousel";
-import useScrollReveal from "../components/SCROLL-REVEAL/ScrollReveal";
 
 const ReviewsSection = () => {
 
-
-  useScrollReveal([
-    { selector: '.element-delay-200', delay: 200, options: { distance: '70px' } },
-    { selector: '.element-delay-400', delay: 400, options: { distance: '70px' } },
-    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
-    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
-    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
-    { selector: '.element-delay-1600', delay: 1600, options: { distance: '70px' } },
-    { selector: '.element-delay-1800', delay: 1800, options: { distance: '70px' } },
-  ]);
 
   const reviewLink = "https://g.page/r/CRMVNulv0FGUEBM/review";
 
@@ -41,7 +30,7 @@ const ReviewsSection = () => {
       <div className="container mx-auto flex flex-col xl:flex-row items-center justify-center relative z-10 p-6 xl:p-10">
         {/* Левая часть: текст и кнопки */}
         <div className="w-full xl:w-1/2 text-center p-5">
-        <div className="flex justify-center space-x-2 mb-4 element-delay-200">
+        <div className="flex justify-center space-x-2 mb-4 ">
   {[...Array(5)].map((_, index) => (
     <img
       key={index}
@@ -52,7 +41,7 @@ const ReviewsSection = () => {
     />
   ))}
 </div>
-          <h1 className="text-4xl sm:text-3xl xl:text-5xl font-bold text-sky-500 element-delay-400">
+          <h1 className="text-4xl sm:text-3xl xl:text-5xl font-bold text-sky-500 ">
             Reviews
           </h1>
           <h2 className="text-xl sm:text-lg xl:text-3xl m-5 font-bold text-almost-white element-delay-800">
