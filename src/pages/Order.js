@@ -220,6 +220,12 @@ const Order = () => {
     }
   };
 
+  const getStartedButton = () => {
+    setTimeout(() => {
+      scrollToSection("targetElementFirst");
+    }, 500);
+  };
+
   const handleServiceClick = (service) => {
     setSelectedService(service.title);
     setSubOptions(service.subOptions);
@@ -305,23 +311,44 @@ const Order = () => {
   
 
   return (
-    <div className="bg-gray-900 text-gray-100 min-h-screen md:pt-14 sm:pt-20">
+    <div className="bg-gray-900 text-gray-100 min-h-screen pt-20">
     <Wrapper>
-    <div className="flex flex-col items-center justify-center text-center ">
-  <div className="bg-gradient-to-r from-sky-500 to-blue-500 p-12 rounded-3xl shadow-xl mt-10 max-w-3xl mx-auto">
-    <h1 className="text-4xl xl:text-5xl font-extrabold text-white mb-4">
-      Choose the Best Solution for Your Needs
+    <div className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 xl:px-8">
+  <div className="w-full h-full bg-gradient-to-b from-sky-500 via-blue-600 to-indigo-800"></div>
+
+
+
+  {/* Контейнер с содержимым */}
+  <div className="bg-gradient-to-r from-sky-600 to-blue-600 p-12 rounded-3xl shadow-2xl mt-10 max-w-4xl mx-auto transform hover:scale-105 transition-transform duration-500">
+    {/* Заголовок */}
+    <h1 className="sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+      Choose the Best <span className="text-sky-300">Solution</span>
     </h1>
-    <p className="text-lg text-gray-200 mb-6">
-      Select the services you need, customize your order, and submit the form to get started. We’ll take care of the rest!
+
+    {/* Описание */}
+    <p className="md:text-xl sm:text-sm text-gray-200 mb-8 leading-relaxed">
+      Customize your order and let us bring your vision to life with stunning designs and innovative solutions tailored just for you!
     </p>
+
+    {/* Кнопка действия */}
+    <div className="flex justify-center">
+      <button 
+        onClick={() => {
+          getStartedButton(null);
+        }}
+      className="w-48 h-14 text-lg font-semibold bg-white text-blue-600 rounded-full shadow-lg hover:bg-blue-100 transition duration-300">
+        Get Started
+      </button>
+    </div>
   </div>
 </div>
 
 
 
 
-      <h1 className="text-sky-500 text-5xl font-extrabold text-center my-10 ">
+
+
+      <h1 id="targetElementFirst" className="text-sky-500 text-5xl font-extrabold text-center my-10 ">
         1. Choose Your Services
       </h1>
       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3 mb-10 xl:p-7 md:p-8 sm:p-10 cursor-pointer  ">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Wrapper } from "../wrapper";
 import Slider from "react-slick";
 import FeatureCard from "../block-home-second/FeatureCard";
@@ -68,9 +68,9 @@ const BlockHomeSecond = () => {
   return (
     <motion.div
       className="w-6xl py-10 md:py-5 px-4 z-10"
-      ref={ref1}  // Добавляем ref для отслеживания
+      ref={ref1}  
       initial={{ opacity: 0 }}
-      animate={{ opacity: inView1 ? 1 : 0 }}  // Анимация срабатывает, когда блок в зоне видимости
+      animate={{ opacity: inView1 ? 1 : 0 }} 
       transition={{ duration: 0.8 }}
     >
       <Wrapper>

@@ -28,13 +28,24 @@ export const BlockHomeFirst = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const newOpacity = Math.max(1 - scrollPosition / 400, 0); // Чем больше скролл, тем меньше прозрачность
+
+      
+      const isMobile = window.matchMedia("(max-width: 768px)").matches; 
+      const threshold = isMobile ? 270 : 100; 
+
+      let newOpacity = 1;
+
+      if (scrollPosition > threshold) {
+        newOpacity = Math.max(1 - (scrollPosition - threshold) / 500, 0);
+      }
+
       setOpacity(newOpacity);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
 
   return (
     <motion.section 
