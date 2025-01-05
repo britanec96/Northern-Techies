@@ -13,8 +13,11 @@ module.exports = {
       fira: ['FiraCode', 'monospace'],
     },
     extend: {
+      colors: {
+        'almost-white': 'hsl(0, 0% ,96%)',
+        'almost-black': 'hsl(240, 20%, 8%)',
+      },
       keyframes: {
-        
         vibrate: {
           '0%': { transform: 'translateX(0)' },
           '25%': { transform: 'translateX(-5px)' },
@@ -23,8 +26,8 @@ module.exports = {
           '100%': { transform: 'translateX(0)' },
         },
         marquee: {
-          '0%': { transform: 'translateX(300%)' }, // Начало с правого края экрана
-          '100%': { transform: 'translateX(-100%)' }, // Конец на левом краю экрана
+          '0%': { transform: 'translateX(300%)' },
+          '100%': { transform: 'translateX(-100%)' },
         },
         shakeRotate: {
           '0%': { transform: 'rotate(0deg)' },
@@ -35,7 +38,7 @@ module.exports = {
         },
         jump: {
           '0%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' }, // Подпрыгивание
+          '50%': { transform: 'translateY(-10px)' },
           '100%': { transform: 'translateY(0)' },
         },
         scaleRotate: {
@@ -56,7 +59,7 @@ module.exports = {
         'marquee': 'marquee 10s linear infinite',
         vibrate: 'vibrate 0.5s linear infinite',
         shakeRotate: 'shakeRotate 0.5s ease-in-out infinite',
-        jump: 'jump 0.6s ease-in-out infinite', // Анимация для прыгающих элементов
+        jump: 'jump 0.6s ease-in-out infinite',
         scaleRotate: 'scaleRotate 2s ease-in-out infinite',
         fadeIn: "fadeIn 0.3s ease-in-out",
         float: "float 6s ease-in-out infinite",
@@ -66,14 +69,12 @@ module.exports = {
         '11xl': '12rem',
         '12xl': '14rem',
       },
-      colors: {
-        'almost-white': 'hsl(0, 0% ,96%)',
-        'almost-black': 'hsl(240, 20%, 8%)',
-      },
     },
   },
   plugins: [],
 }
+
+
 
 
 
