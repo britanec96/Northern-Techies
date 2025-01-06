@@ -28,18 +28,6 @@ const Order = () => {
     setIsCaptchaValid(!!token); // Проверяем, получен ли токен
   };
 
-  fetch('https://server-northern-techies-production.up.railway.app/verify-captcha', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ token: captchaToken })
-  })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
-  
-
 
   const services = [
     {
@@ -280,21 +268,20 @@ const Order = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!isCaptchaValid) {
       alert("Please complete the CAPTCHA verification.");
       return;
     }
-
-    // Простая валидация email
+  
+    // Прочие проверки, например, на корректность email
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
       alert("Please, provide the correct email address.");
       return;
     }
-
+  
     setIsLoading(true);
   
-    // Подготовка данных для отправки
     const emailParams = {
       name: formData.name,
       email: formData.email,
@@ -305,18 +292,33 @@ const Order = () => {
       comments: formData.comments,
       preferredLanguage: preferredLanguage,
       preferredMessenger: preferredMessenger,
+      captchaToken: captchaToken,  // Добавляем токен капчи
     };
   
     try {
-     
+      const response = await fetch('https://server-northern-techies-production.up.railway.app/verify-captcha', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ token: captchaToken })
+      });
+  
+      const captchaData = await response.json();
+      if (!captchaData.success) {
+        alert('CAPTCHA validation failed');
+        return;
+      }
+  
+      // Отправка email
       await emailjs.send(
         'service_lxxmm8s', 
         'template_il5cfqr', 
         emailParams,
-        'Df4zcv3Cqe2LtutdW' 
+        'Df4zcv3Cqe2LtutdW'
       );
       
-      setIsSubmitted(true);  
+      setIsSubmitted(true);
       alert('Form successfully submitted!');
       setFormData({
         name: '',
@@ -332,7 +334,8 @@ const Order = () => {
     } finally {
       setIsLoading(false);
     }
-  };    
+  };
+  
   
 
   return (
