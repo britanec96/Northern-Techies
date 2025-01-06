@@ -28,22 +28,17 @@ const Order = () => {
     setIsCaptchaValid(!!token); // Проверяем, получен ли токен
   };
 
-  const backendUrl = "https://server-northern-techies-production.up.railway.app";
-
-fetch(`${backendUrl}/verify-captcha`, {
-  method: "POST",
-  body: JSON.stringify({ token: captchaToken }),
-  headers: {
-    "Content-Type": "application/json",
-  },
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log("Captcha verified:", data);
+  fetch('https://server-northern-techies-production.up.railway.app/verify-captcha', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ token: captchaToken })
   })
-  .catch(error => {
-    console.error("Error verifying captcha:", error);
-  });
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+  
 
 
   const services = [
