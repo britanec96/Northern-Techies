@@ -561,7 +561,7 @@ const Order = () => {
    {/* reCAPTCHA */}
    <div className="my-4">
               <ReCAPTCHA
-                sitekey="6Ld2568qAAAAAAOBPMgXaGIGRjZNZHqUd-3kuBDf"
+                sitekey="6Ldl_K8qAAAAANAIIS5ZrbcDVCTDA-zizOWgH-Fc"
                 onChange={handleCaptchaChange}
               />
             </div>
