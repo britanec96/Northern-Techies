@@ -296,7 +296,7 @@ const Order = () => {
     };
   
     try {
-      const response = await fetch('https://server-northern-techies-production.up.railway.app/verify-captcha', {
+      const response = await fetch('https://server-northern-techies-production.up.railway.app', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
