@@ -83,3 +83,11 @@ svg {
   z-index: 0;
 }
 
+.no-download {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
