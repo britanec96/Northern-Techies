@@ -28,6 +28,23 @@ const Order = () => {
     setIsCaptchaValid(!!token); // Проверяем, получен ли токен
   };
 
+  const backendUrl = "https://server-northern-techies-production.up.railway.app";
+
+fetch(`${backendUrl}/verify-captcha`, {
+  method: "POST",
+  body: JSON.stringify({ token: captchaToken }),
+  headers: {
+    "Content-Type": "application/json",
+  },
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log("Captcha verified:", data);
+  })
+  .catch(error => {
+    console.error("Error verifying captcha:", error);
+  });
+
 
   const services = [
     {
