@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Wrapper } from "../components/wrapper/index";
 import emailjs from "emailjs-com";
 import { Button } from "../components/button";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Order = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -19,6 +20,13 @@ const Order = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
+    setIsCaptchaValid(!!token); // Проверяем, получен ли токен
+  };
 
 
   const services = [
@@ -260,13 +268,18 @@ const Order = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Простая валидация email
-    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
-      alert('Please, provide the correct email adress.');
+
+    if (!isCaptchaValid) {
+      alert("Please complete the CAPTCHA verification.");
       return;
     }
-  
+
+    // Простая валидация email
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+      alert("Please, provide the correct email address.");
+      return;
+    }
+
     setIsLoading(true);
   
     // Подготовка данных для отправки
@@ -525,6 +538,21 @@ const Order = () => {
       </select>
     </div>
   </div>
+
+
+
+
+
+   {/* reCAPTCHA */}
+   <div className="my-4">
+              <ReCAPTCHA
+                sitekey="6Ld2568qAAAAAAOBPMgXaGIGRjZNZHqUd-3kuBDf"
+                onChange={handleCaptchaChange}
+              />
+            </div>
+
+
+
 
   <Button
     hasWhiteStyle={true}
