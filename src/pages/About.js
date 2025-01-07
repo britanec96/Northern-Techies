@@ -126,7 +126,7 @@ const About = () => {
 </motion.div>
 
 
-{/* Updated Our Team Section */}
+{/* Our Team Section */}
 <motion.div
   className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 my-16 px-6"
   variants={teamAnimation}

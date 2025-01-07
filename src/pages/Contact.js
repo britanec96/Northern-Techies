@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import ContactUsIcon from "../images/ContactUsIcon.svg";
 import PhoneFill from "../images/phone-fill.svg";
 import { Wrapper } from '../components/wrapper';
 import { Button } from '../components/button';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', comments: '' });
@@ -54,6 +53,15 @@ const Contact = () => {
     hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
   };
+
+   const [captchaToken, setCaptchaToken] = useState(null);
+    const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  
+    const handleCaptchaChange = (token) => {
+      setCaptchaToken(token);
+      setIsCaptchaValid(!!token); // Проверяем, получен ли токен
+    };
+  
 
   return (
     <div className="mb-10">
@@ -157,6 +165,19 @@ const Contact = () => {
                   className="w-full p-3 border rounded-lg"
                   required
                 />
+
+
+
+                   {/* reCAPTCHA */}
+   <div className="my-4">
+              <ReCAPTCHA
+                sitekey="6Ldl_K8qAAAAANAIIS5ZrbcDVCTDA-zizOWgH-Fc"
+                onChange={handleCaptchaChange}
+              />
+            </div>
+
+
+
                 <Button hasWhiteStyle={true} type="submit">Send Message</Button>
               </form>
             ) : (
