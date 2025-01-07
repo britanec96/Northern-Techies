@@ -485,7 +485,7 @@ const Order = () => {
       value={formData.name}
       onChange={handleInputChange}
       placeholder="Your Name"
-      className="bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+      className=" md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
       required
     />
     <input
@@ -494,7 +494,7 @@ const Order = () => {
       value={formData.email}
       onChange={handleInputChange}
       placeholder="Your Email"
-      className="bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+      className="md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
       required
     />
     <input
@@ -503,7 +503,7 @@ const Order = () => {
       value={formData.phone}
       onChange={handleInputChange}
       placeholder="Your Phone"
-      className="bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+      className="md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
       required
     />
     <textarea
@@ -511,7 +511,7 @@ const Order = () => {
       value={formData.comments}
       onChange={handleInputChange}
       placeholder="Additional Comments"
-      className="bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+      className="md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
       rows={4}
     ></textarea>
 
@@ -522,7 +522,7 @@ const Order = () => {
       <select
         value={preferredLanguage}
         onChange={(e) => setPreferredLanguage(e.target.value)}
-        className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+        className="w-full md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
         required
       >
         <option value="" className="text-gray-400">
@@ -540,7 +540,7 @@ const Order = () => {
       <select
         value={preferredMessenger}
         onChange={(e) => setPreferredMessenger(e.target.value)}
-        className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+        className="w-full md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
         required
       >
         <option value="" className="text-gray-400">
@@ -559,7 +559,7 @@ const Order = () => {
 
 
    {/* reCAPTCHA */}
-   <div className="my-4">
+   <div className="my-6">
               <ReCAPTCHA
                 sitekey="6Ldl_K8qAAAAANAIIS5ZrbcDVCTDA-zizOWgH-Fc"
                 onChange={handleCaptchaChange}
@@ -573,7 +573,7 @@ const Order = () => {
     hasWhiteStyle={true}
     type="submit"
     disabled={isLoading}
-    className={`w-full mt-10 py-3 px-6 text-white ${
+    className={`w-full mt-4 py-3 px-6 text-white ${
       isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-sky-600 hover:bg-sky-700 border-none"
     }`}
   >
