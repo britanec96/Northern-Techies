@@ -16,9 +16,39 @@ const Contact = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    if (!isCaptchaValid) {
+      alert("Please complete the CAPTCHA verification.");
+      return;
+    }
 
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+      alert("Please, provide the correct email address.");
+      return;
+    }
+
+    try {
+      const response = await fetch('https://server-northern-techies-production.up.railway.app', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ token: captchaToken })
+      });
+  
+      const captchaData = await response.json();
+      if (!captchaData.success) {
+        alert('CAPTCHA validation failed');
+        return;
+      }
+    } catch (error) {
+      console.error('Error validating CAPTCHA:', error);
+      alert('Error validating CAPTCHA');
+      return;
+    }
+    
     emailjs
       .send(
         'service_lxxmm8s',
