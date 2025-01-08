@@ -1,30 +1,44 @@
 import React, { useState } from "react";
 import { Button } from "../components/button";
-import PortfolioIcon from "../images/PortfolioIcon.svg";
 import Paletteline from "../images/palette-line.svg";
 import Slider from "react-slick";
 import { Link } from 'react-router-dom';
-
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 // Изображения и видео для портфолио
-import image1 from "../images/Portfolio/WebSite1.png";
-import image2 from "../images/Portfolio/WebSite2.png";
-import image3 from "../images/Portfolio/WebSite3.png";
-import image4 from "../images/Portfolio/Logo1.png";
-import image5 from "../images/Portfolio/Logo2.png";
-import image6 from "../images/Portfolio/Logo3.png";
-import image7 from "../images/Portfolio/Branding1.png";
-import image8 from "../images/Portfolio/SocialMedia1.png";
-import image9 from "../images/Portfolio/SocialMedia2.png";
-import image10 from "../images/One.png";
-import image11 from "../images/Blogger.png";
-import image12 from "../images/CreativeContent.png";
-import image13 from "../images/WebDev.svg";
-import video1 from '../images/Portfolio/MotionDesign.mp4';
+import {
+  image1, image2, image3, image4, image5, image6,
+  image7, image8, image9,
+  video1
+} from '../images/Portfolio/import';
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
+const AnimatedSection = ({ children, animation }) => {
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={animation}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const Portfolio = () => {
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
 
@@ -38,248 +52,118 @@ const Portfolio = () => {
     setIsModalOpen(false);
   };
 
-
-  const websites = [
-    {
-      image: image1,
-      link: "#",
-    },
-    {
-      image: image2,
-      link: "#",
-    },
-    {
-      image: image3,
-      link: "#",
-    },
-  ];
-
-  const graphicdesign = [
-    {
-      image: image4
-    },
-    {
-      image: image5,
-    },
-    {
-      image: image6,
-    },
-    {
-      image: image7
-    },
-    {
-      image: image8,
-    },
-    {
-      image: image9,
-    },
-  ];
-
-  const motiondesign = [
-    {
-      video: video1,
-    },
-    {
-      video: image5,
-    },
-  ];
-
-  const aicontent = [
-    {
-      image: image10,
-      link: "#",
-    },
-    {
-      image: image11,
-      link: "#",
-    },
-    {
-      image: image12,
-      link: "#",
-    },
-    {
-      image: image13,
-      link: "#",
-    },
-  ];
-
-
-  const settings = {
-    dots: true, // Показывать точки навигации
-    infinite: true, // Зацикливать слайдер
-    speed: 500, // Скорость анимации
-    slidesToShow: 3, // Количество видимых слайдов на маленьких экранах
-    slidesToScroll: 1, // Сколько слайдов прокручивать за раз
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2, // Для экранов с шириной более 768px
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1, // Для экранов с шириной более 1024px
-          slidesToScroll: 1,
-        },
-      },
-      
-    ],
-    
+      { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+      { breakpoint: 1024, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+    ]
   };
 
-  
+  const portfolioSections = [
+    {
+      title: "WEB DEVELOPMENT",
+      content: [
+        { image: image1, link: "#" },
+        { image: image2, link: "#" },
+        { image: image3, link: "#" }
+      ]
+    },
+    {
+      title: "GRAPHIC DESIGN",
+      content: [
+        { image: image4 },
+        { image: image5 },
+        { image: image6 },
+        { image: image7 },
+        { image: image8 },
+        { image: image9 }
+      ]
+    },
+    {
+      title: "MOTION DESIGN",
+      content: [
+        { video: video1 },
+        { video: image5 }
+      ]
+    },
+    {
+      title: "AI CONTENT",
+      content: []
+    }
+  ];
 
   return (
-    <>
     <div className="relative w-full bg-gray-900 overflow-hidden pt-14">
       <div className="container mx-auto flex flex-col xl:flex-row items-center justify-center relative z-10 p-6 xl:p-10">
-        {/* Левая часть: текст и кнопки */}
-        <div className="w-full xl:w-1/2 text-center p-5">
-        <div className="flex justify-center items-center ">
-      <div className="relative">
-        <img
-          src={Paletteline} // Замените на путь к своему значку
-          alt="Portfolio Icon"
-          className="w-32 h-32 transition-transform duration-500 ease-in-out animate-scaleRotate hover:scale-110 hover:rotate-12"
-        />
-      </div>
-    </div>
-          <h1 className="text-4xl sm:text-3xl xl:text-5xl font-bold text-sky-500 ">
-           Our Portfolio
+        <div className="text-center p-5">
+          <div className="flex justify-center items-center">
+            <div className="relative">
+              <img
+                src={Paletteline}
+                alt="Portfolio Icon"
+                className="w-32 h-32 transition-transform duration-500 ease-in-out animate-scaleRotate hover:scale-110 hover:rotate-12"
+              />
+            </div>
+          </div>
+          <h1 className="text-4xl sm:text-3xl xl:text-5xl font-bold text-sky-500">
+            <AnimatedSection animation={fadeInUp}>Our Portfolio</AnimatedSection>
           </h1>
-          <h2 className="text-xl sm:text-lg xl:text-3xl m-5 font-bold text-almost-white ">
-          Explore our work showcasing creativity
+          <h2 className="text-xl sm:text-lg xl:text-3xl m-5 font-bold text-almost-white">
+            <AnimatedSection animation={fadeInUp}>Explore our work showcasing creativity</AnimatedSection>
           </h2>
-          <div className="">
-            <Link to="/order">
-          <Button hasWhiteStyle={true}>Consultation</Button>
+          <AnimatedSection animation={fadeInUp}>
+          <Link to="/order">
+            <Button hasWhiteStyle={true}>Consultation</Button>
           </Link>
-          </div>
+          </AnimatedSection>
         </div>
 
-        {/* Правая часть: изображение */}
-        <div className="w-1/2  ">
-          <img
-            className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-105"
-            src={PortfolioIcon}
-            alt="Happy Customer"
-          />
-        </div>
       </div>
-      
-    <div className="flex justify-center items-center mb-10 ">
-  <div className="w-60 h-px bg-gray-600 opacity-50"></div>
-</div>
+      <div className="flex justify-center items-center mb-10">
+        <div className="w-60 h-px bg-gray-600 opacity-50"></div>
+      </div>
 
-    </div>
-
-
-    <section className="bg-almost-black text-white mt-10">
-    <div className="">
-      <h1 className="text-sky-500 md:text-7xl sm:text-4xl  font-bold bg-gray-900 px-3 text-left ">
-        WEB DEVELOPMENT
-      </h1>
-      {/* Слайдер */}
-      <Slider {...settings}>
-        {websites.map((project, index) => (
-          <div key={index} className="bg-gray-800 shadow-lg overflow-hidden group">
-            {/* Изображение */}
-            <div className="overflow-hidden cursor-pointer opacity-50 hover:opacity-100">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-300"
-                onClick={() => openModal(project.image)}
-              />
-            </div>
+      <section className="bg-almost-black text-white mt-10">
+        {portfolioSections.map((section, index) => (
+          <div key={index} className="my-12">
+            <h1 className="text-sky-500 md:text-7xl sm:text-4xl font-bold bg-gray-900 px-3 text-left">
+              <AnimatedSection animation={slideInRight}>{section.title}</AnimatedSection>
+            </h1>
+            <Slider {...sliderSettings}>
+              {section.content.map((project, idx) => (
+                <div key={idx} className="bg-gray-800 shadow-lg overflow-hidden group">
+                  {project.image ? (
+                    <div className="overflow-hidden cursor-pointer opacity-50 hover:opacity-100">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-300"
+                        onClick={() => openModal(project.image)}
+                      />
+                    </div>
+                  ) : (
+                    <div className="overflow-hidden cursor-pointer opacity-50 hover:opacity-100">
+                      <video
+                        src={project.video}
+                        className="w-full h-60 object-cover"
+                        loop
+                        autoPlay
+                        muted
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </Slider>
           </div>
         ))}
-      </Slider>
-      </div>
+      </section>
 
-
-
-
-      <div className="my-12 ">
-      <h1 className="text-almost-white md:text-7xl sm:text-4xl font-bold bg-gray-900 px-3 text-right">
-        GRAPHIC DESIGN
-      </h1>
-      {/* Слайдер */}
-      <Slider {...settings}>
-        {graphicdesign.map((project, index) => (
-          <div key={index} className="bg-gray-800 shadow-lg overflow-hidden group">
-            {/* Изображение */}
-            <div className="overflow-hidden cursor-pointer opacity-50 hover:opacity-100">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-                onClick={() => openModal(project.image)}
-              />
-            </div>
-          </div>
-        ))}
-      </Slider>
-      </div>
-
-
-
-
-      <div className="my-12 ">
-        <h1 className="text-sky-500 md:text-7xl sm:text-4xl font-bold bg-gray-900 px-3">MOTION DESIGN</h1>
-      {/* Слайдер */}
-      <Slider {...settings}>
-        {motiondesign.map((project, index) => (
-          <div key={index} className="bg-gray-800 shadow-lg overflow-hidden group">
-            {/* Изображение */}
-            <div className="overflow-hidden cursor-pointer opacity-50 hover:opacity-100">
-      <video
-              src={project.video} // Укажите путь к видео
-              className="w-full h-60 object-cover"
-              loop
-              autoPlay
-              muted
-            />
-            </div>
-          </div>
-        ))}
-      </Slider>
-      </div>
-
-
-
-
-
-
-      <div className="">
-        <h1 className="text-almost-white md:text-7xl sm:text-4xl font-bold bg-gray-900 px-3 text-right"> AI CONTENT</h1>
-       {/* Слайдер */}
-       <Slider {...settings}>
-        {aicontent.map((project, index) => (
-          <div key={index} className="bg-gray-800 shadow-lg overflow-hidden group">
-            {/* Изображение */}
-            <div className="overflow-hidden cursor-pointer opacity-50 hover:opacity-100">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-300"
-                onClick={() => openModal(project.image)}
-              />
-            </div>
-          </div>
-        ))}
-      </Slider>
-      </div>
-
-
-
-
-
-
-      {/* Модальное окно */}
       {isModalOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
@@ -300,8 +184,7 @@ const Portfolio = () => {
           </div>
         </div>
       )}
-    </section>
-      </>
+    </div>
   );
 };
 

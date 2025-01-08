@@ -3,6 +3,8 @@ import { Wrapper } from "../components/wrapper/index";
 import emailjs from "emailjs-com";
 import { Button } from "../components/button";
 import ReCAPTCHA from "react-google-recaptcha";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Order = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -26,6 +28,33 @@ const Order = () => {
   const handleCaptchaChange = (token) => {
     setCaptchaToken(token);
     setIsCaptchaValid(!!token); // Проверяем, получен ли токен
+  };
+
+  // Анимация
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+  
+  const slideInRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  };
+  
+  const AnimatedSection = ({ children, animation }) => {
+    const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  
+    return (
+      <motion.div
+        ref={ref}
+        variants={animation}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+        {children}
+      </motion.div>
+    );
   };
 
 
@@ -347,6 +376,7 @@ const Order = () => {
 
 
   {/* Контейнер с содержимым */}
+  <AnimatedSection animation={fadeInUp}>
   <div className="bg-gradient-to-r from-sky-600 to-blue-600 p-12 rounded-3xl shadow-2xl mt-10 max-w-4xl mx-auto transform hover:scale-105 transition-transform duration-500">
     {/* Заголовок */}
     <h1 className="sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
@@ -369,13 +399,14 @@ const Order = () => {
       </button>
     </div>
   </div>
+  </AnimatedSection>
 </div>
 
 
 
 
 
-
+<AnimatedSection animation={slideInRight}>
       <h1 id="targetElementFirst" className="text-sky-500 text-5xl font-extrabold text-center my-10 ">
         1. Choose Your Services
       </h1>
@@ -402,6 +433,7 @@ const Order = () => {
 
         ))}
       </div>
+      </AnimatedSection>
 
       {subOptions.length > 0 && (
         <div id="targetElement" className="mb-10 ">
