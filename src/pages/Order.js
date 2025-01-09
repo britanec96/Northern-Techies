@@ -64,190 +64,358 @@ const Order = () => {
       icon: "ri-code-s-slash-line",
       description: "Create stunning, responsive websites tailored to your goals.",
       subOptions: [
-        { 
-          name: "Landing Page", 
-          subicon: "ri-window-line", 
-          shortDescription: "Simple, single-page online presence.", 
-          nextSubOptions: ["One-page website", "Multi-section website", "Other"] 
+        {
+          name: "Landing Page",
+          subicon: "ri-window-line",
+          shortDescription: "Simple, single-page online presence.",
+          price: "From 140£",
+          nextSubOptions: [
+            { name: "One-page website",description:"Simple, single-page sites designed to focus on one product, service, or goal.", price: "140£" },
+            { name: "Event Pages",description:"Landing pages for promoting events, registrations, or announcements.", price: "180£" },
+            { name: "Campaign-specific Pages",description:"Created for marketing campaigns to capture leads or drive conversions.", price: "Negotiable" }
+          ]
         },
-        { 
-          name: "E-commerce (Online Shop)", 
-          subicon: "ri-pages-line", 
-          shortDescription: "Sell products with ease online.", 
-          nextSubOptions: ["Shopify", "Custom Platform", "Not sure"] 
+        {
+          name: "Multi-page Websites",
+          subicon: "ri-pages-line",
+          shortDescription: "Sell products with ease online.",
+          price: "From 1800£",
+          nextSubOptions: [
+            { name: "Business Website",description:"Multi-page site showcasing company information, products, or services.", price: "From 800£" },
+            { name: "Small Online Store",description:"For limited product ranges.", price: "From 1200£" },
+            { name: "Large Online Stores",description:"Full-featured stores with filters, categories, and user accounts.", price: "From 3150£" },
+            { name: "Custom",description:"Customize your website.", price: "Negotiable" }
+          ]
         },
-        { 
-          name: "Portfolio Website", 
-          subicon: "ri-passport-line", 
-          shortDescription: "Showcase your work beautifully.", 
-          nextSubOptions: ["Photography", "Artworks", "Other"] 
+        {
+          name: "Portfolio Website",
+          subicon: "ri-passport-line",
+          shortDescription: "Showcase your work beautifully.",
+          price: "From 170£",
+          nextSubOptions: [
+            { name: "Photography",description:"", price: "From 170£" },
+            { name: "Artworks",description:"", price: "From 200£" },
+            { name: "Other",description:"", price: "Negotiable" }
+          ]
         },
-        { 
-          name: "Custom Website", 
-          subicon: "ri-grid-line", 
-          shortDescription: "Unique websites for specific needs.", 
-          nextSubOptions: ["Blog", "Forum", "Other"] 
-        },
-      ],
-    },    
+      ]
+    },
     {
       title: "Graphic Design",
       icon: "ri-brush-line",
       description: "Professional designs for logos, banners, and social media content.",
       subOptions: [
-        { 
-          name: "Logotype",
-          subicon: "ri-leaf-line", 
-          shortDescription: "Custom logo designs for branding.",
-          nextSubOptions: ["Minimalist", "3D", "Abstract", "I'm not sure"] 
+        {
+          name: "Logo Design",
+          subicon: "ri-leaf-line",
+          shortDescription: "Creating unique and memorable logos to represent a brand.",
+          price: "From 30£",
+          nextSubOptions: [
+            { name: "Simple", description: "Basic logo design with 1-2 revisions.", price: "From 40£" },
+            { name: "Medium", description: "More detailed logo design with 2-3 revisions and source files.", price: "From 90£" },
+            { name: "Strong", description: "Premium logo design with 3+ revisions, source files, and brand guidelines.", price: "From 150£" },
+            { name: "AI Created Logo", description: "Quick and affordable AI-generated logo concepts.", price: "30£" }
+          ]
         },
-        { 
-          name: "Banner",
-          subicon: "ri-flag-2-line", 
-          shortDescription: "Banners for online ads and print materials.",
-          nextSubOptions: ["Web Ads", "Print Materials", "Other"] 
+        {
+          name: "Banners",
+          subicon: "ri-flag-2-line",
+          shortDescription: "Professional banner designs for online advertising and print materials.",
+          price: "From 30£",
+          nextSubOptions: [
+            { name: "Web Ads", description: "Banners for online platforms like Google Ads and social media.", price: "From 30£" },
+            { name: "Print Materials", description: "Banners for billboards, flyers, and other print media.", price: "From 50£" },
+            { name: "Other", description: "Custom banner designs for specific needs (e.g., trade shows, events).", price: "Negotiable" }
+          ]
         },
-        { 
+        {
           name: "Social Media Content",
-          subicon: "ri-instagram-line", 
-          shortDescription: "Engaging content for social media platforms.",
-          nextSubOptions: ["Posts", "Stories", "Reels", "Other"] 
+          subicon: "ri-instagram-line",
+          shortDescription: "Engaging visuals for social media platforms (Instagram, Facebook, etc.).",
+          price: "From 20£",
+          nextSubOptions: [
+            { name: "Posts", description: "High-quality images for social media posts.", price: "From 20£" },
+            { name: "Stories", description: "Creative visuals and short videos for Instagram/Facebook Stories.", price: "From 40£" },
+            { name: "Reels", description: "Dynamic and engaging short-form videos for Instagram Reels.", price: "From 40£" },
+            { name: "Other", description: "Custom social media content (e.g., carousel posts, live stream graphics).", price: "Negotiable" }
+          ]
         },
-        { 
+        {
           name: "Illustrations",
-          subicon: "ri-paint-line", 
-          shortDescription: "Digital and vector art illustrations.",
-          nextSubOptions: ["Digital Art", "Vector Art"] 
+          subicon: "ri-paint-line",
+          shortDescription: "Professional digital and vector illustrations for various purposes.",
+          price: "From 60£",
+          nextSubOptions: [
+            { name: "Digital Art", description: "High-resolution digital illustrations in various styles (e.g., photorealistic, abstract, cartoon).", price: "From 60£" },
+            { name: "Vector Art", description: "Scalable vector illustrations suitable for logos, branding, and print materials.", price: "From 150£" }
+          ]
         },
-        { 
+        {
           name: "Other",
-          subicon: "ri-service-line", 
-          shortDescription: "Other graphic design services.",
-          nextSubOptions: ["Other"] 
-        },
-      ],
+          subicon: "ri-service-line",
+          shortDescription: "Custom graphic design services not listed above.",
+          price: "Negotiable",
+          nextSubOptions: [
+            { name: "Custom Projects", description: "Discuss your specific needs and receive a personalized quote.", price: "Negotiable" }
+          ]
+        }
+      ]
     },
     {
       title: "Software Assistance",
       icon: "ri-tools-line",
       description: "Resolve software issues and optimize your PC for peak performance.",
       subOptions: [
-        { 
+        {
           name: "PC Optimization",
           subicon: "ri-speed-line",
           shortDescription: "Enhance your PC’s performance with speed and cleaning optimizations.",
-          nextSubOptions: ["Speed Boost", "Cleaning"]
-        },
-        { 
-          name: "Software Installation",
-          subicon: "ri-install-line",
-          shortDescription: "Install essential software for your PC, including office and editing tools.",
-          nextSubOptions: ["Office Suite", "Editing Software"]
-        },
-        { 
-          name: "Troubleshooting",
-          subicon: "ri-error-warning-line",
-          shortDescription: "Fix errors and analyze crashes to ensure your system runs smoothly.",
-          nextSubOptions: ["Error Fixing", "Crash Analysis"]
-        },
-        { 
-          name: "Other",
-          subicon: "ri-service-line",
-          shortDescription: "Other software-related assistance services.",
-          nextSubOptions: ["Other"]
-        },
-      ],
-    },    
-    {
-      title: "Custom PC Builds",
-      icon: "ri-computer-line",
-      description: "Get a PC built for your specific gaming, work, or streaming needs.",
-      subOptions: [
-        { 
-          name: "Gaming PC",
-          subicon: "ri-gamepad-line",
-          shortDescription: "Build a powerful gaming PC for the best performance in high FPS and stunning visuals.",
-          nextSubOptions: ["High FPS", "RGB Setup"]
-        },
-        { 
-          name: "Workstation",
-          subicon: "ri-macbook-line",
-          shortDescription: "Custom PCs designed for intensive tasks like video editing, programming, or office work.",
-          nextSubOptions: ["Video Editing", "Programming", "For Work"]
-        },
-        { 
-          name: "Streaming Setup",
-          subicon: "ri-mic-line",
-          shortDescription: "Optimized setups for high-quality streaming, whether you’re using a single or dual PC setup.",
-          nextSubOptions: ["Dual PC", "Budget Build"]
-        },
-      ],
-    },    
-    {
-      title: "Motion Design",
-      icon: "ri-movie-line",
-      description: "Engaging animations for logos, explainer videos, and intros.",
-      subOptions: [
-        { 
-          name: "Animated Logo",
-          subicon: "ri-image-line",
-          shortDescription: "Create a unique, animated logo to enhance brand identity.",
-          nextSubOptions: ["Looping", "Dynamic"]
-        },
-        { 
-          name: "Explainer Video",
-          subicon: "ri-video-line",
-          shortDescription: "Craft engaging explainer videos with clear messaging and dynamic visuals.",
-          nextSubOptions: ["Whiteboard Animation", "2D Animation"]
-        },
-        { 
-          name: "Intro Animation",
-          subicon: "ri-play-circle-line",
-          shortDescription: "Produce eye-catching intro animations for YouTube or corporate use.",
-          nextSubOptions: ["YouTube Intro", "Corporate"]
-        },
-                { 
-          name: "Other Animation",
-          subicon: "ri-play-circle-line",
-          shortDescription: "Other types of animations.",
-          nextSubOptions: ["Other"]
-        },
-      ],
-    },
-    {
-      title: "AI Solutions",
-      icon: "ri-robot-line",
-      description: "Innovative AI solutions for automation, chatbots, and data insights.",
-      subOptions: [
-        { 
-          name: "AI Integration",
-          subicon: "ri-plug-line",
-          shortDescription: "Integrate AI into your website or CRM for smarter automation.",
-          nextSubOptions: ["Website", "CRM"]
-        },
-        { 
-          name: "Chatbot Development",
-          subicon: "ri-chat-3-line",
-          shortDescription: "Develop advanced chatbots for e-commerce or customer support.",
-          nextSubOptions: ["E-commerce", "Customer Support"]
-        },
-        { 
-          name: "Data Analysis",
-          subicon: "ri-bar-chart-line",
-          shortDescription: "Analyze big data and derive valuable insights for decision-making.",
-          nextSubOptions: ["Big Data", "Insights"]
+          price: "From 30£",
+          nextSubOptions: [
+            { name: "Speed Boost", description: "Optimize system settings and remove unnecessary files to improve startup times and overall responsiveness.", price: "30£" },
+            { name: "Cleaning", description: "Remove junk files, malware, and other unwanted software to free up disk space and improve performance.", price: "30£" }
+          ]
         },
         {
-          name: "AI Images, Video, Sounds",
-          subicon: "ri-image-line", 
-          shortDescription: "Generate AI-powered images, videos, and sounds to bring your ideas to life.",
-          nextSubOptions: ["Big Data", "Insights"]
+          name: "Software Installation",
+          subicon: "ri-install-line",
+          shortDescription: "Professional installation and setup of essential software for your PC.", 
+          price: "From 30£",
+          nextSubOptions: [
+            { name: "Office Suite", description: "Installation and setup of Microsoft Office Suite (Word, Excel, PowerPoint) or equivalent.", price: "30£" },
+            { name: "Editing Software", description: "Installation and setup of professional editing software (e.g., Adobe Photoshop, Premiere Pro, etc.).", price: "From 40£" }
+          ]
+        },
+        {
+          name: "Troubleshooting",
+          subicon: "ri-error-warning-line",
+          shortDescription: "Diagnose and resolve software and hardware issues on your computer.",
+          price: "Negotiable",
+          nextSubOptions: [
+            { name: "Error Fixing", description: "Diagnose and resolve common software errors, including blue screen errors, application crashes, and startup issues.", price: "Negotiable" },
+            { name: "Crash Analysis", description: "In-depth analysis of system crashes to identify and resolve underlying causes.", price: "Negotiable" }
+          ]
+        },
+        {
+          name: "Consultation",
+          subicon: "ri-service-line",
+          shortDescription: "Get expert advice on software and hardware issues.",
+          price: "Free",
+          nextSubOptions: [
+            { name: "Free Consultation", description: "Discuss your specific needs and receive personalized recommendations.", price: "Free" }
+          ]
         }
-        
-      ],
-    }    
-  ];
-
+      ]
+    },
+      {
+        title: "Custom PC Builds",
+        icon: "ri-computer-line",
+        description: "Get a PC built for your specific gaming, work, or streaming needs.",
+        subOptions: [
+          {
+            name: "Gaming PC",
+            subicon: "ri-gamepad-line",
+            shortDescription: "Build a powerful gaming PC for the best performance in high FPS and stunning visuals.",
+            price: "From 500£",
+            nextSubOptions: [
+              {
+                name: "Budget Gaming PC",
+                description: "A cost-effective build for casual gaming and esports titles. Ideal for those on a tight budget.",
+                price: "From £500"
+              },
+              {
+                name: "Mid-Range Gaming PC",
+                description: "Balanced performance for a variety of games at high settings. Suitable for most modern titles.",
+                price: "From £800"
+              },
+              {
+                name: "High-End Gaming PC",
+                description: "Uncompromising performance for the most demanding games and creators. Features top-of-the-line components.",
+                price: "From £1500"
+              },
+              {
+                name: "Extreme Gaming PC",
+                description: "Over-the-top performance for enthusiasts and competitive gamers. Customized with the latest hardware and overclocking.",
+                price: "Custom Quote"
+              },
+            ],
+          },
+          {
+            name: "Workstation",
+            subicon: "ri-macbook-line",
+            shortDescription: "High-performance PCs designed for demanding tasks like video editing, programming, and content creation.",
+            price: "Custom Quote",
+            nextSubOptions: [
+              { 
+                name: "Video Editing Workstation", 
+                description: "Powerful systems with high-end GPUs and fast storage for smooth video editing and rendering.", 
+                price: "Custom Quote" 
+              },
+              { 
+                name: "Programming Workstation", 
+                description: "Optimized for software development with powerful processors and ample RAM for smooth multitasking.", 
+                price: "Custom Quote" 
+              },
+              { 
+                name: "Creative Workstation", 
+                description: "Versatile systems for graphic design, 3D modeling, and other creative tasks.", 
+                price: "Custom Quote" 
+              }
+            ]
+          }
+        ],
+      },
+      {
+        title: "Motion Design",
+        icon: "ri-movie-line",
+        description: "Engaging animations for logos, explainer videos, and intros.",
+        subOptions: [
+          {
+            name: "Animated Logo",
+            subicon: "ri-image-line",
+            shortDescription: "Bring your brand to life with a captivating animated logo.",
+            price: "From 120£",
+            nextSubOptions: [
+              { name: "Looping Animation", description: "A smooth, seamlessly looping animation for use on websites and social media.", price: "From 120£" },
+              { name: "Dynamic Animation", description: "A more complex animation with subtle motion and visual effects.", price: "From 150£" }
+            ]
+          },
+          {
+            name: "Explainer Video",
+            subicon: "ri-video-line",
+            shortDescription: "Create compelling explainer videos that clearly communicate your message and engage your audience.",
+            price: "From 500£",
+            nextSubOptions: [
+              { 
+                name: "Whiteboard Animation", 
+                description: "Classic and engaging whiteboard animation style, ideal for explaining complex concepts in a simple and memorable way.", 
+                price: "From 450£" 
+              },
+              { 
+                name: "2D Animation", 
+                description: "High-quality 2D animation with dynamic characters and vibrant visuals for a more visually engaging experience.", 
+                price: "From 700£" 
+              }
+            ]
+          },
+          {
+            name: "Intro Animation",
+            subicon: "ri-play-circle-line",
+            shortDescription: "Create impactful intro animations for YouTube channels, corporate presentations, and more.",
+            price: "From 200£",
+            nextSubOptions: [
+              { 
+                name: "YouTube Intro", 
+                description: "Dynamic and engaging intros for your YouTube channel, including channel logos and branding elements.", 
+                price: "From 200£" 
+              },
+              { 
+                name: "Corporate Intro", 
+                description: "Professional and sophisticated intros for corporate presentations and events, reflecting your brand identity.", 
+                price: "From 300£" 
+              }
+            ]
+          },
+          {
+            name: "Other Animation",
+            subicon: "ri-play-circle-line",
+            shortDescription: "Custom animation services tailored to your specific needs.",
+            price: "Negotiable",
+            nextSubOptions: [
+              { 
+                name: "Custom Animation", 
+                description: "Discuss your project requirements and receive a personalized quote. We can create a wide range of animations, including motion graphics, 3D animations, and more.", 
+                price: "Negotiable" 
+              }
+            ]
+          },
+        ],
+      },
+      {
+        title: "AI Solutions",
+        icon: "ri-robot-line",
+        description: "Innovative AI solutions to streamline your business and unlock new opportunities.",
+        subOptions: [
+          {
+            name: "AI Integration",
+            subicon: "ri-plug-line",
+            shortDescription: "Seamlessly integrate AI into your existing systems for enhanced automation and efficiency.",
+            price: "From 1000£",
+            nextSubOptions: [
+              { 
+                name: "Website AI Integration", 
+                description: "Integrate AI features like chatbots, personalized recommendations, and predictive analytics into your website.", 
+                price: "From 1000£" 
+              },
+              { 
+                name: "CRM AI Integration", 
+                description: "Leverage AI to improve customer relationship management with features like lead scoring, predictive customer churn, and personalized marketing.", 
+                price: "From 1500£" 
+              }
+            ]
+          },
+          {
+            name: "Chatbot Development",
+            subicon: "ri-chat-3-line",
+            shortDescription: "Develop intelligent chatbots to automate customer interactions and improve efficiency.",
+            price: "From 700£",
+            nextSubOptions: [
+              { 
+                name: "E-commerce Chatbot", 
+                description: "Develop a chatbot for your online store to assist customers with product recommendations, order tracking, and more.", 
+                price: "From 700£" 
+              },
+              { 
+                name: "Customer Support Chatbot", 
+                description: "Create a chatbot to handle common customer inquiries, provide 24/7 support, and improve customer satisfaction.", 
+                price: "From 850£" 
+              }
+            ]
+          },
+          {
+            name: "Data Analysis",
+            subicon: "ri-bar-chart-line",
+            shortDescription: "Uncover valuable insights from your data using advanced AI and machine learning techniques.",
+            price: "From 1500£",
+            nextSubOptions: [
+              { 
+                name: "Big Data Analysis", 
+                description: "Analyze large datasets to identify trends, patterns, and anomalies for informed decision-making.", 
+                price: "From 1500£" 
+              },
+              { 
+                name: "AI-Powered Insights", 
+                description: "Leverage AI to generate actionable insights and predictions for business growth and optimization.", 
+                price: "From 1700£" 
+              }
+            ]
+          },
+          {
+            name: "AI-Powered Creative",
+            subicon: "ri-image-line", 
+            description: "Generate high-quality images, videos, and sounds using cutting-edge AI technologies.",
+            price: "From 10£",
+            nextSubOptions: [
+              { 
+                name: "AI Image Generation", 
+                description: "Create unique and original images using AI tools like DALL-E 2 and Midjourney.", 
+                price: "From 10£" 
+              },
+              { 
+                name: "AI Video Generation", 
+                description: "Generate engaging videos with AI-powered tools, including short-form videos and animations.", 
+                price: "From 30£" 
+              },
+              { 
+                name: "AI Sound Generation", 
+                description: "Create unique sound effects, music, and voiceovers using AI-powered tools.", 
+                price: "From 50£" 
+              }
+            ]
+          }
+        ],
+      },
+    ];    
   const scrollToSection = (id) => {
     const target = document.getElementById(id);
     if (target) {
@@ -315,13 +483,13 @@ const Order = () => {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      selectedService: selectedService,
-      selectedSubOption: selectedSubOption,
-      selectedNextSubOption: selectedNextSubOption,
+      selectedService: selectedService.title,  // Access title from the selected service object
+      selectedSubOption: selectedSubOption.name,  // Access name from the selected sub-option object
+      ...(selectedNextSubOption && { selectedNextSubOption: selectedNextSubOption.name }),  // Include next sub-option if selected
       comments: formData.comments,
       preferredLanguage: preferredLanguage,
       preferredMessenger: preferredMessenger,
-      captchaToken: captchaToken,  // Добавляем токен капчи
+      captchaToken: captchaToken, // Assuming you have a captchaToken variable
     };
   
     try {
@@ -461,6 +629,7 @@ const Order = () => {
   }`}
 >
   {option.shortDescription}
+  <span className="block text-yellow-500 text-xl font-thin mt-2">{option.price}</span>
 </p>
 
       </div>
@@ -472,28 +641,36 @@ const Order = () => {
       )}
 
 {nextSubOptions.length > 0 && (
-  <div id="targetElementSecond" className="mb-14 xl:p-7 md:p-12 sm:p-14 ">
-  <h2  className="text-sky-500 text-3xl font-bold text-center mb-6">
+  <div id="targetElementSecond" className="mb-14 xl:p-7 md:p-12 sm:p-14">
+  <h2 className="text-sky-500 text-3xl font-bold text-center mb-6">
     3. Almost there
   </h2>
   <div className="grid gap-6 mb-24 md:grid-cols-2 xl:grid-cols-3">
     {nextSubOptions.map((option, index) => (
       <div
-        key={option}
-        onClick={() => handleNextSubOptionClick(option)}
+        key={option.name}
+        onClick={() => handleNextSubOptionClick(option.name)}
         className={`relative group bg-gradient-to-br from-gray-800 to-gray-900 p-6 mb-7 rounded-xl shadow-lg text-center transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer ${
-          selectedNextSubOption === option
+          selectedNextSubOption === option.name
             ? "bg-gradient-to-br from-sky-500 via-sky-800 to-sky-700 text-white"
             : ""
         }`}
       >
         <h3
           className={`text-xl font-medium ${
-            selectedNextSubOption === option ? "text-white" : "text-white rounded-full flex items-center justify-center text-sm font-semibold group-hover:animate-bounce"
+            selectedNextSubOption === option.name ? "text-white" : "text-white"
           }`}
         >
-          {option}
+          {option.name}
         </h3>
+        <p
+          className={`text-sm mt-2 ${
+            selectedNextSubOption === option.name ? "text-gray-300" : "text-sky-500"
+          }`}
+        >
+          <span className="block text-gray-400 text-md font-light mt-2">{option.description}</span>
+          <span className="block text-yellow-500 text-xl font-extralight mt-2">{option.price}</span>
+        </p>
       </div>
     ))}
   </div>
