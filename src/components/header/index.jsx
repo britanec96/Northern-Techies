@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as MenuIcon } from '../../images/icon-menu.svg';
 import { ReactComponent as MenuCloseIcon } from '../../images/icon-close-menu.svg';
+
 import { NavItem } from '../nav-item';
 import { NavMenu } from '../nav-menu';
 import { COMPANY, FEATURES } from './constants';
@@ -9,6 +10,7 @@ import { Button } from '../button';
 import { MobileMenu } from '../mobile-menu';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Logo from '../../images/Logo.svg'
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -55,10 +57,15 @@ export const Header = () => {
           transition={{ duration: 1, ease: 'easeInOut' }}
           className="antialiased cursor-pointer tracking-widest"
         >
-          <Link to="/">
-            <h1 className="text-almost-white text-xl font-fira font-extrabold">{"<Northern>"}</h1>
-            <h1 className="text-sky-500 text-xl -mt-2 font-fira font-extrabold">{"</Techies>"}</h1>
-          </Link>
+<Link to="/" className="group">
+  <div className="flex w-48 md:w-52 items-center justify-center">
+    <img 
+      src={Logo} 
+      alt="Company Logo" 
+      className="h-auto w-full object-contain transition-transform duration-200 group-hover:scale-105" 
+    />
+  </div>
+</Link>
         </motion.div>
 
         {/* Навигационное меню */}
@@ -88,7 +95,7 @@ export const Header = () => {
           className="hidden xl:flex"
         >
           <Link to="/order" className="antialiased cursor-pointer tracking-widest">
-            <Button hasWhiteStyle={true}>Order</Button>
+            <Button hasWhiteStyle={true}>Get Started</Button>
           </Link>
         </motion.div>
 

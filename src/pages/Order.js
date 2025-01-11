@@ -562,8 +562,8 @@ const Order = () => {
         onClick={() => {
           getStartedButton(null);
         }}
-      className="w-48 h-14 text-lg font-semibold bg-white text-blue-600 rounded-full shadow-lg hover:bg-blue-100 transition duration-300">
-        Get Started
+      className="w-64 h-14 text-lg bg-white font-extrabold text-sky-600 rounded-full hover:bg-blue-100 transition duration-300">
+        Customize
       </button>
     </div>
   </div>
@@ -680,141 +680,136 @@ const Order = () => {
 
 {selectedNextSubOption && (
   <form
-  id="targetElementThird"
-  onSubmit={handleSubmit}
-  className="bg-gradient-to-b from-gray-800 to-gray-900 xl:p-7 md:p-12 sm:p-14 rounded-2xl shadow-2xl  transform transition-transform hover:scale-105"
->
-  <h2 className="text-sky-500 text-4xl font-extrabold mb-8 text-center">
-    Complete Your Order
-  </h2>
-  <div className="grid gap-6">
-    <input
-      type="text"
-      name="name"
-      value={formData.name}
-      onChange={handleInputChange}
-      placeholder="Your Name"
-      className=" md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
-      required
-    />
-    <input
-      type="email"
-      name="email"
-      value={formData.email}
-      onChange={handleInputChange}
-      placeholder="Your Email"
-      className="md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
-      required
-    />
-    <input
-      type="text"
-      name="phone"
-      value={formData.phone}
-      onChange={handleInputChange}
-      placeholder="Your Phone"
-      className="md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
-      required
-    />
-    <textarea
-      name="comments"
-      value={formData.comments}
-      onChange={handleInputChange}
-      placeholder="Additional Comments"
-      className="md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
-      rows={4}
-    ></textarea>
-
-    <div className="mt-4">
-      <h3 className="text-lg text-gray-300 font-semibold mb-2">
-        Preferred Language:
-      </h3>
-      <select
-        value={preferredLanguage}
-        onChange={(e) => setPreferredLanguage(e.target.value)}
-        className="w-full md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
-        required
-      >
-        <option value="" className="text-gray-400">
-          Select Language
-        </option>
-        <option value="Russian">Russian</option>
-        <option value="English">English</option>
-      </select>
-    </div>
-
-    <div className="mt-4">
-      <h3 className="text-lg text-gray-300 font-semibold mb-2">
-        Preferred Messenger:
-      </h3>
-      <select
-        value={preferredMessenger}
-        onChange={(e) => setPreferredMessenger(e.target.value)}
-        className="w-full md:max-w-full sm:max-w-md bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
-        required
-      >
-        <option value="" className="text-gray-400">
-          Select Messenger
-        </option>
-        <option value="WhatsApp">WhatsApp</option>
-        <option value="Telegram">Telegram</option>
-        <option value="Messenger">Messenger</option>
-        <option value="Email">Email</option>
-      </select>
-    </div>
-  </div>
-
-
-
-
-
-   {/* reCAPTCHA */}
-   <div className="my-6">
-              <ReCAPTCHA
-                sitekey="6Ldl_K8qAAAAANAIIS5ZrbcDVCTDA-zizOWgH-Fc"
-                onChange={handleCaptchaChange}
-              />
-            </div>
-
-
-
-
-  <Button
-    hasWhiteStyle={true}
-    type="submit"
-    disabled={isLoading}
-    className={`w-full mt-4 py-3 px-6 text-white ${
-      isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-sky-600 hover:bg-sky-700 border-none"
-    }`}
+    id="targetElementThird"
+    onSubmit={handleSubmit}
+    className="bg-gradient-to-b from-gray-800 to-gray-900 xl:p-7 md:p-6 sm:p-4 rounded-2xl shadow-2xl transform transition-transform hover:scale-105 max-w-screen mx-auto"
   >
-    {isLoading ? (
-      <div className="flex items-center justify-center">
-        <svg
-          className="animate-spin h-5 w-5 text-white"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
+    <h2 className="text-sky-500 text-2xl md:text-4xl font-extrabold mb-6 text-center">
+      Complete Your Order
+    </h2>
+    <div className="grid gap-6">
+      <input
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleInputChange}
+        placeholder="Your Name"
+        className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleInputChange}
+        placeholder="Your Email"
+        className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+        required
+      />
+      <input
+        type="text"
+        name="phone"
+        value={formData.phone}
+        onChange={handleInputChange}
+        placeholder="Your Phone"
+        className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+        required
+      />
+      <textarea
+        name="comments"
+        value={formData.comments}
+        onChange={handleInputChange}
+        placeholder="Additional Comments"
+        className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+        rows={4}
+      ></textarea>
+
+      <div>
+        <h3 className="text-lg text-gray-300 font-semibold mb-2">
+          Preferred Language:
+        </h3>
+        <select
+          value={preferredLanguage}
+          onChange={(e) => setPreferredLanguage(e.target.value)}
+          className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+          required
         >
-          <circle
-            className="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            strokeWidth="4"
-          ></circle>
-          <path
-            className="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8v4l3.5-3.5L8 8V4a8 8 0 00-4 8h4z"
-          ></path>
-        </svg>
-        <span className="ml-2">Sending...</span>
+          <option value="" className="text-gray-400">
+            Select Language
+          </option>
+          <option value="Russian">Russian</option>
+          <option value="English">English</option>
+        </select>
       </div>
-    ) : (
-      "Submit"
-    )}
-  </Button>
-</form>
+
+      <div>
+        <h3 className="text-lg text-gray-300 font-semibold mb-2">
+          Preferred Messenger:
+        </h3>
+        <select
+          value={preferredMessenger}
+          onChange={(e) => setPreferredMessenger(e.target.value)}
+          className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+          required
+        >
+          <option value="" className="text-gray-400">
+            Select Messenger
+          </option>
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="Telegram">Telegram</option>
+          <option value="Messenger">Messenger</option>
+          <option value="Email">Email</option>
+        </select>
+      </div>
+    </div>
+
+    {/* reCAPTCHA */}
+    <div className="my-6">
+      <ReCAPTCHA
+        sitekey="6Ldl_K8qAAAAANAIIS5ZrbcDVCTDA-zizOWgH-Fc"
+        onChange={handleCaptchaChange}
+      />
+    </div>
+
+    <Button
+      hasWhiteStyle={true}
+      type="submit"
+      disabled={isLoading}
+      className={`w-full mt-4 py-3 px-6 text-white ${
+        isLoading
+          ? "bg-gray-400 cursor-not-allowed"
+          : "bg-sky-600 hover:bg-sky-700 border-none"
+      }`}
+    >
+      {isLoading ? (
+        <div className="flex items-center justify-center">
+          <svg
+            className="animate-spin h-5 w-5 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            ></circle>
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8v4l3.5-3.5L8 8V4a8 8 0 00-4 8h4z"
+            ></path>
+          </svg>
+          <span className="ml-2">Sending...</span>
+        </div>
+      ) : (
+        "Submit"
+      )}
+    </Button>
+  </form>
 
       )}
 

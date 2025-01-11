@@ -76,7 +76,7 @@ function AiContentCreation() {
             <AnimatedSection animation={fadeInUp}>
               <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8">
                 <Link to="/order" className="w-full sm:w-auto">
-                  <Button hasWhiteStyle={true}>Order</Button>
+                  <Button hasWhiteStyle={true}>Service Inquiry</Button>
                 </Link>
                 <div className="flex items-center gap-2 w-full sm:w-auto">
                   <Button hasWhiteStyle={true} onClick={(e) => { e.preventDefault(); handleWhatsApp(); }}>

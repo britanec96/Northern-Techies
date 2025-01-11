@@ -118,7 +118,7 @@ const Portfolio = () => {
           </h2>
           <AnimatedSection animation={fadeInUp}>
           <Link to="/order">
-            <Button hasWhiteStyle={true}>Consultation</Button>
+            <Button hasWhiteStyle={true}>Plan Your Project</Button>
           </Link>
           </AnimatedSection>
         </div>

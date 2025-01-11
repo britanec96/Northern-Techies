@@ -79,7 +79,7 @@ const WebDev = () => {
             </p>
             <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8">
               <Link to="/order" className="w-full sm:w-auto">
-                <Button hasWhiteStyle={true}>Order</Button>
+                <Button hasWhiteStyle={true}>Get Started</Button>
               </Link>
               <Button
                 className="flex items-center gap-2 w-full sm:w-auto"

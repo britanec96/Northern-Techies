@@ -73,7 +73,7 @@ function MotionGraphics() {
             <AnimatedSection animation={slideInRight}>
             <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8">
               <Link to="/order" className="w-full sm:w-auto">
-                <Button hasWhiteStyle={true}>Order</Button>
+                <Button hasWhiteStyle={true}>Get Started</Button>
               </Link>
               <Button
                 className="flex items-center gap-2 w-full sm:w-auto"
@@ -155,7 +155,7 @@ function MotionGraphics() {
               From just <span className='text-sky-500 text-3xl font-semibold'>£20</span>, bring your brand to life with dynamic animations!
             </motion.p>
             <Link to='/order'>
-              <Button hasWhiteStyle={true}>Order Page</Button>
+              <Button hasWhiteStyle={true}>Get Started</Button>
             </Link>
           </div>
         </section>
@@ -251,7 +251,7 @@ function MotionGraphics() {
                 Get professional advice<span className='text-sky-500 text-2xl md:text-3xl font-semibold'> RIGHT NOW!</span>
               </motion.p>
               <Link to="/order">
-                <Button hasWhiteStyle={true}>Order Page</Button>
+                <Button hasWhiteStyle={true}>Get Started</Button>
               </Link>
             </div>
           </div>

@@ -74,7 +74,7 @@ function ConsultationServices() {
                   viewport={{ once: false }}
                 >
                   <Link to="/order" className="w-full sm:w-auto">
-                    <Button hasWhiteStyle={true}>Order page</Button>
+                    <Button hasWhiteStyle={true}>Get Started</Button>
                   </Link>
                   <Button
                     className="flex items-center gap-2 w-full sm:w-auto"

@@ -52,7 +52,7 @@ const Pricing = () => {
             </motion.h2>
             <motion.div className="flex items-center justify-center gap-4" variants={fadeInUp}>
               <Link to="/order">
-                <Button hasWhiteStyle={true}>Order Page</Button>
+                <Button hasWhiteStyle={true}>Choose Services</Button>
               </Link>
 
               <a href={fileUrl} download="Northern_Techies_Services_and_Pricing_Guide.pdf">

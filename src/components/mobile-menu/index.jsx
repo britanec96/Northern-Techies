@@ -79,7 +79,7 @@ export const MobileMenu = ({ isOpen = false, onClose }) => {
           <div className="mt-auto pt-6">
             <Link to="/order">
               <Button hasWhiteStyle={true} className="w-full py-3">
-                Order
+              Get Started
               </Button>
             </Link>
           </div>
