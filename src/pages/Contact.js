@@ -40,7 +40,7 @@ const Contact = () => {
   
       const captchaData = await response.json();
       if (!captchaData.success) {
-        alert('CAPTCHA validation failed');
+        alert('Too many requests from this IP, please try again later.');
         return;
       }
     } catch (error) {

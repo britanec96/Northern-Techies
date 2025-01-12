@@ -14,16 +14,29 @@ import GraphicDesignPage from "./pages/GraphicDesign";
 import AiContentCreation from "./pages/ContentCreation";
 import MotionGraphics from "./pages/MotionGraphics";
 import ConsultationServices from "./pages/ConsultingServ";
-import ChatBotWrapper from "./components/chat-bot-script/chatbotwrapper";
 import ScrollToTopButton from "./components/ScrollToTopButton/";
 import ScrollToTop from "./components/ScrollToTopPages";
+import { useEffect } from "react";
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+      var s1 = document.createElement("script");
+      var s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6783c138af5bfec1dbea78dd/1ihdalhk5';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  }, []);
+
+
   return (
     <Router>
       <Wrapper>
         <Header />
-        <ChatBotWrapper />
         <ScrollToTopButton />
         <ScrollToTop />
         </Wrapper>

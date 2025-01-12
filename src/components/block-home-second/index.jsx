@@ -1,3 +1,4 @@
+/* global Tawk_API */ // Объявляем Tawk_API как глобальную переменную для ESLint
 import React, { useEffect, useState } from "react";
 import { Wrapper } from "../wrapper";
 import Slider from "react-slick";
@@ -64,6 +65,24 @@ const BlockHomeSecond = () => {
 
   const { ref: ref1, inView: inView1 } = useInView({ threshold: 0.1 });
 
+  useEffect(() => {
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+      var s1 = document.createElement("script");
+      var s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6783c138af5bfec1dbea78dd/1ihdalhk5';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  }, []);
+
+  const openChat = () => {
+    if (typeof Tawk_API !== "undefined" && Tawk_API.toggle() !== undefined) {
+      Tawk_API.toggle(); 
+    }
+  };
 
   return (
     <motion.div
@@ -73,10 +92,10 @@ const BlockHomeSecond = () => {
       animate={{ opacity: inView1 ? 1 : 0 }} 
       transition={{ duration: 0.8 }}
     >
-      <Wrapper>
+ <Wrapper>
         <Slider {...carouselSettings} className="feature-slider">
           {[
-            { title: "Software & Computer Assistance", description: "Having trouble with your software or hardware? We troubleshoot, repair, and optimize all types of devices.", icon: "💻", button: "Chat", onButtonClick: () => setIsChatOpen(true) },
+            { title: "Software & Computer Assistance", description: "Having trouble with your software or hardware? We troubleshoot, repair, and optimize all types of devices.", icon: "💻", button: "Chat", onButtonClick: openChat },
             { title: "Website Development", description: "We offer website design and development services that bring your vision online. Fully responsive, user-friendly, and optimized.", icon: "🚀", button: "Explore", onButtonClick: () => handleRedirect("/web-development") },
             { title: "Graphic Design", description: "We create visuals that make your business stand out, including logos, branding, and website graphics.", icon: "✏️", button: "Explore", onButtonClick: () => handleRedirect("/graphic-design") },
             { title: "Custom PC Builds", description: "We design and assemble custom PCs to meet your exact specifications, whether for gaming, work, or personal use.", icon: "⚙️", button: "Explore", onButtonClick: () => handleRedirect("/consultationservices") },
