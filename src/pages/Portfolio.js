@@ -117,7 +117,7 @@ const Portfolio = () => {
             <AnimatedSection animation={fadeInUp}>Explore our work showcasing creativity</AnimatedSection>
           </h2>
           <AnimatedSection animation={fadeInUp}>
-          <Link to="/order">
+          <Link to="/services/customize-your-order">
             <Button hasWhiteStyle={true}>Plan Your Project</Button>
           </Link>
           </AnimatedSection>

@@ -73,7 +73,7 @@ function ConsultationServices() {
                   whileInView="visible"
                   viewport={{ once: false }}
                 >
-                  <Link to="/order" className="w-full sm:w-auto">
+                  <Link to="/services/customize-your-order" className="w-full sm:w-auto">
                     <Button hasWhiteStyle={true}>Get Started</Button>
                   </Link>
                   <Button

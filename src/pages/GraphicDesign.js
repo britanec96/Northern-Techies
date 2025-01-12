@@ -78,7 +78,7 @@ function GraphicDesignPage() {
                 (Adobe Photoshop, Adobe Illustrator, Figma or Adobe XD, Blender 3D, Canva)
               </p>
               <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8">
-                <Link to="/order" className="w-full sm:w-auto">
+                <Link to="/services/customize-your-order" className="w-full sm:w-auto">
                   <Button hasWhiteStyle={true}>Get Started</Button>
                 </Link>
                 <Button

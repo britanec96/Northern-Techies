@@ -51,7 +51,7 @@ const Pricing = () => {
               Our price list provides transparent and competitive rates for all our services
             </motion.h2>
             <motion.div className="flex items-center justify-center gap-4" variants={fadeInUp}>
-              <Link to="/order">
+              <Link to="/services/customize-your-order">
                 <Button hasWhiteStyle={true}>Choose Services</Button>
               </Link>
 

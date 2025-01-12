@@ -78,7 +78,7 @@ const WebDev = () => {
               MERN Stack (MongoDB, Express.js, React, Node.js, Tailwind, Other Libraries and API)
             </p>
             <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8">
-              <Link to="/order" className="w-full sm:w-auto">
+              <Link to="/services/customize-your-order" className="w-full sm:w-auto">
                 <Button hasWhiteStyle={true}>Get Started</Button>
               </Link>
               <Button

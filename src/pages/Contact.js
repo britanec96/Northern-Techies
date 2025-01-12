@@ -135,7 +135,7 @@ const Contact = () => {
              whileInView="visible"
              variants={fadeInUp}
             className="">
-              <Link to="/about">
+              <Link to="about-us/about">
                 <Button hasWhiteStyle={true}>About Us</Button>
               </Link>
             </motion.div>

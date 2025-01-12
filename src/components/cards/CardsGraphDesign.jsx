@@ -63,7 +63,7 @@ const Card = ({ id, title, price, description, developmentTime, technologies, im
         </div>
       </div>
 
-      <Link to="/order">
+      <Link to="/services/customize-your-order">
         <Button hasWhiteStyle={true} className="mt-5">
         Request Details
         </Button>

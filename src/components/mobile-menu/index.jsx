@@ -66,18 +66,18 @@ export const MobileMenu = ({ isOpen = false, onClose }) => {
             </motion.div>
           </NavItem>
 
-          <Link to="/portfolio">
+          <Link to="/about-us/portfolio">
             <NavItem text="Portfolio" />
           </Link>
-          <Link to="/about">
+          <Link to="about-us/about">
             <NavItem text="About" />
           </Link>
-          <Link to="/contact">
+          <Link to="/about-us/contact-us">
             <NavItem text="Contact Us" />
           </Link>
 
           <div className="mt-auto pt-6">
-            <Link to="/order">
+            <Link to="/services/customize-your-order">
               <Button hasWhiteStyle={true} className="w-full py-3">
               Get Started
               </Button>

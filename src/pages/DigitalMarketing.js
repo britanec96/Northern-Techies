@@ -50,7 +50,7 @@ function DigMarketing() {
               TikTok, Instagram, Facebook
             </p>
             <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8 ">
-  <Link to="/order" className="w-full sm:w-auto">
+  <Link to="/services/customize-your-order" className="w-full sm:w-auto">
     <Button hasWhiteStyle={true}>Get Started</Button>
   </Link>
   <Button
@@ -100,7 +100,7 @@ function DigMarketing() {
          <h1 className='m-5 text-almost-white text-6xl font-extrabold '>Are you ready to go viral?</h1>
          <div className=''>
          <p className='m-5 text-gray-100 text-2xl'>Start or improve your way to popularity from just<span className='text-sky-500 text-3xl font-semibold'> £20!</span></p>
-         <Link to='/order'>
+         <Link to='/services/customize-your-order'>
          <Button
                   hasWhiteStyle={true}
                   className=""
@@ -219,7 +219,7 @@ alt="Online Store Showcase"
          <h1 className='m-5 text-almost-white text-6xl font-extrabold '>Get a free consultation</h1>
          <div className=''>
          <p className='m-5 text-gray-100 text-2xl'>Get professional advice right NOW!<span className='text-sky-500 text-3xl font-semibold'> £20!</span></p>
-         <Link to="/order">
+         <Link to="/services/customize-your-order">
          <Button
                   hasWhiteStyle={true}
                 >

@@ -82,9 +82,9 @@ export const Header = () => {
           <NavItem text="Services" onSelect={handleSelect} selected={selected}>
             <NavMenu items={COMPANY} onClose={() => setSelected('')} />
           </NavItem>
-          <NavItem text="Portfolio" to="/portfolio" />
-          <NavItem text="About" to="/about" />
-          <NavItem text="Contact Us" to="/contact" />
+          <NavItem text="Portfolio" to="/about-us/portfolio" />
+          <NavItem text="About" to="about-us/about" />
+          <NavItem text="Contact Us" to="/about-us/contact-us" />
         </motion.nav>
 
         {/* Кнопка заказа */}
@@ -94,7 +94,7 @@ export const Header = () => {
           transition={{ duration: 1, ease: 'easeInOut' }}
           className="hidden xl:flex"
         >
-          <Link to="/order" className="antialiased cursor-pointer tracking-widest">
+          <Link to="/services/customize-your-order" className="antialiased cursor-pointer tracking-widest">
             <Button hasWhiteStyle={true}>Get Started</Button>
           </Link>
         </motion.div>

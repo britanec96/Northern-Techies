@@ -2,22 +2,39 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Logo from '../../images/Logo.svg'
 
 export const Footer = () => {
   // Настроим хук useInView для отслеживания видимости каждого блока
   const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: false, threshold: 0.3 });
   const { ref: servicesRef, inView: servicesInView } = useInView({ triggerOnce: false, threshold: 0.3 });
   const { ref: contactRef, inView: contactInView } = useInView({ triggerOnce: false, threshold: 0.3 });
+  const { ref: logoRef, inView: logoInView } = useInView({ triggerOnce: false, threshold: 0.3 });
 
   return (
     <footer className="bg-gray-900 text-almost-white py-10">
       <div className="container mx-auto px-4">
-        <div className="flex justify-center mb-10">
-          <Link to="/" className='antialiased cursor-pointer tracking-widest'>
-            <h1 className="text-almost-white text-xl font-fira font-extrabold">{"<Northern>"}</h1>
-            <h1 className="text-sky-500 text-xl -mt-2 font-fira font-extrabold">{"</Techies>"}</h1>
-          </Link>
-        </div>
+
+{/* Логотип с анимацией появления */}
+<motion.div
+          ref={logoRef}
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: logoInView ? 1 : 0, y: logoInView ? 0 : -30 }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className="antialiased cursor-pointer tracking-widest"
+        >
+      <div className="flex justify-center items-center mb-8">
+        <Link to="/" className="group">
+          <div className="w-48 md:w-52">
+            <img 
+              src={Logo} 
+              alt="Company Logo" 
+              className="h-auto w-full object-contain transition-transform duration-200 group-hover:scale-105" 
+            />
+          </div>
+        </Link>
+      </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div
@@ -34,10 +51,10 @@ export const Footer = () => {
             </p>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link to="/about" className="hover:text-sky-500">About Us</Link>
+                <Link to="about-us/about" className="hover:text-sky-500">About Us</Link>
               </li>
               <li>
-                <Link to="/portfolio" className="hover:text-sky-500">Portfolio</Link>
+                <Link to="/about-us/portfolio" className="hover:text-sky-500">Portfolio</Link>
               </li>
             </ul>
           </motion.div>
@@ -52,16 +69,16 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/web-development" className="hover:text-sky-500">Web Development</Link>
+                <Link to="/services/web-development" className="hover:text-sky-500">Web Development</Link>
               </li>
               <li>
-                <Link to="/graphic-design" className="hover:text-sky-500">Graphic Design</Link>
+                <Link to="/services/graphic-design" className="hover:text-sky-500">Graphic Design</Link>
               </li>
               <li>
-                <Link to="/consultationservices" className="hover:text-sky-500">Consulting Services</Link>
+                <Link to="/services/consultation-services" className="hover:text-sky-500">Consulting Services</Link>
               </li>
               <li>
-                <Link to="/ai-content-creation" className="hover:text-sky-500">Content Creation</Link>
+                <Link to="/services/ai-content-creation" className="hover:text-sky-500">Content Creation</Link>
               </li>
             </ul>
           </motion.div>

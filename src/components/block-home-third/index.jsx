@@ -107,7 +107,7 @@ const BlockHomeThird = () => {
               Your dream of running an online shop is within reach! We’ve helped countless entrepreneurs bring their store ideas to life, from custom designs to seamless integrations. Join our happy clients, and get a quick overview of the steps and what you can expect by working with us.
             </motion.p>
             <div className="mt-6">
-              <Link to="/web-development">
+              <Link to="/services/web-development">
                 <Button hasWhiteStyle={true}>Let's Start</Button>
               </Link>
             </div>
@@ -196,7 +196,7 @@ const BlockHomeThird = () => {
               From simple business cards to social media designs, we create stylish, memorable solutions. Our designers help you stand out, whether it’s for personal branding or small business needs. Check out our portfolio and see how easy it is to update your look!
             </motion.p>
             <div className="mt-6">
-              <Link to="/portfolio">
+              <Link to="/about-us/portfolio">
                 <Button hasWhiteStyle={true}>Portfolio</Button>
               </Link>
             </div>

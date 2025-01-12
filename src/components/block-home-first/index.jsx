@@ -137,7 +137,7 @@ export const BlockHomeFirst = () => {
             EMAIL NOW
           </Button>
 
-          <Link to="/order" className="antialiased cursor-pointer tracking-widest">
+          <Link to="/services/customize-your-order" className="antialiased cursor-pointer tracking-widest">
             <Button className="text-sm font-bold bg-almost-white text-black" hasWhiteStyle={true}>
             Get Started
             </Button>

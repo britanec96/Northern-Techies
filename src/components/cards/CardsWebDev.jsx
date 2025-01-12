@@ -52,7 +52,7 @@ const Card = ({ title, price, description, developmentTime, technologies, image 
         <p className="mt-5"><span className="text-sky-500">Development time:</span> {developmentTime}</p>
         <p className="mt-5"><span className="text-sky-500">Technologies:</span> {technologies}</p>
       </div>
-  <Link to="/order">
+  <Link to="/services/customize-your-order">
     <Button hasWhiteStyle={true} className="mt-5">Request Details</Button>
   </Link>
 

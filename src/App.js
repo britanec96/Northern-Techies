@@ -42,17 +42,17 @@ const App = () => {
         </Wrapper>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/testimonials" element={<Testimonials/>} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/web-development" element={<WebDev />} />
-          <Route path="/graphic-design" element={<GraphicDesignPage />} />
-          <Route path="/ai-content-creation" element={<AiContentCreation />} />
-          <Route path="/motion-graphics" element={<MotionGraphics />} />
-          <Route path="/consultationservices" element={<ConsultationServices />} />
-          <Route path="/order" element={<Order />} />
+          <Route path="/about-us/about" element={<About />} />
+          <Route path="/about-us/reviews" element={<Testimonials/>} />
+          <Route path="/about-us/portfolio" element={<Portfolio />} />
+          <Route path="/about-us/contact-us" element={<Contact />} />
+          <Route path="/about-us/pricing" element={<Pricing />} />
+          <Route path="/services/web-development" element={<WebDev />} />
+          <Route path="/services/graphic-design" element={<GraphicDesignPage />} />
+          <Route path="/services/ai-content-creation" element={<AiContentCreation />} />
+          <Route path="/services/motion-graphics" element={<MotionGraphics />} />
+          <Route path="/services/consultation-services" element={<ConsultationServices />} />
+          <Route path="/services/customize-your-order" element={<Order />} />
           <Route path="/order" element={<Order />} />
           <Route path="/order" element={<Order />} />
         </Routes>

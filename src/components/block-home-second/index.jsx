@@ -96,10 +96,10 @@ const BlockHomeSecond = () => {
         <Slider {...carouselSettings} className="feature-slider">
           {[
             { title: "Software & Computer Assistance", description: "Having trouble with your software or hardware? We troubleshoot, repair, and optimize all types of devices.", icon: "💻", button: "Chat", onButtonClick: openChat },
-            { title: "Website Development", description: "We offer website design and development services that bring your vision online. Fully responsive, user-friendly, and optimized.", icon: "🚀", button: "Explore", onButtonClick: () => handleRedirect("/web-development") },
-            { title: "Graphic Design", description: "We create visuals that make your business stand out, including logos, branding, and website graphics.", icon: "✏️", button: "Explore", onButtonClick: () => handleRedirect("/graphic-design") },
-            { title: "Custom PC Builds", description: "We design and assemble custom PCs to meet your exact specifications, whether for gaming, work, or personal use.", icon: "⚙️", button: "Explore", onButtonClick: () => handleRedirect("/consultationservices") },
-            { title: "AI Content Creation", description: "Effortlessly generate high-quality content using artificial intelligence for blogs, social media updates, and more.", icon: "🤖", button: "Explore", onButtonClick: () => handleRedirect("/ai-content-creation") },
+            { title: "Website Development", description: "We offer website design and development services that bring your vision online. Fully responsive, user-friendly, and optimized.", icon: "🚀", button: "Explore", onButtonClick: () => handleRedirect("/services/web-development") },
+            { title: "Graphic Design", description: "We create visuals that make your business stand out, including logos, branding, and website graphics.", icon: "✏️", button: "Explore", onButtonClick: () => handleRedirect("/services/graphic-design") },
+            { title: "Custom PC Builds", description: "We design and assemble custom PCs to meet your exact specifications, whether for gaming, work, or personal use.", icon: "⚙️", button: "Explore", onButtonClick: () => handleRedirect("/services/consultation-services") },
+            { title: "AI Content Creation", description: "Effortlessly generate high-quality content using artificial intelligence for blogs, social media updates, and more.", icon: "🤖", button: "Explore", onButtonClick: () => handleRedirect("/services/ai-content-creation") },
           ].map((card, index) => {
             // Применяем уникальную анимацию к каждому элементу
             const animation = getAnimation(index);
