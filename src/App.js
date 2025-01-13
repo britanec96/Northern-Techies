@@ -17,6 +17,7 @@ import ConsultationServices from "./pages/ConsultingServ";
 import ScrollToTopButton from "./components/ScrollToTopButton/";
 import ScrollToTop from "./components/ScrollToTopPages";
 import { useEffect } from "react";
+import DiscountModal from "./components/modal-windows/DiscountModal";
 
 const App = () => {
   useEffect(() => {
@@ -37,6 +38,7 @@ const App = () => {
     <Router>
       <Wrapper>
         <Header />
+        <DiscountModal />
         <ScrollToTopButton />
         <ScrollToTop />
         </Wrapper>
