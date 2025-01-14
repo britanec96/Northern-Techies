@@ -7,16 +7,22 @@ const DiscountModal = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    promocode: "LUCKY2025"
   });
-  const [status, setStatus] = useState(""); // Статус отправки
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
-    const hasVisited = localStorage.getItem("hasVisited");
-    if (!hasVisited) {
+    if (!localStorage.getItem("hasVisited")) {
       setShowModal(true);
       localStorage.setItem("hasVisited", "true");
     }
   }, []);
+
+  useEffect(() => {
+    if (showModal) {
+      setIsOpen(true);
+    }
+  }, [showModal]);
 
   const closeModal = () => {
     setIsOpen(false);
@@ -38,10 +44,12 @@ const DiscountModal = () => {
         "Df4zcv3Cqe2LtutdW"
       );
       setStatus("Success! Your discount request has been sent.");
-      setFormData({ name: "", email: "" }); // Очистка формы
+      setFormData({ name: "", email: "", promocode:""
+    
+       });
       setTimeout(() => {
-        setIsOpen(false); // Закрытие модального окна через 3 секунды
-        setStatus(""); // Очистка статуса
+        setIsOpen(false);
+        setStatus("");
       }, 3000);
     } catch (error) {
       console.error("Error sending email: ", error);
@@ -68,7 +76,7 @@ const DiscountModal = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your Name"
-                className="w-full p-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
+                className="w-full p-3 border text-almost-white bg-gray-600 border-gray-400 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
                 required
               />
               <input
@@ -77,7 +85,16 @@ const DiscountModal = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your Email"
-                className="w-full p-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
+                className="w-full p-3 border text-almost-white bg-gray-600 border-gray-400 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
+                required
+              />
+                <input
+                type="text"
+                name="promocode"
+                value={formData.promocode}
+                onChange={handleChange}
+                placeholder="Promocode"
+                className="w-full p-3 border text-almost-white bg-gray-600 border-gray-400 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
                 required
               />
               <button
@@ -90,9 +107,7 @@ const DiscountModal = () => {
             {status && (
               <p
                 className={`text-center mt-4 ${
-                  status.startsWith("Success")
-                    ? "text-green-500"
-                    : "text-red-500"
+                  status.includes("Success") ? "text-sky-500" : "text-red-500"
                 }`}
               >
                 {status}
