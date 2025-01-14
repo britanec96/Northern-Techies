@@ -99,7 +99,7 @@ const ReviewsSection = () => {
         viewport={{ once: false, amount: 0.3 }}
         variants={fadeInUp}
       >
-        <div className="w-60 h-px bg-gray-600 opacity-50"></div>
+        <div className="w-60 h-px bg-gray-900 opacity-50"></div>
       </motion.div>
 
       {/* Карусель отзывов */}

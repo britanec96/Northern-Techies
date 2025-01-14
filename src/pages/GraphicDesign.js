@@ -74,7 +74,7 @@ function GraphicDesignPage() {
               <h1 className="text-5xl font-bold text-almost-white">
                 Our the best <span className="text-yellow-500">Graphic Designers</span> for any job
               </h1>
-              <p className="mt-6 text-xl font-fira text-gray-300">
+              <p className="mt-6 text-xl font-fira text-gray-400">
                 (Adobe Photoshop, Adobe Illustrator, Figma or Adobe XD, Blender 3D, Canva)
               </p>
               <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8">
@@ -105,7 +105,7 @@ function GraphicDesignPage() {
                 </Button>
               </div>
             </div>
-            <div className="w-full h-px bg-gray-200 my-12 opacity-20"></div>
+            <div className="w-full h-px bg-gray-400 my-12 opacity-20"></div>
             <AnimatedSection animation={slideInRight}>
               <div className="w-full md:flex md:items-center justify-between mt-12">
                 <p className="text-almost-white font-bold text-center md:text-left text-xl mt-7 mb-4 md:mb-0">
@@ -133,7 +133,7 @@ function GraphicDesignPage() {
           <h1 className="m-5 text-almost-white text-6xl font-extrabold">
             Ready to elevate your brand?
           </h1>
-          <p className="m-5 text-gray-100 text-2xl">
+          <p className="m-5 text-almost-white text-2xl">
             Get started with a custom graphic design package from just
             <span className="text-sky-500 text-3xl font-semibold"> £10!</span>
           </p>
@@ -145,7 +145,7 @@ function GraphicDesignPage() {
 
       <Wrapper>
         <section>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-400">
             <AnimatedSection animation={fadeInUp}>
               <div className="flex flex-col items-center">
                 <img
@@ -155,7 +155,7 @@ function GraphicDesignPage() {
                   loading="lazy"
                 />
                 <h1 className="font-bold text-lg text-almost-white">What is Graphic Design?</h1>
-                <p className="m-5 text-gray-300">
+                <p className="m-5 text-gray-400">
                   Graphic design is the art of visual communication that combines text and images to convey ideas and
                   messages effectively.
                 </p>
@@ -170,7 +170,7 @@ function GraphicDesignPage() {
                   loading="lazy"
                 />
                 <h1 className="font-bold text-lg text-almost-white">Why Choose Us for Graphic Design?</h1>
-                <p className="m-5 text-gray-300">
+                <p className="m-5 text-gray-400">
                   At our agency, we offer flexible budget plans tailored for everyone—from startups to established
                   businesses.
                 </p>

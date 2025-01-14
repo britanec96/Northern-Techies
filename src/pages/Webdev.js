@@ -74,7 +74,7 @@ const WebDev = () => {
             <h1 className="text-5xl font-bold text-almost-white">
               Our expert <span className="text-sky-500">Web Developers</span> for any job
             </h1>
-            <p className="mt-6 text-xl font-fira text-gray-300">
+            <p className="mt-6 text-xl font-fira text-gray-400">
               MERN Stack (MongoDB, Express.js, React, Node.js, Tailwind, Other Libraries and API)
             </p>
             <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8">
@@ -99,7 +99,7 @@ const WebDev = () => {
               </Button>
             </div>
           </div>
-          <div className="w-full h-px bg-gray-200 my-12 opacity-20"></div>
+          <div className="w-full h-px bg-gray-400 my-12 opacity-20"></div>
 
 
           <AnimatedSection animation={slideInRight}>
@@ -132,7 +132,7 @@ const WebDev = () => {
           className="bg-gray-900 p-5 text-center relative"
         >
           <h1 className="m-5 text-almost-white text-6xl font-extrabold">Ready to grow?</h1>
-          <p className="m-5 text-gray-100 text-2xl">
+          <p className="m-5 text-almost-white text-2xl">
             Start your website with us from just
             <span className="text-sky-500 text-3xl font-semibold"> £140!</span>
           </p>
@@ -146,7 +146,7 @@ const WebDev = () => {
       <Wrapper>
         <section>
           <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-300"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-400"
           >
             <AnimatedSection animation={fadeInUp}>
             <div className="flex flex-col items-center">
@@ -157,7 +157,7 @@ const WebDev = () => {
                 loading="lazy"
               />
               <h1 className="font-bold text-lg text-almost-white">What is Web Development?</h1>
-              <p className="m-5 text-gray-300">
+              <p className="m-5 text-gray-400">
                 Web development is the process of designing and building websites. Web developers use
                 programming languages, software, and tools to create everything you see on a website,
                 from text and images to videos, apps, and games.
@@ -173,7 +173,7 @@ const WebDev = () => {
                 loading="lazy"
               />
               <h1 className="font-bold text-lg text-almost-white">Why Choose Us for Your Website Development?</h1>
-              <p className="m-5 text-gray-300">
+              <p className="m-5 text-gray-400">
                 We bring creativity, technical expertise, and personalized solutions to build websites
                 that perform exceptionally. Our team ensures responsive, SEO-optimized websites
                 tailored to your business needs.

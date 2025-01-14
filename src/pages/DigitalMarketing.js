@@ -46,7 +46,7 @@ function DigMarketing() {
             <h1 className="text-5xl font-bold text-white ">
               Our expert <span className="text-red-500">Marketers</span> for Boost your social media
             </h1>
-            <p className="mt-6 text-xl font-fira text-gray-300 ">
+            <p className="mt-6 text-xl font-fira text-gray-400 ">
               TikTok, Instagram, Facebook
             </p>
             <div className="flex sm:flex-wrap md:flex-nowrap gap-5 mt-8 ">
@@ -77,7 +77,7 @@ function DigMarketing() {
   </Button>
 </div>
           </div>
-          <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
+          <div className="w-full h-px bg-gray-400 my-12 opacity-25"></div>
         </div>
         <div className="flex justify-between mt-12">
           <p className="text-almost-white font-bold text-xl mt-7 ">We work with the most popular social media:</p>
@@ -99,7 +99,7 @@ function DigMarketing() {
         <div className='bg-gray-900 p-5 text-center relative'>
          <h1 className='m-5 text-almost-white text-6xl font-extrabold '>Are you ready to go viral?</h1>
          <div className=''>
-         <p className='m-5 text-gray-100 text-2xl'>Start or improve your way to popularity from just<span className='text-sky-500 text-3xl font-semibold'> £20!</span></p>
+         <p className='m-5 text-almost-white text-2xl'>Start or improve your way to popularity from just<span className='text-sky-500 text-3xl font-semibold'> £20!</span></p>
          <Link to='/services/customize-your-order'>
          <Button
                   hasWhiteStyle={true}
@@ -118,16 +118,16 @@ function DigMarketing() {
 
     <Wrapper>
     <section>
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-300'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-400'>
     <div className='flex flex-col items-center'>
     <img className="w-1/2 h-auto m-10 " src={MarketingIcon} alt="Web Icon" loading="lazy" />
           <h1 className='font-bold text-lg text-almost-white '>What is Digital Marketing?</h1>
-          <p className='m-5 text-gray-300 '>Digital marketing for social media involves creating and implementing strategies to promote brands, products, or services across social media platforms. Digital marketers use various tools, techniques, and content—such as posts, ads, videos, and stories—to engage target audiences, increase brand visibility, and drive user interaction.</p>
+          <p className='m-5 text-gray-400 '>Digital marketing for social media involves creating and implementing strategies to promote brands, products, or services across social media platforms. Digital marketers use various tools, techniques, and content—such as posts, ads, videos, and stories—to engage target audiences, increase brand visibility, and drive user interaction.</p>
         </div>
         <div className='flex flex-col items-center'>
         <img className="w-1/2 h-auto m-10 " src={WhyChooseUsIcon} alt="Web Icon" loading="lazy" />
         <h1 className='font-bold text-lg text-almost-white '>Why Choose Us for Boost you Social?</h1>
-          <p className='m-5 text-gray-300 '>We bring a mix of creativity, strategic expertise, and personalized solutions to craft digital marketing campaigns that engage and convert. Our team specializes in building targeted, data-driven social media strategies and content that boost brand visibility, foster customer relationships, and drive measurable results. </p>
+          <p className='m-5 text-gray-400 '>We bring a mix of creativity, strategic expertise, and personalized solutions to craft digital marketing campaigns that engage and convert. Our team specializes in building targeted, data-driven social media strategies and content that boost brand visibility, foster customer relationships, and drive measurable results. </p>
         </div>
       </div>
       </section>
@@ -144,7 +144,7 @@ function DigMarketing() {
 <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">
 Want to be a blogger?
 </h3>
-<p className="text-lg text-gray-300">
+<p className="text-lg text-gray-400">
 Want to be a blogger but not sure how to create engaging content or post effectively? We’ll develop a custom content strategy and guide you on how to create captivating posts for your audience.
 </p>
 </div>
@@ -178,7 +178,7 @@ alt="Online Store Showcase"
 <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">
 Need to refresh and revitalize your brand on social media?
 </h3>
-<p className="text-lg text-gray-300">
+<p className="text-lg text-gray-400">
 Our team will handle everything from posting schedules to engagement strategies, so your brand stays active and relevant.
 </p>
 
@@ -200,7 +200,7 @@ Our team will handle everything from posting schedules to engagement strategies,
 <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">
 Analytics & Reporting
 </h3>
-<p className="text-lg text-gray-300">
+<p className="text-lg text-gray-400">
 Want to know what’s working and what’s not? We provide in-depth analytics and reports, helping you track your performance and adjust strategies for better results.
 </p>
 </div>
@@ -218,7 +218,7 @@ alt="Online Store Showcase"
         <div className='bg-gray-900 p-5 my-5 rounded-lg text-center relative'>
          <h1 className='m-5 text-almost-white text-6xl font-extrabold '>Get a free consultation</h1>
          <div className=''>
-         <p className='m-5 text-gray-100 text-2xl'>Get professional advice right NOW!<span className='text-sky-500 text-3xl font-semibold'> £20!</span></p>
+         <p className='m-5 text-almost-white text-2xl'>Get professional advice right NOW!<span className='text-sky-500 text-3xl font-semibold'> £20!</span></p>
          <Link to="/services/customize-your-order">
          <Button
                   hasWhiteStyle={true}

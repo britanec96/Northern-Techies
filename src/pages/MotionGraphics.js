@@ -66,7 +66,7 @@ function MotionGraphics() {
               <h1 className="text-5xl font-bold text-almost-white">
                 Professional <span className="text-purple-500">Motion Designers</span> for All Your Needs
               </h1>
-              <p className="mt-6 text-xl font-fira text-gray-300">
+              <p className="mt-6 text-xl font-fira text-gray-400">
                 Our team of skilled motion designers brings your ideas to life through stunning intros, animations, and engaging content.
               </p>
             </AnimatedSection>
@@ -100,7 +100,7 @@ function MotionGraphics() {
             </div>
             </AnimatedSection>
           </div>
-          <div className="w-full h-px bg-gray-200 my-12 opacity-20"></div>
+          <div className="w-full h-px bg-gray-400 my-12 opacity-20"></div>
           <div className="w-full md:flex sm:block justify-between items-center">
             <AnimatedSection animation={fadeInUp}>
               <p className="text-almost-white font-bold text-center md:text-left text-xl mt-7 mb-4 md:mb-0">
@@ -151,7 +151,7 @@ function MotionGraphics() {
             Elevate Your Brand with Motion Design
           </motion.h1>
           <div>
-            <motion.p className='m-5 text-gray-100 text-2xl'>
+            <motion.p className='m-5 text-almost-white text-2xl'>
               From just <span className='text-sky-500 text-3xl font-semibold'>£20</span>, bring your brand to life with dynamic animations!
             </motion.p>
             <Link to='/services/customize-your-order'>
@@ -164,7 +164,7 @@ function MotionGraphics() {
       <Wrapper>
         <AnimatedSection animation={slideInRight}>
           <section>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-300'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-400'>
               <div className='flex flex-col items-center'>
                 <motion.img
                   className="w-1/2 h-auto m-10"
@@ -176,7 +176,7 @@ function MotionGraphics() {
                 <motion.h1 className='font-bold text-lg text-almost-white'>
                   What is Motion Design?
                 </motion.h1>
-                <p className='m-5 text-gray-300'>
+                <p className='m-5 text-gray-400'>
                   Motion design is a creative process that brings graphics to life using animation and visual effects. Our motion designers specialize in creating captivating intros, explainer videos, social media content, and much more.
                 </p>
               </div>
@@ -191,7 +191,7 @@ function MotionGraphics() {
                 <motion.h1 className='font-bold text-lg text-almost-white'>
                   Why Choose Us for Motion Design?
                 </motion.h1>
-                <p className='m-5 text-gray-300'>
+                <p className='m-5 text-gray-400'>
                   We combine technical expertise and artistic vision to create animations that engage and inspire. Our team is committed to delivering polished, impactful designs tailored to your audience and brand.
                 </p>
               </div>
@@ -247,7 +247,7 @@ function MotionGraphics() {
               Get a free consultation
             </motion.h1>
             <div>
-              <motion.p className='m-5 text-gray-100 text-xl md:text-2xl'>
+              <motion.p className='m-5 text-almost-white text-xl md:text-2xl'>
                 Get professional advice<span className='text-sky-500 text-2xl md:text-3xl font-semibold'> RIGHT NOW!</span>
               </motion.p>
               <Link to="/services/customize-your-order">

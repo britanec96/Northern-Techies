@@ -46,7 +46,7 @@ export const Header = () => {
     <>
       <header
         className={`p-3 rounded-lg fixed container top-0 flex items-center justify-between my-4 z-50 transition-colors duration-300 ${
-          isScrolled ? 'bg-gray-800 bg-opacity-80' : 'bg-gray-800 bg-opacity-30'
+          isScrolled ? 'bg-gray-900 bg-opacity-80' : 'bg-gray-900 bg-opacity-30'
         }`}
       >
         {/* Логотип с анимацией появления */}

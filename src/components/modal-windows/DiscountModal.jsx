@@ -53,11 +53,11 @@ const DiscountModal = () => {
     <>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-gray-800 rounded-lg p-6 shadow-lg w-11/12 max-w-md">
-            <h2 className="text-3xl font-bold text-center text-gray-200 mb-4">
+          <div className="bg-gray-900 rounded-lg p-6 shadow-lg w-11/12 max-w-md">
+            <h2 className="text-3xl font-bold text-center text-gray-400 mb-4">
               Get 30% Off on Our Services!
             </h2>
-            <p className="text-center text-gray-300 mb-6">
+            <p className="text-center text-gray-400 mb-6">
               Exclusive offer for first-time visitors. Enter your details below
               to claim your discount.
             </p>
@@ -68,7 +68,7 @@ const DiscountModal = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your Name"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
+                className="w-full p-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
                 required
               />
               <input
@@ -77,12 +77,12 @@ const DiscountModal = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your Email"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
+                className="w-full p-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none"
                 required
               />
               <button
                 type="submit"
-                className="w-full bg-sky-500 text-white py-3 rounded-lg hover:bg-sky-600 transition-colors"
+                className="w-full bg-sky-500 text-white py-3 rounded-lg hover:bg-sky-500 transition-colors"
               >
                 Claim Offer
               </button>

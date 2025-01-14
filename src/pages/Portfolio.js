@@ -125,7 +125,7 @@ const Portfolio = () => {
 
       </div>
       <div className="flex justify-center items-center mb-10">
-        <div className="w-60 h-px bg-gray-600 opacity-50"></div>
+        <div className="w-60 h-px bg-gray-900 opacity-50"></div>
       </div>
 
       <section className="bg-almost-black text-white mt-10">
@@ -136,7 +136,7 @@ const Portfolio = () => {
             </h1>
             <Slider {...sliderSettings}>
               {section.content.map((project, idx) => (
-                <div key={idx} className="bg-gray-800 shadow-lg overflow-hidden group">
+                <div key={idx} className="bg-gray-900 shadow-lg overflow-hidden group">
                   {project.image ? (
                     <div className="overflow-hidden cursor-pointer opacity-50 hover:opacity-100">
                       <img
@@ -176,7 +176,7 @@ const Portfolio = () => {
               className="max-w-full max-h-screen rounded-lg"
             />
             <button
-              className="absolute top-4 right-4 bg-gray-800 text-white p-2 rounded-full"
+              className="absolute top-4 right-4 bg-gray-900 text-white p-2 rounded-full"
               onClick={closeModal}
             >
               ✕

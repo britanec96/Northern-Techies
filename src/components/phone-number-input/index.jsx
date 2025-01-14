@@ -135,7 +135,7 @@ function PhoneNumberInput({ value, onChange }) {
           </div>
         ),
       }}
-      className="w-full px-6 py-4 border-2 border-transparent focus:border-sky-500 rounded-lg bg-gray-700 text-almost-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out"
+      className="w-full px-6 py-4 border-2 border-transparent focus:border-sky-500 rounded-lg bg-gray-900 text-almost-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out"
       classNamePrefix="react-select"
       placeholder="Select Country"
       styles={{
@@ -180,7 +180,7 @@ function PhoneNumberInput({ value, onChange }) {
       onChange={handlePhoneChange}
       onBlur={handleBlur}
       placeholder="Phone number"
-      className="w-full pl-6 py-4 bg-gray-700 text-white border-2 border-transparent focus:border-sky-500 rounded-lg focus:text-sky-500 text-xl placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out"
+      className="w-full pl-6 py-4 bg-gray-900 text-white border-2 border-transparent focus:border-sky-500 rounded-lg focus:text-sky-500 text-xl placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out"
       required
     />
   </div>

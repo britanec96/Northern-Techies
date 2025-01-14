@@ -64,7 +64,7 @@ function ServiceOrderForm() {
           <select
             value={term} // Используем отдельное состояние для срока
             onChange={(e) => setTerm(e.target.value)}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-lg"
+            className="w-full mt-1 p-2 border border-gray-400 rounded-lg"
             required
           >
             <option value="">Select...</option>
@@ -85,7 +85,7 @@ function ServiceOrderForm() {
               name="inputname"
               value={name} // Используем состояние для имени
               onChange={(e) => setName(e.target.value)} // Обновляем состояние при вводе
-              className="block w-full rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800"
+              className="block w-full rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-900"
               required // Делаем поле обязательным
             />
           </div>
@@ -101,7 +101,7 @@ function ServiceOrderForm() {
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-lg"
+            className="w-full mt-1 p-2 border border-gray-400 rounded-lg"
             rows="4"
             placeholder="Type something.."
           ></textarea>
@@ -119,7 +119,7 @@ function ServiceOrderForm() {
             <span
               className="inline-block w-5 h-5 border-2 border-almost-white relative cursor-pointer 
                 after:content-[''] after:absolute after:top-2/4 after:left-2/4 after:-translate-x-1/2 
-                after:-translate-y-1/2 after:w-[10px] after:h-[10px] after:bg-sky-600 after:rounded-[2px] 
+                after:-translate-y-1/2 after:w-[10px] after:h-[10px] after:bg-sky-500 after:rounded-[2px] 
                 after:opacity-0 peer-checked:after:opacity-100"
             ></span>
             <p className="inline-flex text-almost-white ml-4">I agree to the &nbsp; <a className="text-sky-500 underline cursor-pointer">terms</a> &nbsp; of personal data processing (Your data is protected)</p>

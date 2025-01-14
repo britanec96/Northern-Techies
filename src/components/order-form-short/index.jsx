@@ -62,7 +62,7 @@ function ServiceOrderFormShort() {
             name="textarea"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full border-2 mt-1 p-2 border-gray-300 rounded-lg"
+            className="w-full border-2 mt-1 p-2 border-gray-400 rounded-lg"
             rows="4"
             placeholder="Type something.."
           ></textarea>
@@ -80,7 +80,7 @@ function ServiceOrderFormShort() {
     <span
       className="inline-block w-5 h-5 border-2 border-almost-black relative cursor-pointer 
         after:content-[''] after:absolute after:top-2/4 after:left-2/4 after:-translate-x-1/2 
-        after:-translate-y-1/2 after:w-[10px] after:h-[10px] after:bg-sky-600 after:rounded-[2px] 
+        after:-translate-y-1/2 after:w-[10px] after:h-[10px] after:bg-sky-500 after:rounded-[2px] 
         after:opacity-0 peer-checked:after:opacity-100"
     ></span>
     <p className="inline-flex text-almost-black ml-4">

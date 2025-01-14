@@ -99,7 +99,7 @@ const BlockHomeThird = () => {
               Thinking of Starting an Online Store?
             </motion.h3>
             <motion.p 
-              className="text-lg text-gray-300"
+              className="text-lg text-gray-400"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: inView4 ? 1 : 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -134,7 +134,7 @@ const BlockHomeThird = () => {
               Computer issues?
             </motion.h3>
             <motion.p 
-              className="text-lg text-gray-300"
+              className="text-lg text-gray-400"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: inView5 ? 1 : 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -188,7 +188,7 @@ const BlockHomeThird = () => {
               Want to Refresh Your Existing Design or Your Business’s Image?
             </motion.h3>
             <motion.p 
-              className="text-lg text-gray-300"
+              className="text-lg text-gray-400"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: inView6 ? 1 : 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -216,7 +216,7 @@ const BlockHomeThird = () => {
             Get a free consultation
           </h1>
           <div className="">
-            <p className="m-5 text-gray-100 md:text-2xl sm:text-xl">Get professional help right{' '}
+            <p className="m-5 text-almost-white md:text-2xl sm:text-xl">Get professional help right{' '}
               <span className="text-sky-500 text-3xl font-semibold">NOW!</span>
             </p>
             <motion.div

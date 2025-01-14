@@ -536,23 +536,23 @@ const Order = () => {
   
 
   return (
-    <div className="bg-gray-900 text-gray-100 min-h-screen pt-20">
+    <div className="bg-gray-900 text-almost-white min-h-screen pt-20">
     <Wrapper>
     <div className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 xl:px-8">
-  <div className="w-full h-full bg-gradient-to-b from-sky-500 via-blue-600 to-indigo-800"></div>
+  <div className="w-full h-full bg-gradient-to-b from-sky-500 via-sky-600 to-indigo-800"></div>
 
 
 
   {/* Контейнер с содержимым */}
   <AnimatedSection animation={fadeInUp}>
-  <div className="bg-gradient-to-r from-sky-600 to-blue-600 p-12 rounded-3xl shadow-2xl mt-10 max-w-4xl mx-auto transform hover:scale-105 transition-transform duration-500">
+  <div className="bg-gradient-to-r from-sky-500 to-sky-500 p-12 rounded-3xl shadow-2xl mt-10 max-w-4xl mx-auto transform hover:scale-105 transition-transform duration-500">
     {/* Заголовок */}
     <h1 className="sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-      Choose the Best <span className="text-sky-300">Solution</span>
+      Choose the Best <span className="text-sky-700">Solution</span>
     </h1>
 
     {/* Описание */}
-    <p className="md:text-xl sm:text-sm text-gray-200 mb-8 leading-relaxed">
+    <p className="md:text-xl sm:text-sm text-gray-800 mb-8 leading-relaxed">
       Customize your order and let us bring your vision to life with stunning designs and innovative solutions tailored just for you!
     </p>
 
@@ -562,7 +562,7 @@ const Order = () => {
         onClick={() => {
           getStartedButton(null);
         }}
-      className="w-64 h-14 text-lg bg-white font-extrabold text-sky-600 rounded-full hover:bg-blue-100 transition duration-300">
+      className="w-64 h-14 text-lg bg-white font-extrabold text-sky-500 rounded-full hover:bg-blue-100 transition duration-300">
         Customize
       </button>
     </div>
@@ -614,18 +614,18 @@ const Order = () => {
         key={option.name}
         onClick={() => handleSubOptionClick(option)}
         className={`bg-gradient-to-br from-gray-800 to-gray-900 p-4 mb-5 rounded-lg shadow-lg text-center cursor-pointer transition-transform transform hover:scale-105${
-          selectedSubOption === option.name ? "bg-gradient-to-br from-sky-500 via-sky-800 to-sky-700" : ""
+          selectedSubOption === option.name ? "bg-gradient-to-br from-sky-500 via-sky-500 to-sky-700" : ""
         }`}
       >
         <i
           className={`${option.subicon} text-2xl mb-2 block ${
-            selectedSubOption === option.name ? "text-gray-300" : "text-sky-500"
+            selectedSubOption === option.name ? "text-gray-600" : "text-sky-500"
           }`}
         ></i>
         <h3 className="font-bold text-lg mb-1">{option.name}</h3>
         <p
   className={`text-sm ${
-    selectedSubOption === option.name ? "text-gray-400" : "text-sky-500"
+    selectedSubOption === option.name ? "text-gray-200" : "text-sky-500"
   }`}
 >
   {option.shortDescription}
@@ -652,7 +652,7 @@ const Order = () => {
         onClick={() => handleNextSubOptionClick(option.name)}
         className={`relative group bg-gradient-to-br from-gray-800 to-gray-900 p-6 mb-7 rounded-xl shadow-lg text-center transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer ${
           selectedNextSubOption === option.name
-            ? "bg-gradient-to-br from-sky-500 via-sky-800 to-sky-700 text-white"
+            ? "bg-gradient-to-br from-sky-500 via-sky-500 to-sky-700 text-white"
             : ""
         }`}
       >
@@ -665,10 +665,10 @@ const Order = () => {
         </h3>
         <p
           className={`text-sm mt-2 ${
-            selectedNextSubOption === option.name ? "text-gray-300" : "text-sky-500"
+            selectedNextSubOption === option.name ? "text-gray-400" : "text-sky-500"
           }`}
         >
-          <span className="block text-gray-400 text-md font-light mt-2">{option.description}</span>
+          <span className="block text-gray-200 text-md font-light mt-2">{option.description}</span>
           <span className="block text-yellow-500 text-xl font-extralight mt-2">{option.price}</span>
         </p>
       </div>
@@ -682,7 +682,7 @@ const Order = () => {
   <form
     id="targetElementThird"
     onSubmit={handleSubmit}
-    className="bg-gradient-to-b from-gray-800 to-gray-900 xl:p-7 md:p-6 sm:p-4 rounded-2xl shadow-2xl transform transition-transform hover:scale-105 max-w-screen mx-auto"
+    className="bg-gradient-to-b from-gray-800 to-gray-900 xl:p-7 md:p-6 sm:p-4 rounded-2xl shadow-2xl max-w-screen mx-auto"
   >
     <h2 className="text-sky-500 text-2xl md:text-4xl font-extrabold mb-6 text-center">
       Complete Your Order
@@ -694,7 +694,7 @@ const Order = () => {
         value={formData.name}
         onChange={handleInputChange}
         placeholder="Your Name"
-        className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+        className="w-full bg-gray-900 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
         required
       />
       <input
@@ -703,7 +703,7 @@ const Order = () => {
         value={formData.email}
         onChange={handleInputChange}
         placeholder="Your Email"
-        className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+        className="w-full bg-gray-900 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
         required
       />
       <input
@@ -712,7 +712,7 @@ const Order = () => {
         value={formData.phone}
         onChange={handleInputChange}
         placeholder="Your Phone"
-        className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+        className="w-full bg-gray-900 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
         required
       />
       <textarea
@@ -720,18 +720,18 @@ const Order = () => {
         value={formData.comments}
         onChange={handleInputChange}
         placeholder="Additional Comments"
-        className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+        className="w-full bg-gray-900 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
         rows={4}
       ></textarea>
 
       <div>
-        <h3 className="text-lg text-gray-300 font-semibold mb-2">
+        <h3 className="text-lg text-gray-400 font-semibold mb-2">
           Preferred Language:
         </h3>
         <select
           value={preferredLanguage}
           onChange={(e) => setPreferredLanguage(e.target.value)}
-          className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+          className="w-full bg-gray-900 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
           required
         >
           <option value="" className="text-gray-400">
@@ -743,13 +743,13 @@ const Order = () => {
       </div>
 
       <div>
-        <h3 className="text-lg text-gray-300 font-semibold mb-2">
+        <h3 className="text-lg text-gray-400 font-semibold mb-2">
           Preferred Messenger:
         </h3>
         <select
           value={preferredMessenger}
           onChange={(e) => setPreferredMessenger(e.target.value)}
-          className="w-full bg-gray-700 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
+          className="w-full bg-gray-900 text-white p-4 rounded-xl outline-none focus:ring-4 focus:ring-sky-500 transition-all"
           required
         >
           <option value="" className="text-gray-400">
@@ -778,7 +778,7 @@ const Order = () => {
       className={`w-full mt-4 py-3 px-6 text-white ${
         isLoading
           ? "bg-gray-400 cursor-not-allowed"
-          : "bg-sky-600 hover:bg-sky-700 border-none"
+          : "bg-sky-500 hover:bg-sky-700 border-none"
       }`}
     >
       {isLoading ? (

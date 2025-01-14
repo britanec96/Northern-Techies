@@ -80,7 +80,7 @@ export const BlockHomeFirst = () => {
                 repeat={Infinity}
                 className="text-sky-500"
               />services starting from £10
-              <span className="block my-7 p-2 px-3 rounded-md bg-gray-800 bg-opacity-40 text-sky-500 font-thin text-base md:text-xl">
+              <span className="block my-7 p-2 px-3 rounded-md bg-gray-900 bg-opacity-40 text-sky-500 font-thin text-base md:text-xl">
                 At Northern Techies, our mission is to make IT and technology accessible to everyone.
               </span>
             </h1>

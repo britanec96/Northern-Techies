@@ -35,7 +35,7 @@ const ScrollToTopButton = () => {
   onClick={scrollToTop}
   className={`fixed bottom-10 left-10 p-4 bg-sky-500 text-white rounded-full shadow-lg transition-opacity duration-500 ease-out z-50 ${
     isVisible ? "opacity-100 z-99" : "opacity-0 pointer-events-none"
-  } hover:bg-sky-600`}
+  } hover:bg-sky-500`}
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"

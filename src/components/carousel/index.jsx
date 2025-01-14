@@ -83,17 +83,17 @@ const TestimonialCarousel = () => {
               <div className="flex justify-between items-center mb-4">
                 <div className="flex items-center">
                   <span className="text-yellow-400 text-xl font-bold">★★★★★</span>
-                  <FaGoogle className="ml-2 text-gray-500 text-xl" />
+                  <FaGoogle className="ml-2 text-gray-400 text-xl" />
                 </div>
               </div>
-              <p className="text-gray-300 mb-4">{testimonial.review}</p>
+              <p className="text-gray-400 mb-4">{testimonial.review}</p>
               <div className="flex items-center mt-6">
-                <div className="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center text-lg font-semibold text-gray-100">
+                <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-lg font-semibold text-almost-white">
                   {testimonial.name[0]}
                 </div>
                 <div className="ml-4">
                   <h4 className="font-bold">{testimonial.name}</h4>
-                  <p className="text-gray-400 text-sm">{testimonial.date}</p>
+                  <p className="text-gray-500 text-sm">{testimonial.date}</p>
                 </div>
               </div>
             </div>

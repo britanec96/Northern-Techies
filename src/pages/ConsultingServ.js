@@ -63,7 +63,7 @@ function ConsultationServices() {
                 <h1 className="text-5xl font-extrabold text-white">
                   Our expert <span className="text-sky-500">Consultants</span> for your tech needs
                 </h1>
-                <p className="mt-6 text-xl font-fira text-gray-300">
+                <p className="mt-6 text-xl font-fira text-gray-400">
                   From Computer Repairs to Internet Setup & Full Tech Support — We are here for you.
                 </p>
                 <motion.div
@@ -101,7 +101,7 @@ function ConsultationServices() {
                 </motion.div>
               </div>
             </AnimatedSection>
-            <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
+            <div className="w-full h-px bg-gray-400 my-12 opacity-25"></div>
           </div>
           <div className="flex justify-between mt-12">
             <AnimatedSection animation={animationVariants}>
@@ -116,12 +116,12 @@ function ConsultationServices() {
       <section className="p-12 bg-gray-900">
         <div className="max-w-7xl mx-auto text-center">
           <AnimatedSection animation={animationVariants}>
-            <motion.h2 className="text-4xl md:text-6xl font-bold text-gray-300 mb-6">
-              <span className="text-sky-400">Common</span> Consultation Topics
+            <motion.h2 className="text-4xl md:text-6xl font-bold text-gray-400 mb-6">
+              <span className="text-sky-500">Common</span> Consultation Topics
             </motion.h2>
           </AnimatedSection>
           <AnimatedSection animation={animationVariants}>
-            <motion.p className="text-lg md:text-xl text-gray-300 mb-10 opacity-80">
+            <motion.p className="text-lg md:text-xl text-gray-400 mb-10 opacity-80">
               Reach out to us for professional guidance on the following topics and more:
             </motion.p>
           </AnimatedSection>
@@ -148,7 +148,7 @@ function ConsultationServices() {
                   <h3 className="text-2xl font-bold text-white mb-3 z-10 relative">
                     {item.title}
                   </h3>
-                  <p className="text-gray-300 z-10 relative">
+                  <p className="text-gray-400 z-10 relative">
                     {item.description}
                   </p>
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black opacity-40 group-hover:opacity-50 transition duration-300"></div>
@@ -166,7 +166,7 @@ function ConsultationServices() {
           </motion.h1>
         </AnimatedSection>
         <AnimatedSection animation={animationVariants}>
-          <motion.p className="m-5 text-gray-100 text-xl md:text-2xl">
+          <motion.p className="m-5 text-almost-white text-xl md:text-2xl">
             Get a free consultation and chat with our specialist 24/7{' '}
             <span className="text-sky-500 text-2xl md:text-3xl font-semibold">RIGHT NOW!</span>
           </motion.p>

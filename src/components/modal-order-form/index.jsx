@@ -78,7 +78,7 @@ function ContactFormModal({ toggleModal }) {
     <div className="fixed inset-0 flex z-50 w-full h-full">
     {/* Фон модального окна */}
     <div
-      className="absolute inset-0 bg-gray-800 opacity-60 z-40"
+      className="absolute inset-0 bg-gray-900 opacity-60 z-40"
       onClick={() => {
         console.log("Closing modal via background click");
         toggleModal();
@@ -99,7 +99,7 @@ function ContactFormModal({ toggleModal }) {
       </p>
   
       {/* Форма */}
-      <form onSubmit={handleSubmit} className="w-full flex flex-col gap-6 p-6 bg-gray-800 rounded-lg mx-auto">
+      <form onSubmit={handleSubmit} className="w-full flex flex-col gap-6 p-6 bg-gray-900 rounded-lg mx-auto">
   {/* Поле имени */}
   <div className="flex flex-col mb-4">
     <label htmlFor="name" className="text-sm text-almost-white mb-2">Name</label>
@@ -108,7 +108,7 @@ function ContactFormModal({ toggleModal }) {
       name="name"
       value={name}
       onChange={(e) => setName(e.target.value)}
-      className="w-full h-14 px-6 py-3 border-2 border-transparent focus:border-sky-500 rounded-lg bg-gray-700 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out shadow-md resize-none"
+      className="w-full h-14 px-6 py-3 border-2 border-transparent focus:border-sky-500 rounded-lg bg-gray-900 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out shadow-md resize-none"
       placeholder="Enter your name"
     ></textarea>
   </div>
@@ -119,7 +119,7 @@ function ContactFormModal({ toggleModal }) {
     <PhoneNumberInput
       value={phoneNumber}
       onChange={handlePhoneChange}
-      className="w-full px-6 py-3 border-2 border-transparent focus:border-sky-500 rounded-lg bg-gray-700  text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out"
+      className="w-full px-6 py-3 border-2 border-transparent focus:border-sky-500 rounded-lg bg-gray-900  text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out"
     />
   </div>
 
@@ -131,7 +131,7 @@ function ContactFormModal({ toggleModal }) {
       name="message"
       value={message}
       onChange={(e) => setMessage(e.target.value)}
-      className="w-full h-32 px-6 py-3 border-2 border-transparent focus:border-sky-500 rounded-lg bg-gray-700 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out shadow-md resize-none"
+      className="w-full h-32 px-6 py-3 border-2 border-transparent focus:border-sky-500 rounded-lg bg-gray-900 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300 ease-in-out shadow-md resize-none"
       placeholder="The more details, the better we can serve you!"
     ></textarea>
   </div>

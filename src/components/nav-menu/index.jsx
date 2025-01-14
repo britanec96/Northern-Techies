@@ -24,7 +24,7 @@ export const NavMenu = ({ items = [], onClose }) => {
       ref={menuRef}
       className='flex flex-col 
       px-4 py-2
-      bg-gray-800 drop-shadow rounded-lg 
+      bg-gray-900 drop-shadow rounded-lg 
       absolute top-10 right-0 w-44
       space-y-3 z-30 text-sky-500'>
         {items.map(({ text, icon, to }) => (

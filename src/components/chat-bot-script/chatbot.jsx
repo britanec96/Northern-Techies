@@ -211,13 +211,13 @@ const ChatBot = ({ isOpen, onClose }) => {
 
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-gray-800 shadow-2xl border border-gray-700 rounded-3xl w-[90%] sm:w-80 md:w-96 max-h-[80vh] flex flex-col text-white transition-transform  duration-300">
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 bg-gradient-to-br from-gray-900 to-gray-800 shadow-2xl border border-gray-700 rounded-3xl w-[90%] sm:w-80 lg:w-96 max-h-[80vh] flex flex-col z-50 text-white">
+    <div className="bg-gradient-to-br from-gray-900 to-gray-900 shadow-2xl border border-gray-900 rounded-3xl w-[90%] sm:w-80 md:w-96 max-h-[80vh] flex flex-col text-white transition-transform  duration-300">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 bg-gradient-to-br from-gray-900 to-gray-900 shadow-2xl border border-gray-900 rounded-3xl w-[90%] sm:w-80 lg:w-96 max-h-[80vh] flex flex-col z-50 text-white">
       <div className="bg-sky-500 rounded-t-3xl p-4 flex justify-between items-center shadow-md">
         <h3 className="text-lg font-bold">Chat Assistant</h3>
         <button
           onClick={onClose}
-          className="text-white bg-gray-800 p-2 rounded-full hover:bg-gray-700 transition duration-300"
+          className="text-white bg-gray-900 p-2 rounded-full hover:bg-gray-900 transition duration-300"
         >
           ✕
         </button>
@@ -225,7 +225,7 @@ const ChatBot = ({ isOpen, onClose }) => {
 
       <div
         ref={chatRef}
-        className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800"
+        className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-900"
       >
         {messages.map((msg, index) => (
           <div
@@ -237,7 +237,7 @@ const ChatBot = ({ isOpen, onClose }) => {
             <div
               className={`p-3 rounded-2xl text-sm max-w-[80%] lg:max-w-[70%] ${
                 msg.type === "bot"
-                  ? "bg-gray-700 text-gray-200 animate-slideInLeft"
+                  ? "bg-gray-900 text-gray-400 animate-slideInLeft"
                   : "bg-sky-500 text-white animate-slideInRight"
               }`}
             >
@@ -247,20 +247,20 @@ const ChatBot = ({ isOpen, onClose }) => {
         ))}
         {isTyping && (
           <div className="flex justify-start">
-            <div className="p-3 rounded-2xl text-sm max-w-[80%] lg:max-w-[70%] bg-gray-700 text-gray-200">
+            <div className="p-3 rounded-2xl text-sm max-w-[80%] lg:max-w-[70%] bg-gray-900 text-gray-400">
               Typing...
             </div>
           </div>
         )}
       </div>
 
-      <div className="bg-gray-800 p-4 space-y-2">
+      <div className="bg-gray-900 p-4 space-y-2">
         {options.map((option, index) => (
           <button
             key={index}
             onClick={() => handleOptionClick(option)}
             disabled={isButtonDisabled}
-            className={`w-full text-left bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition-all duration-200 py-2 px-4 rounded-lg text-sm shadow-md ${
+            className={`w-full text-left bg-gray-900 text-gray-400 hover:bg-gray-900 hover:text-white transition-all duration-200 py-2 px-4 rounded-lg text-sm shadow-md ${
               isButtonDisabled ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
@@ -277,7 +277,7 @@ const ChatBot = ({ isOpen, onClose }) => {
             </button>
             <button
               onClick={handleTelegram}
-              className="w-full bg-blue-500 text-white hover:bg-blue-600 py-2 px-4 rounded-lg shadow-md transition-all duration-300"
+              className="w-full bg-blue-500 text-white hover:bg-sky-500 py-2 px-4 rounded-lg shadow-md transition-all duration-300"
             >
               Telegram
             </button>
@@ -285,19 +285,19 @@ const ChatBot = ({ isOpen, onClose }) => {
         )}
       </div>
 
-      <div className="bg-gray-800 p-4 rounded-b-3xl space-y-2">
+      <div className="bg-gray-900 p-4 rounded-b-3xl space-y-2">
         <div className="flex">
           <input
             type="text"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
             onKeyPress={handleKeyPress}
-            className="flex-1 bg-gray-700 text-white p-2 rounded-l-lg outline-none border-none"
+            className="flex-1 bg-gray-900 text-white p-2 rounded-l-lg outline-none border-none"
             placeholder="Type your message..."
           />
           <button
             onClick={handleSendMessage}
-            className="bg-sky-500 text-white px-4 rounded-r-lg hover:bg-sky-600 transition-all duration-300"
+            className="bg-sky-500 text-white px-4 rounded-r-lg hover:bg-sky-500 transition-all duration-300"
           >
             Send
           </button>

@@ -69,7 +69,7 @@ function AiContentCreation() {
               </motion.h1>
             </AnimatedSection>
             <AnimatedSection animation={fadeInUp}>
-              <motion.p className="mt-6 text-xl font-fira text-gray-300">
+              <motion.p className="mt-6 text-xl font-fira text-gray-400">
                 Images, Business Plans, Content, Essays, Studying and other
               </motion.p>
             </AnimatedSection>
@@ -93,7 +93,7 @@ function AiContentCreation() {
               </div>
             </AnimatedSection>
           </div>
-          <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
+          <div className="w-full h-px bg-gray-400 my-12 opacity-25"></div>
           <div className="w-full md:flex md:items-center justify-between mt-12">
             <AnimatedSection animation={fadeInUp}>
               <motion.p className="text-almost-white font-bold text-center md:text-left text-xl mt-7 mb-4 md:mb-0">
@@ -105,10 +105,10 @@ function AiContentCreation() {
                 <motion.img className="w-12 h-12 md:w-16 md:h-16" src={ChatGPT} alt="ChatGPT" loading="lazy" />
               </AnimatedSection>
               <AnimatedSection animation={slideInRight}>
-                <motion.img className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-purple-500 via-blue-400 to-pink-400" src={Canva} alt="Canva" loading="lazy" />
+                <motion.img className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-purple-500 via-sky-500 to-pink-400" src={Canva} alt="Canva" loading="lazy" />
               </AnimatedSection>
               <AnimatedSection animation={slideInRight}>
-                <motion.img className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-800 via-purple-600 to-cyan-500" src={MidJourney} alt="MidJourney" loading="lazy" />
+                <motion.img className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-sky-700 via-purple-600 to-cyan-500" src={MidJourney} alt="MidJourney" loading="lazy" />
               </AnimatedSection>
               <AnimatedSection animation={slideInRight}>
                 <motion.img className="w-12 h-12 md:w-16 md:h-16" src={Gemini} alt="Gemini" loading="lazy" />
@@ -127,7 +127,7 @@ function AiContentCreation() {
             </motion.h1>
           </AnimatedSection>
           <AnimatedSection animation={slideInLeft}>
-            <motion.p className='m-5 text-gray-100 text-2xl'>
+            <motion.p className='m-5 text-almost-white text-2xl'>
               Start your project from just <span className='text-sky-500 text-3xl font-semibold'>£10!</span>
             </motion.p>
           </AnimatedSection>
@@ -136,12 +136,12 @@ function AiContentCreation() {
 
       <Wrapper>
         <section>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-300'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-400'>
             <AnimatedSection animation={fadeInUp}>
               <div className='flex flex-col items-center'>
                 <img className="w-1/2 h-auto m-10" src={PromptEngineeringIcon} alt="Prompt Engineering Icon" loading="lazy" />
                 <h1 className='font-bold text-lg text-almost-white '>What is Prompt Engineering?</h1>
-                <p className='m-5 text-gray-300'>
+                <p className='m-5 text-gray-400'>
                   Prompt engineering is the art of crafting effective inputs for AI models to generate desired outputs. Our engineers specialize in fine-tuning prompts to produce high-quality images, business plans, and content tailored to your needs.
                 </p>
               </div>
@@ -150,7 +150,7 @@ function AiContentCreation() {
               <div className='flex flex-col items-center'>
                 <img className="w-1/2 h-auto m-10" src={WhyChooseUsIcon} alt="Business Plans Icon" loading="lazy" />
                 <h1 className='font-bold text-lg text-almost-white '>Why Choose Us for Prompt Engineering?</h1>
-                <p className='m-5 text-gray-300'>
+                <p className='m-5 text-gray-400'>
                   We bring a blend of technical expertise and creative vision to ensure your prompts are optimized to produce exceptional results. Whether you're looking to enhance productivity or generate creative content, our experts are here to assist.
                 </p>
               </div>
@@ -166,7 +166,7 @@ function AiContentCreation() {
             <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">
               Looking for Creative Content?
             </h3>
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-gray-400">
               Need custom content to engage your audience? Our prompt engineers will develop captivating content to suit your unique style and goals.
             </p>
           </AnimatedSection>
@@ -194,7 +194,7 @@ function AiContentCreation() {
             <h3 className="text-2xl md:text-3xl font-bold text-almost-white mb-4">
               Need Stunning AI-Generated Images?
             </h3>
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-gray-400">
               Our AI specialists can create unique visuals for any purpose, helping you stand out with custom image content.
             </p>
           </AnimatedSection>
@@ -209,7 +209,7 @@ function AiContentCreation() {
             </h1>
           </AnimatedSection>
           <AnimatedSection animation={fadeInUp}>
-            <p className='m-5 text-gray-100 text-xl md:text-2xl'>
+            <p className='m-5 text-almost-white text-xl md:text-2xl'>
               Contact us now to discuss your next project and explore AI-powered solutions.
             </p>
           </AnimatedSection>

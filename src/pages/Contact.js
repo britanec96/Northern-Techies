@@ -143,7 +143,7 @@ const Contact = () => {
         </div>
 
         <div className="flex justify-center items-center mb-10 ">
-          <div className="w-60 h-px bg-gray-600 opacity-50"></div>
+          <div className="w-60 h-px bg-gray-900 opacity-50"></div>
         </div>
       </div>
 
@@ -156,11 +156,11 @@ const Contact = () => {
             className="bg-gray-900 p-8 rounded-lg shadow-lg"
           >
             <h2 className="text-3xl text-almost-white font-semibold mb-4">Cooperation</h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-gray-400 mb-4">
               If you want to work with us, we look forward to your message.
             </p>
             <h3 className="text-3xl text-almost-white font-semibold mb-2">Contact Information</h3>
-            <ul className="text-gray-300 mb-4">
+            <ul className="text-gray-400 mb-4">
               <li>Email: support@northerntechies.com</li>
               <li>Address: Greater Manchester, UK</li>
             </ul>
@@ -233,7 +233,7 @@ const Contact = () => {
               }}
               className="relative"
             >
-              <p className="absolute bottom-2 right-2 bg-gray-800 bg-opacity-75 text-sm text-almost-white px-2 py-1 rounded">
+              <p className="absolute bottom-2 right-2 bg-gray-900 bg-opacity-75 text-sm text-almost-white px-2 py-1 rounded">
                 We Are Based in Manchester
               </p>
             </div>

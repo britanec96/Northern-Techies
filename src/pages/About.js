@@ -54,7 +54,7 @@ const About = () => {
             About Us
           </motion.h1>
           <motion.p
-            className="text-xl sm:text-2xl mt-4 text-gray-300 opacity-80 hover:opacity-100 transition-opacity duration-300 ease-in-out"
+            className="text-xl sm:text-2xl mt-4 text-gray-400 opacity-80 hover:opacity-100 transition-opacity duration-300 ease-in-out"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -73,7 +73,7 @@ const About = () => {
             ref={missionRef}
           >
             <h2 className="text-3xl font-semibold text-almost-white mb-4">Our Mission</h2>
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-gray-400">
               At Northern Techies, we believe in bridging the gap between technology and people. Our mission is to make innovative IT services accessible to everyone, regardless of their technical knowledge. We provide high-quality, budget-friendly solutions that empower businesses and individuals to thrive in the digital age.
             </p>
           </motion.div>
@@ -86,7 +86,7 @@ const About = () => {
             ref={visionRef}
           >
             <h2 className="text-3xl font-semibold text-almost-white mb-4">Our Vision</h2>
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-gray-400">
               We aim to create a world where technology is no longer intimidating or out of reach for anyone. Our vision is to help individuals and businesses unlock their full potential through seamless tech solutions, creative designs, and innovative digital services.
             </p>
           </motion.div>
@@ -94,13 +94,13 @@ const About = () => {
 
         {/* Updated Our Values Section */}  
 <motion.div
-  className="bg-gray-800 py-16 rounded-xl shadow-xl"
+  className="bg-gray-900 py-16 rounded-xl shadow-xl"
   variants={valuesAnimation}
   initial="hidden"
   animate={valuesInView ? "visible" : "hidden"}
   ref={valuesRef}
 >
-  <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600 text-center mb-12">
+  <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-sky-500 text-center mb-12">
     Our Core Values
   </h2>
   <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 px-6">
@@ -111,13 +111,13 @@ const About = () => {
     ].map((value, index) => (
       <div
         key={index}
-        className="relative text-center border-2 border-sky-600 p-8 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-700 hover:border-none group overflow-hidden"
+        className="relative text-center border-2 border-sky-500 p-8 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-900 hover:border-none group overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-sky-500 via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity"></div>
         <h3 className="text-3xl font-semibold text-sky-500 mb-4 transition-transform group-hover:translate-y-[-5px]">
           {value.title}
         </h3>
-        <p className="text-gray-300 group-hover:text-gray-100 transition-colors">
+        <p className="text-gray-400 group-hover:text-almost-white transition-colors">
           {value.text}
         </p>
       </div>
@@ -159,32 +159,32 @@ const About = () => {
   ].map((member, index) => (
     <div
       key={index}
-      className="relative text-center bg-gray-800 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 group overflow-hidden"
+      className="relative text-center bg-gray-900 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 group overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-0 group-hover:opacity-30 transition-opacity"></div>
       <img
   src={member.image}
   alt={`Team Member ${index + 1}`}
-  className="rounded-full object-cover w-32 h-32 mx-auto mb-4 border-4 border-gray-700 transition-transform group-hover:rotate-6"
+  className="rounded-full object-cover w-32 h-32 mx-auto mb-4 border-4 border-gray-900 transition-transform group-hover:rotate-6"
   onContextMenu={(e) => e.preventDefault()} 
   draggable="false" 
 />
 
-      <h3 className="text-2xl font-semibold text-sky-400 group-hover:text-sky-300 transition-colors">
+      <h3 className="text-2xl font-semibold text-sky-500 group-hover:text-sky-500 transition-colors">
         {member.name}
       </h3>
-      <p className="text-gray-300 mb-2">{member.role}</p>
-      <p className="text-gray-400 group-hover:text-gray-200 transition-colors">
+      <p className="text-gray-400 mb-2">{member.role}</p>
+      <p className="text-gray-400 group-hover:text-gray-400 transition-colors">
         {member.description}
       </p>
       <div className="absolute inset-x-0 bottom-0 flex justify-center gap-4 pb-4 opacity-0 group-hover:opacity-100 transition-opacity">
-        <button className="text-gray-300 hover:text-sky-400 transition-colors">
+        <button className="text-gray-400 hover:text-sky-500 transition-colors">
           <i className="fab fa-linkedin-in"></i>
         </button>
-        <button className="text-gray-300 hover:text-sky-400 transition-colors">
+        <button className="text-gray-400 hover:text-sky-500 transition-colors">
           <i className="fab fa-twitter"></i>
         </button>
-        <button className="text-gray-300 hover:text-sky-400 transition-colors">
+        <button className="text-gray-400 hover:text-sky-500 transition-colors">
           <i className="fab fa-github"></i>
         </button>
       </div>
@@ -195,13 +195,13 @@ const About = () => {
 
        {/* Achievements Section */}
 <motion.div
-  className="bg-gray-800 py-16 rounded-xl shadow-xl"
+  className="bg-gray-900 py-16 rounded-xl shadow-xl"
   variants={achievementsAnimation}
   initial="hidden"
   animate={achievementsInView ? "visible" : "hidden"}
   ref={achievementsRef}
 >
-  <h2 className="md:text-5xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600 text-center mb-12">
+  <h2 className="md:text-5xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-sky-500 text-center mb-12">
     Our Achievements
   </h2>
   <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 px-6">
@@ -212,13 +212,13 @@ const About = () => {
     ].map((achievement, index) => (
       <div
         key={index}
-        className="relative text-center border-2 border-sky-600 hover:border-none  p-8 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-600 group overflow-hidden"
+        className="relative text-center border-2 border-sky-500 hover:border-none  p-8 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-900 group overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-sky-500 via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity"></div>
         <h3 className="text-2xl font-semibold text-sky-500 mb-4 transition-transform group-hover:translate-y-[-5px]">
           {achievement.title}
         </h3>
-        <p className="text-gray-300 group-hover:text-gray-100 transition-colors">
+        <p className="text-gray-400 group-hover:text-almost-white transition-colors">
           {achievement.text}
         </p>
       </div>
@@ -228,8 +228,8 @@ const About = () => {
 
 
         {/* Call-to-Action Section */}
-        <div className="text-center my-12 bg-gray-800 rounded-xl p-5">
-  <p className="md:text-2xl sm:text-xl text-gray-300 mb-4">
+        <div className="text-center my-12 bg-gray-900 rounded-xl p-5">
+  <p className="md:text-2xl sm:text-xl text-gray-400 mb-4">
     Ready to start your project with Northern Techies? Get in touch today to discuss your needs!
   </p>
   <a
