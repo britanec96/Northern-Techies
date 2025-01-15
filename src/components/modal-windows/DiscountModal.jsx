@@ -3,7 +3,7 @@ import emailjs from "emailjs-com";
 import Disc from "../../images/CreativeContent.jpg";
 
 const DiscountModal = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -62,10 +62,9 @@ const DiscountModal = () => {
     <>
       {isOpen && (
        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-       <div className="bg-gray-900 rounded-lg p-6 shadow-lg w-11/12 md:max-w-5xl sm:max-w-xl">
-         <div className="grid grid-cols-2 gap-4">
-           <img src={Disc} className="col-span-1 self-center rounded-lg" alt="Discount Image" />
-           <div className="col-span-1">
+       <div className="bg-gray-900 rounded-lg p-6 shadow-lg w-11/12 md:max-w-4xl sm:max-w-md">
+         <div className="grid grid-cols-1 gap-4">
+           <div className="sm:col-span-2 md:col-span-1">
              <h2 className="text-3xl font-bold text-center text-almost-white mb-4">
                Get 30% Off on Our Services!
              </h2>
