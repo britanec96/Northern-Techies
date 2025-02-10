@@ -196,8 +196,8 @@ const BlockHomeThird = () => {
               From simple business cards to social media designs, we create stylish, memorable solutions. Our designers help you stand out, whether it’s for personal branding or small business needs. Check out our portfolio and see how easy it is to update your look!
             </motion.p>
             <div className="mt-6">
-              <Link to="/about-us/portfolio">
-                <Button hasWhiteStyle={true}>Portfolio</Button>
+              <Link to="/services/customize-your-order">
+                <Button hasWhiteStyle={true}>Get started</Button>
               </Link>
             </div>
           </motion.div>

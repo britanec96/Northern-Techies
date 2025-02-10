@@ -66,9 +66,6 @@ export const MobileMenu = ({ isOpen = false, onClose }) => {
             </motion.div>
           </NavItem>
 
-          <Link to="/about-us/portfolio">
-            <NavItem text="Portfolio" />
-          </Link>
           <Link to="about-us/about">
             <NavItem text="About" />
           </Link>

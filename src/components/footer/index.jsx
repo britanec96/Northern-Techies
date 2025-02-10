@@ -49,7 +49,6 @@ export const Footer = () => {
             </p>
             <ul className="mt-4 space-y-2">
               <li><Link to="about-us/about" className="hover:text-sky-500">About Us</Link></li>
-              <li><Link to="/about-us/portfolio" className="hover:text-sky-500">Portfolio</Link></li>
             </ul>
           </motion.div>
 

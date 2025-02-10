@@ -82,7 +82,6 @@ export const Header = () => {
           <NavItem text="Services" onSelect={handleSelect} selected={selected}>
             <NavMenu items={COMPANY} onClose={() => setSelected('')} />
           </NavItem>
-          <NavItem text="Portfolio" to="/about-us/portfolio" />
           <NavItem text="About" to="about-us/about" />
           <NavItem text="Contact Us" to="/about-us/contact-us" />
         </motion.nav>
