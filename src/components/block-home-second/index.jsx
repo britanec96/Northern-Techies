@@ -1,143 +1,173 @@
-/* global Tawk_API */ // Объявляем Tawk_API как глобальную переменную для ESLint
 import React, { useEffect, useState } from "react";
 import { Wrapper } from "../wrapper";
-import Slider from "react-slick";
-import FeatureCard from "../block-home-second/FeatureCard";
-import TestimonialCarousel from "../carousel";
+import { motion, useAnimation, useScroll } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import ChatBot from "../chat-bot-script/chatbot";
-import { motion } from "framer-motion"; // Импортируем motion из framer-motion
-import { useInView } from "react-intersection-observer"; // Импортируем хук из react-intersection-observer
-import "slick-carousel/slick/slick.css"; // Стили для слайдера
-import "slick-carousel/slick/slick-theme.css"; // Стили для слайдера
+import TestimonialCarousel from "../carousel";
+
+// Изображения для разделов
+import WebDevImage from "../../images/website-development.png";
+import PcHelpImage from "../../images/pc-assistants.png";
+import GraphicDesignImage from "../../images/Six.jpg";
+import EssayWritingImage from "../../images/essey-writing.png";
+import ConsultingImage from "../../images/BrandRefresh.jpg";
+import { Button } from "../button";
 
 const BlockHomeSecond = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
-
-  const handleRedirect = (path) => {
-    window.location.href = path;
-  };
-
-  const carouselSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 1 },
-      },
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2 },
-      },
-    ],
-  };
-
-  // Функция для создания анимации для каждого элемента
-  const getAnimation = (index) => {
-    switch (index % 3) {
-      case 0:
-        return {
-          initial: { opacity: 0, y: 50 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 1, ease: "easeOut" },
-        };
-      case 1:
-        return {
-          initial: { opacity: 0, x: -50 },
-          animate: { opacity: 1, x: 0 },
-          transition: { duration: 1, ease: "easeOut" },
-        };
-      case 2:
-        return {
-          initial: { opacity: 0, scale: 0.8 },
-          animate: { opacity: 1, scale: 1 },
-          transition: { duration: 1, ease: "easeOut" },
-        };
-      default:
-        return {};
-    }
-  };
-
-  const { ref: ref1, inView: inView1 } = useInView({ threshold: 0.1 });
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.1 });
+  const handleWhatsApp = () => window.open("https://wa.me/+447378716579", "_blank");
 
   useEffect(() => {
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function() {
-      var s1 = document.createElement("script");
-      var s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/6783c138af5bfec1dbea78dd/1ihdalhk5';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  }, []);
-
-  const openChat = () => {
-    if (typeof Tawk_API !== "undefined" && Tawk_API.toggle() !== undefined) {
-      Tawk_API.toggle(); 
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
     }
+  }, [controls, inView]);
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
+
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
 
   return (
     <motion.div
-      className="w-6xl py-10 md:py-5 px-4 z-10"
-      ref={ref1}  
-      initial={{ opacity: 0 }}
-      animate={{ opacity: inView1 ? 1 : 0 }} 
-      transition={{ duration: 0.8 }}
+      className="w-full pt-14 pb-2 bg-gradient-to-br from-gray-900 to-gray-800"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
     >
- <Wrapper>
-        <Slider {...carouselSettings} className="feature-slider">
+      {/* Hero Section */}
+      <Wrapper>
+        <motion.div
+          className="text-center mb-20"
+          variants={fadeInUp}
+        >
+          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-6">
+            Affordable & Fast Tech Solutions
+          </h1>
+          <p className="text-xl text-almost-white">
+            From web development to consulting any problem, we offer high-quality services at unbeatable prices.
+          </p>
+        </motion.div>
+      </Wrapper>
+
+      {/* Services Section */}
+      <Wrapper>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
+          variants={fadeInUp}
+        >
           {[
-            { title: "Software & Computer Assistance", description: "Having trouble with your software or hardware? We troubleshoot, repair, and optimize all types of devices.", icon: "💻", button: "Chat", onButtonClick: openChat },
-            { title: "Website Development", description: "We offer website design and development services that bring your vision online. Fully responsive, user-friendly, and optimized.", icon: "🚀", button: "Explore", onButtonClick: () => handleRedirect("/services/web-development") },
-            { title: "Graphic Design", description: "We create visuals that make your business stand out, including logos, branding, and website graphics.", icon: "✏️", button: "Explore", onButtonClick: () => handleRedirect("/services/graphic-design") },
-            { title: "Custom PC Builds", description: "We design and assemble custom PCs to meet your exact specifications, whether for gaming, work, or personal use.", icon: "⚙️", button: "Explore", onButtonClick: () => handleRedirect("/services/consultation-services") },
-            { title: "AI Content Creation", description: "Effortlessly generate high-quality content using artificial intelligence for blogs, social media updates, and more.", icon: "🤖", button: "Explore", onButtonClick: () => handleRedirect("/services/ai-content-creation") },
-          ].map((card, index) => {
-            // Применяем уникальную анимацию к каждому элементу
-            const animation = getAnimation(index);
-            return (
-              <motion.div
-                key={index}
-                className="p-4"
-                initial={animation.initial}
-                animate={animation.animate}
-                transition={animation.transition}
-              >
-                <FeatureCard {...card} />
-              </motion.div>
-            );
-          })}
-        </Slider>
+            {
+              title: "Web Development",
+              description: "We create stunning, responsive websites from scratch tailored to your needs.",
+              image: WebDevImage,
+              link: "/services/web-development",
+            },
+            {
+              title: "PC Assistance",
+              description: "Get help with software, hardware, and custom PC builds.",
+              image: PcHelpImage,
+              link: "/services/consultation-services",
+            },
+            {
+              title: "Graphic Design",
+              description: "Professional designs for logos, branding, and more.",
+              image: GraphicDesignImage,
+              link: "/services/graphic-design",
+            },
+            {
+              title: "Essay Writing",
+              description: "High-quality essays and academic writing services for your studying. 100% guaranteed pass.",
+              image: EssayWritingImage,
+              link: "/services/consultation-services",
+            },
+            {
+              title: "Consulting",
+              description: "Consulting on any topic, from promoting your business to setting up your computer. We know how computers and the internet work for you.",
+              image: ConsultingImage,
+              link: "/services/consultation-services",
+            },
+          ].map((service, index) => (
+            <motion.div
+              key={index}
+              className="relative bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
+            >
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-60 object-cover"
+              />
+              <div className="p-6">
+                <h2 className="text-2xl font-semibold text-sky-500 mb-4">{service.title}</h2>
+                <p className="text-almost-white mb-6">{service.description}</p>
+                <a
+                  href={service.link}
+                  className="text-sky-500 hover:text-sky-300 transition-colors"
+                >
+                  Learn More →
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </Wrapper>
+
+      {/* Testimonials Section */}
+      <Wrapper>
+        <motion.div
+          className="py-16 bg-gray-900/50 backdrop-blur-lg rounded-xl shadow-2xl"
+          variants={fadeInUp}
+        >
+          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-12">
+            What Our Clients Say
+          </h2>
+          <TestimonialCarousel />
+        </motion.div>
+      </Wrapper>
+
+      {/* Call-to-Action Section */}
+      <Wrapper>
+        <motion.div
+          className="text-center my-20"
+          variants={fadeInUp}
+        >
+          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-6">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-almost-white mb-8">
+            Contact us today to discuss your problem and get a free consultation.
+          </p>
+            <Button
+              hasWhiteStyle={true} 
+              onClick={(e) => {
+                e.preventDefault();
+                handleWhatsApp();
+              }}
+            >
+              CHAT NOW
+            </Button>
+        </motion.div>
       </Wrapper>
 
       <ChatBot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
-
-      <motion.div
-        className="py-3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <Wrapper>
-          <div className="flex justify-center my-10">
-            <div className="border-l-2 border-almost-white h-14" />
-          </div>
-          <h2 className="text-center text-almost-white text-3xl font-bold mb-10">OUR CLIENTS</h2>
-          <TestimonialCarousel />
-        </Wrapper>
-
-        <div className="flex justify-center my-10">
-          <div className="border-l-2 border-almost-white h-14" />
-        </div>
-      </motion.div>
     </motion.div>
   );
 };

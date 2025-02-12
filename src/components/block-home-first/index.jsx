@@ -29,7 +29,6 @@ export const BlockHomeFirst = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
-      
       const isMobile = window.matchMedia("(max-width: 768px)").matches; 
       const threshold = isMobile ? 270 : 100; 
 
@@ -46,20 +45,22 @@ export const BlockHomeFirst = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
   return (
     <motion.section 
-    style={{ opacity }} 
+      style={{ opacity }} 
       initial={{ opacity: 1 }}
       animate={{ opacity }}
       transition={{ duration: 0.5 }}
-    className="relative w-full h-[55rem] max-h-full">
+      className="relative w-full max-h-full"
+    >
       <video
         className="absolute inset-0 w-full h-full object-cover mask-video opacity-50"
         autoPlay
         loop
         muted
         playsInline
+        onContextMenu={(e) => e.preventDefault()}
+        draggable="false"
       >
         <source src={require('../../videos/CoddingFootage.mp4')} type="video/mp4" />
       </video>
@@ -106,48 +107,43 @@ export const BlockHomeFirst = () => {
       </div>
 
       <Wrapper>
-        <motion.div
-          className="relative z-20 pointer-events-auto select-auto flex gap-5 mt-16 sm:justify-center md:justify-start"
-          variants={buttonVariant}
-          initial="hidden"
-          animate="visible"
-        >
-          <Button 
-            className="flex items-center justify-center gap-2 text-sm font-bold" 
-            hasWhiteStyle={true} 
-            onClick={(e) => {
-              e.preventDefault();
-              handleWhatsApp();
-            }}
-          >
-            <i className="ri-whatsapp-line text-green-500 text-base font-thin"></i>
-            CHAT NOW
-          </Button>
+      <motion.div
+  className="pointer-events-auto select-auto flex gap-5 mt-16 pb-20 sm:justify-center md:justify-start"
+  variants={buttonVariant}
+  initial="hidden"
+  animate="visible"
+>
+  <Button 
+    hasWhiteStyle={true} 
+    onClick={(e) => {
+      e.preventDefault();
+      handleWhatsApp();
+    }}
+  >
+    💬 CHAT NOW
+  </Button>
 
-          <Button
-            className="text-sm font-bold"
-            hasWhiteStyle={true}
-            onClick={() => {
-              const email = 'support@northerntechies.com';
-              const subject = encodeURIComponent('Service Request');
-              const body = encodeURIComponent('Hello, I would like to request your services.');
-              window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-            }}
-          >
-            EMAIL NOW
-          </Button>
+  <Button
+    hasWhiteStyle={true}
+    onClick={() => {
+      const email = 'support@northerntechies.com';
+      const subject = encodeURIComponent('Service Request');
+      const body = encodeURIComponent('Hello, I would like to request your services.');
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }}
+  >
+    📧 EMAIL NOW
+  </Button>
 
-          <Link to="/services/customize-your-order" className="antialiased cursor-pointer tracking-widest">
-            <Button className="text-sm font-bold bg-almost-white text-black" hasWhiteStyle={true}>
-            Get Started
-            </Button>
-          </Link>
-        </motion.div>
+  <Link to="/services/customize-your-order" className="antialiased cursor-pointer tracking-widest">
+    <Button hasWhiteStyle={true}>
+      🚀 GET STARTED
+    </Button>
+  </Link>
+</motion.div>
       </Wrapper>
     </motion.section>
   );
 };
 
 export default BlockHomeFirst;
-
-

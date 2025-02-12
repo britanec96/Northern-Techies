@@ -85,7 +85,7 @@ const DiscountModal = () => {
       >
         <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-t-2xl p-8 shadow-2xl border border-gray-700/50">
           {/* Заголовок */}
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-400 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-4">
             Get Free Advice and a Discount
           </h2>
           <p className="text-center text-gray-300 mb-6 text-lg">
@@ -139,7 +139,7 @@ const DiscountModal = () => {
     <div className="relative w-6 h-6 flex items-center justify-center rounded-lg border-2 border-gray-400 transition-all duration-300 hover:border-sky-400">
       {/* Анимация галочки */}
       <motion.div
-        className="w-4 h-4 bg-gradient-to-r from-sky-400 to-purple-400 rounded-md"
+        className="w-4 h-4 bg-gradient-to-r from-sky-500 to-purple-400 rounded-md"
         initial={{ scale: 0 }}
         animate={{ scale: formData.agreeToTerms ? 1 : 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -152,7 +152,7 @@ const DiscountModal = () => {
         href="/privacy-policy"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sky-400 hover:text-sky-300 transition-colors"
+        className="text-sky-500 hover:text-sky-300 transition-colors"
       >
         Privacy Policy
       </a>{" "}

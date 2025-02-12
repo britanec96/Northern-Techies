@@ -11,9 +11,7 @@ export const MainSection = () => {
     <>
     <BlockHomeFirst/>
     <BlockHomeSecond/>
-    <Wrapper>
     <BlockHomeThird/>
-  </Wrapper>
     </>
   )
 }

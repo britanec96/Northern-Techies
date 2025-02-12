@@ -75,7 +75,7 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-white py-10 rounded-lg">
+    <div className=" text-white py-10 rounded-lg">
       <Slider {...settings} className="px-4">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="p-4">

@@ -48,7 +48,7 @@ export const Footer = () => {
               We are an IT services provider offering a wide range of digital solutions.
             </p>
             <ul className="mt-4 space-y-2">
-              <li><Link to="about-us/about" className="hover:text-sky-500">About Us</Link></li>
+              <li><Link to="about-us/about" className="hover:text-sky-500">Read More..</Link></li>
             </ul>
           </motion.div>
 

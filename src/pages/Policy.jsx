@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-purple-400 mb-6"
+          className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-purple-400 mb-6"
         >
           Privacy Policy
         </motion.h1>
@@ -82,7 +82,7 @@ const PrivacyPolicy = () => {
               content: (
                 <>
                   If you have any questions regarding this Privacy Policy, please contact us at{" "}
-                  <span className="text-sky-400 hover:text-sky-300 transition-colors">
+                  <span className="text-sky-500 hover:text-sky-300 transition-colors">
                     support@northerntechies.com
                   </span>
                   .
@@ -97,7 +97,7 @@ const PrivacyPolicy = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="bg-gray-700/20 p-6 rounded-xl border border-gray-600/20"
             >
-              <h2 className="text-2xl font-semibold text-sky-400 mb-3">{section.title}</h2>
+              <h2 className="text-2xl font-semibold text-sky-500 mb-3">{section.title}</h2>
               <div className="text-gray-300">{section.content}</div>
             </motion.div>
           ))}

@@ -1,11 +1,34 @@
 import React from 'react';
 
-const redStyle = 'border-2 border-gray-400 text-red-500 rounded-lg hover:bg-red-500 hover:text-white hover:border-transparent transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-lg md:text-lg sm:text-sm md:px-4 sm:px-2 md:py-2 sm:py-1 whitespace-nowrap';
+const redStyle = `
+  bg-transparent
+  text-red-500 font-semibold
+  rounded-lg
+  border-2 border-red-500
+  transform transition-all duration-300 ease-out
+  hover:bg-red-500 hover:text-white
+  hover:shadow-md
+  active:scale-95
+  md:text-lg sm:text-sm
+  md:px-6 sm:px-4
+  md:py-2 sm:py-1
+  whitespace-nowrap
+`;
 
-const whiteStyle = 'border-2 border-gray-400 text-almost-white rounded-lg hover:bg-sky-500 hover:text-white hover:border-transparent transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-lg md:text-lg sm:text-sm md:px-4 sm:px-2 md:py-2 sm:py-1 whitespace-nowrap';
-
-
-
+const whiteStyle = `
+  bg-transparent
+  text-almost-white font-semibold
+  rounded-lg
+  border-2 border-gray-400
+  transform transition-all duration-300 ease-out
+  hover:bg-sky-500 hover:text-white hover:border-transparent
+  hover:shadow-md
+  active:scale-95
+  md:text-lg sm:text-sm
+  md:px-6 sm:px-4
+  md:py-2 sm:py-1
+  whitespace-nowrap
+`;
 
 
 export const Button = ({

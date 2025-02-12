@@ -1,16 +1,36 @@
-import React from 'react';
-import { Button } from '../button';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer'; // Импортируем useInView
-import One from '../../images/One.jpg';
-import Three from '../../images/Three.jpg';
-import Six from '../../images/Six.jpg';
+import React from "react";
+import { Button } from "../button";
+import { Link } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import One from "../../images/One.jpg";
+import Three from "../../images/Three.jpg";
+import Logo from '../../images/Logo.svg'
 
 const BlockHomeThird = () => {
-
   const handleWhatsApp = () => {
     window.open("https://wa.me/+447378716579", "_blank");
+  };
+
+  // Анимации
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
   // useInView для каждого элемента
@@ -19,233 +39,207 @@ const BlockHomeThird = () => {
   const { ref: ref3, inView: inView3 } = useInView({ threshold: 0.1 });
   const { ref: ref4, inView: inView4 } = useInView({ threshold: 0.1 });
   const { ref: ref5, inView: inView5 } = useInView({ threshold: 0.1 });
-  const { ref: ref6, inView: inView6 } = useInView({ threshold: 0.1 });
-  const { ref: ref7, inView: inView7 } = useInView({ threshold: 0.1 });
 
   return (
-    <>
-      <motion.div 
-        className="bg-gray-900 rounded-lg shadow-md py-20 px-4 md:px-8 mt-20 mb-5"
-        ref={ref1}  // Добавляем ref для отслеживания
-        initial={{ opacity: 0 }}
-        animate={{ opacity: inView1 ? 1 : 0 }}  // Анимация срабатывает, когда блок в зоне видимости
-        transition={{ duration: 0.8 }}
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800">
+      {/* Hero Section */}
+      <motion.div
+  className="flex flex-col items-center justify-center py-20"
+  ref={ref1}
+  initial="hidden"
+  animate={inView1 ? "visible" : "hidden"}
+  variants={fadeInUp}
+>
+  {/* Логотип */}
+  <div className="flex justify-center mb-6">
+    <img 
+      src={Logo} 
+      alt="Company Logo" 
+      className="md:max-w-[50rem] sm:max-w-[30rem] w-full h-auto object-contain transition-transform duration-200 hover:scale-105" 
+    />
+  </div>
+
+  {/* Текст под логотипом */}
+  <p className="text-xl text-almost-white text-center max-w-2xl px-4">
+    Your trusted partner for affordable, fast, and high-quality tech solutions.
+  </p>
+</motion.div>
+
+      {/* Why Choose Us Section */}
+      <motion.div
+        className="py-20 px-4 bg-gray-900/50 backdrop-blur-lg"
+        ref={ref2}
+        initial="hidden"
+        animate={inView2 ? "visible" : "hidden"}
+        variants={fadeInUp}
       >
-        <div className="text-center mb-12 ">
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-almost-white"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: inView1 ? 1 : 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            Any Your Idea With
-          </motion.h2>
-          <motion.h1 
-            className="text-4xl mt-2 md:text-7xl font-bold text-sky-500"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: inView1 ? 1 : 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Northern Techies
-          </motion.h1>
-        </div>
+          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-12">
+            Why Choose Us?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "🚀",
+                title: "Fast Delivery",
+                description: "We deliver results quickly without compromising on quality. Our team works efficiently to meet your deadlines.",
+              },
+              {
+                icon: "💸",
+                title: "Affordable Prices",
+                description: "As a new startup, we offer competitive prices to help you save money while getting top-notch services.",
+              },
+              {
+                icon: "🌟",
+                title: "High Quality",
+                description: "We pride ourselves on delivering high-quality solutions that exceed your expectations.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-800/50 p-6 rounded-lg shadow-lg text-center"
+                variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-2xl font-semibold text-sky-500 mb-4">{item.title}</h3>
+                <p className="text-almost-white">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
 
-        {/* Добавляем useInView для анимации с задержкой */}
-        <motion.div 
-          className="text-center text-lg md:text-xl text-gray-400 mb-12 font-fira"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: inView2 ? 1 : 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          ref={ref2} 
-        >
-          <p>You don't have to know computers or software — we handle it all for you.</p>
-        </motion.div>
-        <motion.div
-          className="flex items-center justify-center text-gray-400 "
-          initial={{ opacity: 0 }}
-          animate={{ opacity: inView3 ? 1 : 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          ref={ref3}
-        >
-          <i className="ri-money-pound-circle-line mr-1"></i> <h1 className='mr-5'>Low-Budget</h1>
-          <i className="ri-speed-line mr-1"></i> <h1 className='mr-5'>Fast</h1>
-          <i className="ri-star-line mr-1"></i> <h1>Qualitatively</h1>
-        </motion.div>
-
-        <motion.div 
-          className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: inView4 ? 1 : 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          ref={ref4}
-        >
-          <motion.div className="block md:w-1/2">
-            <motion.img
-              src={One}
-              className="w-full max-w-1/2 aspect-video object-cover rounded-lg shadow-md transition-transform duration-300 ease-in-out hover:scale-105"
-              alt="Online Store Showcase"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: inView4 ? 1 : 0.8, opacity: inView4 ? 1 : 0 }}
-              transition={{ duration: 0.8 }}
-            />
-          </motion.div>
-          <motion.div className="flex-1">
-            <motion.h3 
-              className="text-2xl md:text-3xl font-bold text-almost-white mb-4"
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: inView4 ? 1 : 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Thinking of Starting an Online Store?
-            </motion.h3>
-            <motion.p 
-              className="text-lg text-gray-400"
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: inView4 ? 1 : 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Your dream of running an online shop is within reach! We’ve helped countless entrepreneurs bring their store ideas to life, from custom designs to seamless integrations. Join our happy clients, and get a quick overview of the steps and what you can expect by working with us.
-            </motion.p>
-            <div className="mt-6">
-              <Link to="/services/web-development">
-                <Button hasWhiteStyle={true}>Let's Start</Button>
-              </Link>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        <div className="border-t-2 border-gray-400 my-8 opacity-25 mt-20"></div>
-
-        {/* Повторяем для других элементов */}
-        <motion.div 
-          className="mt-12 flex flex-col md:flex-row items-center md:text-left sm:text-center gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: inView5 ? 1 : 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          ref={ref5}
-        >
-          <motion.div className="flex-1">
-            <motion.h3 
-              className="text-2xl md:text-3xl font-bold text-almost-white mb-4"
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: inView5 ? 1 : 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Computer issues?
-            </motion.h3>
-            <motion.p 
-              className="text-lg text-gray-400"
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: inView5 ? 1 : 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Won’t start? Running slow? Need a Windows reinstall? We’ve got you covered! Our specialists are experienced in handling all kinds of issues and can quickly get your computer back to optimal performance. Contact us to learn how we can help restore your device to peak condition.
-            </motion.p>
-            <div className="mt-6">
-              <Link to="/consultationservices">
-                <Button hasWhiteStyle={true}>Get Help</Button>
-              </Link>
-            </div>
-          </motion.div>
-          <motion.div className="block md:w-1/2">
-            <motion.img
-              src={Three}
-              className="w-full max-w-1/2 aspect-video object-cover rounded-lg shadow-md transition-transform duration-300 ease-in-out hover:scale-105"
-              alt="Online Store Showcase"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: inView5 ? 1 : 0.8, opacity: inView5 ? 1 : 0 }}
-              transition={{ duration: 0.8 }}
-            />
-          </motion.div>
-        </motion.div>
-
-        <div className="border-t-2 border-gray-400 my-8 opacity-25 mt-20"></div>
-
-        <motion.div 
-          className="mt-12 flex flex-col md:flex-row items-center md:text-right sm:text-center gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: inView6 ? 1 : 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          ref={ref6}
-        >
-          <motion.div className="block md:w-1/2">
-            <motion.img
-              src={Six}
-              className="w-full max-w-1/2 aspect-video object-cover rounded-lg shadow-md transition-transform duration-300 ease-in-out hover:scale-105"
-              alt="Online Store Showcase"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: inView6 ? 1 : 0.8, opacity: inView6 ? 1 : 0 }}
-              transition={{ duration: 0.8 }}
-            />
-          </motion.div>
-          <motion.div className="flex-1">
-            <motion.h3 
-              className="text-2xl md:text-3xl font-bold text-almost-white mb-4"
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: inView6 ? 1 : 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Want to Refresh Your Existing Design or Your Business’s Image?
-            </motion.h3>
-            <motion.p 
-              className="text-lg text-gray-400"
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: inView6 ? 1 : 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              From simple business cards to social media designs, we create stylish, memorable solutions. Our designers help you stand out, whether it’s for personal branding or small business needs. Check out our portfolio and see how easy it is to update your look!
-            </motion.p>
-            <div className="mt-6">
-              <Link to="/services/customize-your-order">
-                <Button hasWhiteStyle={true}>Get started</Button>
-              </Link>
-            </div>
-          </motion.div>
-        </motion.div>
       </motion.div>
 
-      <section>
-        <motion.div
-          className="bg-gray-900 p-5 mb-5 text-center relative rounded-lg"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: inView7 ? 1 : 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          ref={ref7}
-        >
-          <h1 className="m-5 text-almost-white md:text-5xl sm:text-3xl font-extrabold ">
-            Get a free consultation
-          </h1>
-          <div className="">
-            <p className="m-5 text-almost-white md:text-2xl sm:text-xl">Get professional help right{' '}
-              <span className="text-sky-500 text-3xl font-semibold">NOW!</span>
-            </p>
-            <motion.div
-      className="m-5"
-      animate={{
-        scale: [1, 1.1, 1], 
-      }}
-      transition={{
-        duration: 1.5, // Длительность анимации
-        repeat: Infinity, // Зацикливаем анимацию
-        repeatType: "loop", // Повторяем анимацию бесконечно
-        ease: "easeInOut", // Плавное изменение
-      }}
-    >
-      <Button
-        onClick={(event) => {
-          event.preventDefault();
-          handleWhatsApp();
-        }}
-        className="text-white py-3 px-6 rounded-lg shadow-lg"
-        hasWhiteStyle={true}
+      {/* Success Stories Section */}
+      <motion.div
+        className="py-20 px-4"
+        ref={ref3}
+        initial="hidden"
+        animate={inView3 ? "visible" : "hidden"}
+        variants={fadeInUp}
       >
-        Contact Us
-      </Button>
-    </motion.div>
+          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-12">
+            Success Stories
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Revamped Online Store",
+                description: "We helped a local business increase their online sales by 200% with a new website design and SEO optimization.",
+                image: One,
+              },
+              {
+                title: "Custom PC Build",
+                description: "A gaming enthusiast got their dream PC built by us, tailored to their exact specifications and budget.",
+                image: Three,
+              },
+            ].map((story, index) => (
+              <motion.div
+                key={index}
+                className="relative bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
+              >
+                <img
+                  src={story.image}
+                  alt={story.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-2xl font-semibold text-sky-500 mb-4">{story.title}</h2>
+                  <p className="text-almost-white mb-6">{story.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      </section>
-    </>
+      </motion.div>
+
+      {/* How We Work Section */}
+      <motion.div
+        className="py-20 px-4 bg-gray-900/50 backdrop-blur-lg"
+        ref={ref4}
+        initial="hidden"
+        animate={inView4 ? "visible" : "hidden"}
+        variants={fadeInUp}
+      >
+          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-12">
+            How We Work
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              {
+                icon: "📞",
+                title: "Consultation",
+                description: "We discuss your needs and goals to understand your project.",
+              },
+              {
+                icon: "💡",
+                title: "Planning",
+                description: "We create a detailed plan tailored to your requirements.",
+              },
+              {
+                icon: "🛠️",
+                title: "Execution",
+                description: "Our team works efficiently to deliver high-quality results.",
+              },
+              {
+                icon: "✅",
+                title: "Delivery",
+                description: "We deliver the final product and provide ongoing support.",
+              },
+            ].map((step, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-800/50 p-6 rounded-lg shadow-lg text-center"
+                variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
+              >
+                <div className="text-4xl mb-4">{step.icon}</div>
+                <h3 className="text-2xl font-semibold text-sky-500 mb-4">{step.title}</h3>
+                <p className="text-almost-white">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+      </motion.div>
+
+      {/* FAQ Section */}
+      <motion.div
+        className="py-20 px-5"
+        ref={ref5}
+        initial="hidden"
+        animate={inView5 ? "visible" : "hidden"}
+        variants={fadeInUp}
+      >
+          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                question: "How long does it take to complete a project?",
+                answer: "The timeline depends on the complexity of the project, but we always strive to deliver as quickly as possible without compromising quality.",
+              },
+              {
+                question: "Why are your prices so affordable?",
+                answer: "As a new startup, we aim to provide high-quality services at competitive prices to build our reputation and client base.",
+              },
+              {
+                question: "Do you offer ongoing support?",
+                answer: "Yes, we provide ongoing support to ensure your project continues to perform well.",
+              },
+              {
+                question: "Can I request custom features?",
+                answer: "Absolutely! We tailor our services to meet your specific needs and requirements.",
+              },
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-800/50 p-6 rounded-lg shadow-lg"
+                variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
+              >
+                <h3 className="text-xl font-semibold text-sky-500 mb-4">{faq.question}</h3>
+                <p className="text-almost-white">{faq.answer}</p>
+              </motion.div>
+            ))}
+          </div>
+      </motion.div>
+    </div>
   );
 };
 
