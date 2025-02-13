@@ -58,10 +58,10 @@ const BlockHomeSecond = () => {
           className="text-center mb-20"
           variants={fadeInUp}
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-6 px-6">
             Affordable & Fast Tech Solutions
           </h1>
-          <p className="text-xl text-almost-white">
+          <p className="sm:text-sm md:text-xl px-6 text-almost-white">
             From web development to consulting any problem, we offer high-quality services at unbeatable prices.
           </p>
         </motion.div>
@@ -107,7 +107,7 @@ const BlockHomeSecond = () => {
           ].map((service, index) => (
             <motion.div
               key={index}
-              className="relative bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="relative sm:mx-6 md:mx-0 bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
               variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
             >
               <img
@@ -152,7 +152,7 @@ const BlockHomeSecond = () => {
           <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-almost-white mb-8">
+          <p className="sm:text-sm md:text-xl text-almost-white mb-8">
             Contact us today to discuss your problem and get a free consultation.
           </p>
             <Button

@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import One from "../../images/One.jpg";
 import Three from "../../images/Three.jpg";
-import Logo from '../../images/Logo.svg'
+import { Wrapper } from "../wrapper";
 
 const BlockHomeThird = () => {
   const handleWhatsApp = () => {
@@ -42,28 +42,7 @@ const BlockHomeThird = () => {
 
   return (
     <div className="bg-gradient-to-br from-gray-900 to-gray-800">
-      {/* Hero Section */}
-      <motion.div
-  className="flex flex-col items-center justify-center py-20"
-  ref={ref1}
-  initial="hidden"
-  animate={inView1 ? "visible" : "hidden"}
-  variants={fadeInUp}
->
-  {/* Логотип */}
-  <div className="flex justify-center mb-6">
-    <img 
-      src={Logo} 
-      alt="Company Logo" 
-      className="md:max-w-[50rem] sm:max-w-[30rem] w-full h-auto object-contain transition-transform duration-200 hover:scale-105" 
-    />
-  </div>
 
-  {/* Текст под логотипом */}
-  <p className="text-xl text-almost-white text-center max-w-2xl px-4">
-    Your trusted partner for affordable, fast, and high-quality tech solutions.
-  </p>
-</motion.div>
 
       {/* Why Choose Us Section */}
       <motion.div
@@ -73,7 +52,7 @@ const BlockHomeThird = () => {
         animate={inView2 ? "visible" : "hidden"}
         variants={fadeInUp}
       >
-          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-12">
+          <h2 className="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-l from-sky-500 to-purple-400 mb-12">
             Why Choose Us?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -100,7 +79,7 @@ const BlockHomeThird = () => {
                 variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-2xl font-semibold text-sky-500 mb-4">{item.title}</h3>
+                <h3 className="sm:text-xl md:text-2xl py-1 font-semibold rounded-lg bg-gradient-to-r from-sky-500 to-purple-400 text-gray-900 mb-4">{item.title}</h3>
                 <p className="text-almost-white">{item.description}</p>
               </motion.div>
             ))}
@@ -116,7 +95,7 @@ const BlockHomeThird = () => {
         animate={inView3 ? "visible" : "hidden"}
         variants={fadeInUp}
       >
-          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-12">
+          <h2 className="text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-12">
             Success Stories
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -159,10 +138,10 @@ const BlockHomeThird = () => {
         animate={inView4 ? "visible" : "hidden"}
         variants={fadeInUp}
       >
-          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-12">
-            How We Work
+          <h2 className="text-4xl pb-5 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-12">
+            Work Processing
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
             {[
               {
                 icon: "📞",
@@ -191,8 +170,8 @@ const BlockHomeThird = () => {
                 variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
               >
                 <div className="text-4xl mb-4">{step.icon}</div>
-                <h3 className="text-2xl font-semibold text-sky-500 mb-4">{step.title}</h3>
-                <p className="text-almost-white">{step.description}</p>
+                <h3 className="sm:text-xl md:text-2xl py-1 font-semibold rounded-lg bg-gradient-to-r from-sky-500 to-purple-400 text-gray-900 mb-4">{step.title}</h3>
+                <p className="text-almost-white sm:text-sm md:text-lg">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -239,7 +218,35 @@ const BlockHomeThird = () => {
             ))}
           </div>
       </motion.div>
+
+      <div className="border-t border-gray-700 my-4 mb-14"></div>
+
+
+      {/* Call-to-Action Section */}
+      <Wrapper>
+        <motion.div
+          className="text-center pb-14"
+          variants={fadeInUp}
+        >
+          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 mb-6">
+            Ready to Get Started?
+          </h2>
+          <p className="sm:text-sm md:text-xl text-almost-white mb-8">
+            Contact us today to discuss your problem and get a free consultation.
+          </p>
+            <Button
+              hasWhiteStyle={true} 
+              onClick={(e) => {
+                e.preventDefault();
+                handleWhatsApp();
+              }}
+            >
+              CHAT NOW
+            </Button>
+        </motion.div>
+      </Wrapper>
     </div>
+    
   );
 };
 

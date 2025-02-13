@@ -73,7 +73,7 @@ export const BlockHomeFirst = () => {
             initial="hidden"
             animate="visible"
           >
-            <h1 className="font-black text-almost-white text-4xl md:text-6xl my-14 xl:mt-56 md:mt-28 sm:mt-52 whitespace-pre-line">
+            <h1 className="font-black text-almost-white text-4xl md:text-6xl my-14 xl:mt-48 md:mt-28 sm:mt-32 whitespace-pre-line">
               Budget <TypeAnimation
                 sequence={["IT", 2000, "TECH", 2000]}
                 wrapper="span"
@@ -108,7 +108,7 @@ export const BlockHomeFirst = () => {
 
       <Wrapper>
       <motion.div
-  className="pointer-events-auto select-auto flex gap-5 mt-16 pb-20 sm:justify-center md:justify-start"
+  className="pointer-events-auto select-auto flex flex-wrap gap-5 mt-16 pb-20 sm:justify-center md:justify-start"
   variants={buttonVariant}
   initial="hidden"
   animate="visible"
