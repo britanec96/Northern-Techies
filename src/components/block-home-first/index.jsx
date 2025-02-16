@@ -8,33 +8,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 export const BlockHomeFirst = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const headingRef = useRef(null);
-
-  // Настройка Intersection Observer
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      {
-        root: null, // Отслеживаем относительно viewport
-        rootMargin: "0px",
-        threshold: 0.5, // Элемент считается видимым, если 50% его площади на экране
-      }
-    );
-
-    if (headingRef.current) {
-      observer.observe(headingRef.current);
-    }
-
-    // Очистка observer при размонтировании компонента
-    return () => {
-      if (headingRef.current) {
-        observer.unobserve(headingRef.current);
-      }
-    };
-  }, []);
+  
 
   const toggleModal = () => setModalOpen(prev => !prev);
 
@@ -102,7 +76,6 @@ export const BlockHomeFirst = () => {
              className="font-black text-almost-white text-4xl md:text-6xl my-14 xl:mt-48 md:mt-28 sm:mt-32 whitespace-pre-line">
               Tech support and{" "}
   <span className="inline-block h-12">
-    {isVisible && (
       <TypeAnimation
         sequence={[
           "Digital",
@@ -119,7 +92,6 @@ export const BlockHomeFirst = () => {
         repeat={Infinity}
         className="text-sky-500"
       />
-    )}
   </span>{" "}
   services is easy
               <span className="block my-7 p-2 px-3 rounded-md bg-gray-900 bg-opacity-40 text-sky-500 font-thin text-base md:text-xl">
