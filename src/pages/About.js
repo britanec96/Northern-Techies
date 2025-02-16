@@ -98,7 +98,7 @@ const About = () => {
           <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 text-center mb-12">
             Our Core Values
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 px-6">
             {[
               { title: "Innovation", text: "We constantly push the boundaries of technology to offer creative solutions that meet the unique needs of our clients." },
               { title: "Integrity", text: "We are committed to transparency, honesty, and ethical practices in all our interactions." },
@@ -120,7 +120,7 @@ const About = () => {
 
         {/* Our Team Section */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 my-16"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 my-16"
           variants={fadeInUp}
           initial="hidden"
           animate={teamInView ? "visible" : "hidden"}
@@ -175,12 +175,12 @@ const About = () => {
           animate={achievementsInView ? "visible" : "hidden"}
           ref={achievementsRef}
         >
-          <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-purple-400 text-center mb-12">
             Our Achievements
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 px-6">
             {[
-              { title: "70+ Successful Projects", text: "We've completed over 70 projects, helping clients achieve their goals through cutting-edge technology." },
+              { title: "35+ Successful Projects", text: "We've completed over 70 projects, helping clients achieve their goals through cutting-edge technology." },
               { title: "Global Presence", text: "With clients across multiple continents, we have established a strong global presence in the tech industry." },
               { title: "5-Star Rating", text: "Our clients consistently rate us 5 stars for the quality of our work and our commitment to customer satisfaction." },
             ].map((achievement, index) => (
@@ -201,7 +201,7 @@ const About = () => {
         {/* Call-to-Action Section */}
         <div className="text-center my-16 bg-gray-900/50 backdrop-blur-lg rounded-xl p-8 shadow-2xl">
           <p className="text-2xl text-gray-400 mb-6">
-            Ready to start your project with Northern Techies? Get in touch today to discuss your needs!
+            Get in touch <span className='text-sky-500 font-extrabold'>today</span> to discuss your needs!
           </p>
           <a
             href="https://wa.me/447378716579"

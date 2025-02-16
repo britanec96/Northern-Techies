@@ -10,9 +10,9 @@ import TestimonialCarousel from "../carousel";
 // Изображения для разделов
 import WebDevImage from "../../images/website-development.png";
 import PcHelpImage from "../../images/pc-assistants.png";
-import GraphicDesignImage from "../../images/Six.jpg";
+import GraphicDesignImage from "../../images/graphic-design.png";
 import EssayWritingImage from "../../images/essey-writing.png";
-import ConsultingImage from "../../images/BrandRefresh.jpg";
+import ConsultingImage from "../../images/consulting-services.png";
 import { Button } from "../button";
 
 const BlockHomeSecond = () => {
@@ -76,30 +76,35 @@ const BlockHomeSecond = () => {
           {[
             {
               title: "Web Development",
+              online: "Remote",
               description: "We create stunning, responsive websites from scratch tailored to your needs.",
               image: WebDevImage,
               link: "/services/web-development",
             },
             {
               title: "PC Assistance",
+              online: "Remote / On-site",
               description: "Get help with software, hardware, and custom PC builds.",
               image: PcHelpImage,
               link: "/services/consultation-services",
             },
             {
               title: "Graphic Design",
+              online: "Remote",
               description: "Professional designs for logos, branding, and more.",
               image: GraphicDesignImage,
               link: "/services/graphic-design",
             },
             {
               title: "Essay Writing",
+              online: "Remote",
               description: "High-quality essays and academic writing services for your studying. 100% guaranteed pass.",
               image: EssayWritingImage,
               link: "/services/consultation-services",
             },
             {
               title: "Consulting",
+              online: "Remote / On-site",
               description: "Consulting on any topic, from promoting your business to setting up your computer. We know how computers and the internet work for you.",
               image: ConsultingImage,
               link: "/services/consultation-services",
@@ -107,23 +112,25 @@ const BlockHomeSecond = () => {
           ].map((service, index) => (
             <motion.div
               key={index}
-              className="relative sm:mx-6 md:mx-0 bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="relative sm:mx-6 md:mx-0 rounded-3xl bg-gray-800/50 backdrop-blur-lg  overflow-hidden shadow-lg hover:bg-gray-900 hover:shadow-2xl hover:shadow-sky-400 transition-shadow"
               variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-60 object-cover"
+                className="w-full object-cover"
               />
               <div className="p-6">
-                <h2 className="text-2xl font-semibold text-sky-500 mb-4">{service.title}</h2>
-                <p className="text-almost-white mb-6">{service.description}</p>
-                <a
-                  href={service.link}
-                  className="text-sky-500 hover:text-sky-300 transition-colors"
-                >
-                  Learn More →
-                </a>
+              <h2 className="text-3xl font-black text-almost-white mb-4">
+  {service.title}
+</h2>
+
+                <h2 className="text-xl font-light text-indigo-400 mb-2">{service.online}</h2>
+                <p className="text-gray-200 mb-6">{service.description}</p>
+                <a href={service.link} className="bg-gradient-to-r from-sky-200 to-purple-100 font-extrabold p-2 px-6 rounded-xl hover:bg-sky-500 transition-colors">
+  Details
+</a>
+
               </div>
             </motion.div>
           ))}

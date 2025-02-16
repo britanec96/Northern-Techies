@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Wrapper } from '../wrapper';
 import OrderFormModal from '../modal-order-form';
 import { Button } from "../button";
@@ -8,6 +8,33 @@ import { TypeAnimation } from 'react-type-animation';
 
 export const BlockHomeFirst = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const headingRef = useRef(null);
+
+  // Настройка Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null, // Отслеживаем относительно viewport
+        rootMargin: "0px",
+        threshold: 0.5, // Элемент считается видимым, если 50% его площади на экране
+      }
+    );
+
+    if (headingRef.current) {
+      observer.observe(headingRef.current);
+    }
+
+    // Очистка observer при размонтировании компонента
+    return () => {
+      if (headingRef.current) {
+        observer.unobserve(headingRef.current);
+      }
+    };
+  }, []);
 
   const toggleModal = () => setModalOpen(prev => !prev);
 
@@ -53,17 +80,15 @@ export const BlockHomeFirst = () => {
       transition={{ duration: 0.5 }}
       className="relative w-full max-h-full"
     >
-      <video
-        className="absolute inset-0 w-full h-full object-cover mask-video opacity-50"
-        autoPlay
-        loop
-        muted
-        playsInline
-        onContextMenu={(e) => e.preventDefault()}
-        draggable="false"
-      >
-        <source src={require('../../videos/CoddingFootage.mp4')} type="video/mp4" />
-      </video>
+<div className="absolute inset-0 w-full h-full object-cover mask-video opacity-50">
+  <img
+  src={require('../../images/homepage-image.jpg')}
+  alt="Background"
+  className="absolute inset-0 w-full h-full object-cover mask-video opacity-50"
+  loading="eager"
+/>
+  </div>
+
 
       <div className="relative z-10 pointer-events-none select-none">
         <Wrapper>
@@ -73,14 +98,30 @@ export const BlockHomeFirst = () => {
             initial="hidden"
             animate="visible"
           >
-            <h1 className="font-black text-almost-white text-4xl md:text-6xl my-14 xl:mt-48 md:mt-28 sm:mt-32 whitespace-pre-line">
-              Budget <TypeAnimation
-                sequence={["IT", 2000, "TECH", 2000]}
-                wrapper="span"
-                speed={60}
-                repeat={Infinity}
-                className="text-sky-500"
-              />services starting from £10
+            <h1
+             className="font-black text-almost-white text-4xl md:text-6xl my-14 xl:mt-48 md:mt-28 sm:mt-32 whitespace-pre-line">
+              Tech support and{" "}
+  <span className="inline-block h-12">
+    {isVisible && (
+      <TypeAnimation
+        sequence={[
+          "Digital",
+          2000,
+          "Consulting",
+          2000,
+          "Web Application",
+          2000,
+          "Graphic Design",
+          2000,
+        ]}
+        wrapper="span"
+        speed={60}
+        repeat={Infinity}
+        className="text-sky-500"
+      />
+    )}
+  </span>{" "}
+  services is easy
               <span className="block my-7 p-2 px-3 rounded-md bg-gray-900 bg-opacity-40 text-sky-500 font-thin text-base md:text-xl">
                 At Northern Techies, our mission is to make IT and technology accessible to everyone.
               </span>

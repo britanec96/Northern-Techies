@@ -2,62 +2,112 @@ import React from 'react';
 import Slider from 'react-slick';
 import { FaGoogle } from 'react-icons/fa';
 
+
 const testimonials = [
   {
-    name: 'John Smith',
+    name: 'Guest',
     date: '2 January 2025',
-    review: "Amazing service! They helped me set up my new website, and it looks incredible. I had no idea how to even start with this stuff, but they made it all so easy. Highly recommend if you want a website but don’t know where to start!",
+    review: "Honestly, I wasn't expecting much, but you guys really surprised me. The website looks amazing, and the whole process was super smooth. Thanks a lot!",
+    avatar: '/images/avatars/customer1.jpg',
   },
   {
-    name: 'Emily Chen KK',
+    name: 'Emily Chen',
     date: '3 January 2025',
-    review: "I got my PC upgraded by them, and honestly, I can see the difference right away. My computer was running slow, and now it's super fast. Best money I've spent on tech stuff in ages. Definitely worth it!",
+    review: "Upgraded my PC with their help, and it feels like a completely new machine. No more lag, everything runs so much smoother now. Definitely worth it!",
+    avatar: '/images/avatars/customer2.jpg'
   },
   {
-    name: 'Michael Rodriguez',
+    name: 'Guest',
     date: '5 January 2025',
-    review: "Super happy with the TikTok growth service they provided! I went from barely any views to getting thousands on my videos within just a couple weeks. They really know what they're doing, and they’re really friendly too. 😊",
+    review: "Appreciate the help! My content started getting way more views after the tweaks they suggested. Didn't expect results so fast.",
   },
   {
     name: 'Sofia Becker',
     date: '7 January 2025',
-    review: "The team helped me build an e-commerce website, and wow, it turned out better than I imagined. They were patient with all my questions and really made the site look professional. I already started getting sales on it, thanks to them!",
+    review: "Everything went great! Quick and professional. Really appreciate the support.",
+    avatar: '/images/avatars/customer3.jpg'
   },
   {
     name: 'Alexander Krasavin',
     date: '9 January 2025',
-    review: "Ребята помогли мне с созданием сайта, и я остался в восторге. Всё сделали очень качественно, быстро, и объяснили все детали. Я теперь могу управлять сайтом сам. Очень рекомендую, спасибо!",
+    review: "Ребята сделали сайт оперативно и качественно. Теперь сам могу редактировать, что мне нужно, без проблем. Очень доволен!",
   },
   {
     name: 'Laura Williams',
     date: '11 January 2025',
-    review: "Good",
+    review: "They installed and set up the software I needed and even took the time to explain how to use it properly. Super helpful, saved me so much time!",
   },
   {
-    name: 'Davidd',
+    name: 'David',
     date: '13 January 2025',
-    review: "Hello Manchester! Just got my pc cleaned by them and it feels like new! It was overheating all the time before, now it runs smooth and quiet. Not sure what they did exactly, but it worked! Good job, man.",
+    review: "My PC was running so slow, I was about to give up on it. They optimized everything, and now it runs like it's brand new again. Great job!",
+    avatar: '/images/avatars/customer4.jpg'
   },
   {
-    name: 'Hannah Thompson',
+    name: 'Guest',
     date: '15 January 2025',
-    review: "The website redesign service was incredible. My old site looked outdated, and now it’s so sleek and modern. They understood exactly what I wanted, and the process was so smooth. Definitely recommend if you want a professional-looking site.",
+    review: "Finally got rid of my outdated website. Now it looks modern and professional—exactly what I wanted. Thanks for the great work!",
+  },
+  {
+    name: 'James O’Connor',
+    date: '18 January 2025',
+    review: "I run a small business and needed a website that actually represents what I do. These guys nailed it! Great communication and support throughout.",
+    avatar: '/images/avatars/customer5.jpg'
+  },
+  {
+    name: 'Emma Patel',
+    date: '20 January 2025',
+    review: "My laptop was giving me constant trouble, and they sorted everything out in no time. No stress, just solutions. Appreciate it!",
+  },
+  {
+    name: 'Oliver Green',
+    date: '22 January 2025',
+    review: "I needed a website for my café, and I’m honestly so happy with how it turned out. Clean, functional, and easy to update. Highly recommend!",
+    avatar: '/images/avatars/customer6.jpg'
+  },
+  {
+    name: 'Sophia Lee',
+    date: '25 January 2025',
+    review: "Setting up WordPress always felt overwhelming, but they made it super easy. My blog looks amazing now. Thank you so much!",
+  },
+  {
+    name: 'Liam Brown',
+    date: '28 January 2025',
+    review: "My old website was slow and outdated. They revamped everything, and now it's clean, professional, and super fast. Very happy with the results!",
+    avatar: '/images/avatars/customer7.jpg'
+  },
+  {
+    name: 'Ava Wilson',
+    date: '30 January 2025',
+    review: "I was struggling with setting up my online store, but they made the process so much easier. Everything works perfectly now!",
+  },
+  {
+    name: 'Noah Taylor',
+    date: '1 February 2025',
+    review: "Needed help with business software, and they set everything up flawlessly. Even gave me tips to make my workflow smoother. Appreciate it!",
+  },
+  {
+    name: 'Isabella Clark',
+    date: '3 February 2025',
+    review: "I needed a website for my freelance work, and they delivered exactly what I was looking for. Simple, modern, and easy to manage!",
   },
 ];
 
 
 const TestimonialCarousel = () => {
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+      accessibility: false, // Отключает управление клавиатурой
+      focusOnSelect: false, // Не позволяет фокусироваться на скрытых слайдах
+    dots: true, // Enable navigation dots
+    infinite: true, // Loop through slides indefinitely
+    speed: 500, // Transition speed
+    slidesToShow: 3, // Number of testimonials visible at once
+    slidesToScroll: 1, // Number of testimonials to scroll per action
+    autoplay: true, // Enable automatic sliding
+    autoplaySpeed: 3000, // Time before automatically switching slides
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // Adjust settings for medium-sized screens
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -65,7 +115,7 @@ const TestimonialCarousel = () => {
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 640, // Adjust settings for small screens
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -75,7 +125,7 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <div className=" text-white py-10 rounded-lg">
+    <div className="text-white py-10 rounded-lg">
       <Slider {...settings} className="px-4">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="p-4">
@@ -88,9 +138,17 @@ const TestimonialCarousel = () => {
               </div>
               <p className="text-gray-400 mb-4">{testimonial.review}</p>
               <div className="flex items-center mt-6">
-                <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-lg font-semibold text-almost-white">
-                  {testimonial.name[0]}
-                </div>
+                {testimonial.avatar ? (
+                  <img
+                    src={testimonial.avatar}
+                    alt="avatar"
+                    className="w-10 h-10 rounded-full object-cover pointer-events-none"
+                  />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-lg font-semibold text-almost-white">
+                    {testimonial.name[0]}
+                  </div>
+                )}
                 <div className="ml-4">
                   <h4 className="font-bold">{testimonial.name}</h4>
                   <p className="text-gray-500 text-sm">{testimonial.date}</p>
@@ -105,4 +163,3 @@ const TestimonialCarousel = () => {
 };
 
 export default TestimonialCarousel;
-

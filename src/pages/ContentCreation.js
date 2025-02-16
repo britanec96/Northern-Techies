@@ -14,7 +14,6 @@ import MidJourney from '../images/MidJourney.svg';
 import Gemini from '../images/Gemini.png';
 import CreativeContent from '../images/CreativeContent.jpg';
 import ImageGeneration from '../images/ImageGeneration.jpg';
-import Analytics from '../images/AnalyticsPromt.jpg';
 
 // Animation settings
 const fadeInUp = {

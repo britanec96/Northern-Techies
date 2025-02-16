@@ -45,11 +45,8 @@ export const Footer = () => {
           >
             <h4 className="text-lg font-semibold mb-4">About Us</h4>
             <p className="text-gray-400">
-              We are an IT services provider offering a wide range of digital solutions.
+              We are an IT services provider offering a wide range of digital solutions...<Link to="about-us/about" className="hover:text-sky-500 text-almost-white">Read more</Link>
             </p>
-            <ul className="mt-4 space-y-2">
-              <li><Link to="about-us/about" className="hover:text-sky-500">Read More..</Link></li>
-            </ul>
           </motion.div>
 
           {/* Services */}
